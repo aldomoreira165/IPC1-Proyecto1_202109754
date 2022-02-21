@@ -28,6 +28,7 @@ public static crearUsuario getInstancia(){
     public crearUsuario() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -54,9 +55,25 @@ public static crearUsuario getInstancia(){
 
         panelCrearUsuario.setBackground(new java.awt.Color(204, 204, 204));
 
-        txt_password.setText("jPasswordField1");
+        txt_nombre.setText("Aldo");
 
-        txt_confirmarPassword.setText("jPasswordField1");
+        txt_id.setText("1");
+        txt_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_idActionPerformed(evt);
+            }
+        });
+
+        txt_apellido.setText("Moreira");
+
+        txt_usuario.setText("aldomoreira165");
+
+        txt_rol.setText("Estudiante");
+
+        txt_password.setText("contraseña");
+        txt_password.setToolTipText("");
+
+        txt_confirmarPassword.setText("contraseña");
         txt_confirmarPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_confirmarPasswordActionPerformed(evt);
@@ -201,44 +218,65 @@ public static crearUsuario getInstancia(){
     }//GEN-LAST:event_txt_confirmarPasswordActionPerformed
 
     private void btn_crearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearUsuarioActionPerformed
-        contador = contador + 1;
-        id[contador] = txt_id.getText();
-        nombre[contador] = txt_nombre.getText();
-        apellido[contador] = txt_apellido.getText();
-        user[contador] = txt_usuario.getText();
-        rol[contador] = txt_rol.getText();
-        password[contador] = txt_password.getText();
 
-        if (txt_confirmarPassword.getText().equals(txt_password.getText())) {
-            JOptionPane.showMessageDialog(null, "Nuevo usuario: " + txt_usuario.getText(), "Usuario creado con éxito", JOptionPane.INFORMATION_MESSAGE);
+        int idExistente = 0;
+        String idPrevio = txt_id.getText();
 
-        txt_id.setText("");
-        txt_nombre.setText("");
-        txt_apellido.setText("");
-        txt_usuario.setText("");
-        txt_rol.setText("");
-
-        crearUsuario.getInstancia().setVisible(false);
-        ventanaAdministrador.getInstancia().setVisible(true);
-
-        System.out.println(contador);
         for (int i = 0; i <= contador; i++) {
-            System.out.println(id[i]);
-            System.out.println(nombre[i]);
-            System.out.println(apellido[i]);
-            System.out.println(user[i]);
-            System.out.println(rol[i]);
-            System.out.println(password[i]);
-        }   
+            if (id[i].equals(idPrevio)) {
+                idExistente = 1;
+            }
+        }
 
-        }else{
-            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden."
-             + " Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
+
+        if (idExistente == 0) {
+
+            if (txt_confirmarPassword.getText().equals(txt_password.getText())) {
+                JOptionPane.showMessageDialog(null, "Nuevo usuario: " + txt_usuario.getText(), "Usuario creado con éxito", JOptionPane.INFORMATION_MESSAGE);
+
+                contador = contador + 1;
+                id[contador] = txt_id.getText();
+                nombre[contador] = txt_nombre.getText();
+                apellido[contador] = txt_apellido.getText();
+                user[contador] = txt_usuario.getText();
+                rol[contador] = txt_rol.getText();
+                password[contador] = txt_password.getText();
+
+                txt_id.setText("");
+                txt_nombre.setText("");
+                txt_apellido.setText("");
+                txt_usuario.setText("");
+                txt_rol.setText("");
+
+                crearUsuario.getInstancia().setVisible(false);
+                ventanaAdministrador.getInstancia().setVisible(true);
+
+                System.out.println(contador);
+                for (int i = 0; i <= contador; i++) {
+                    System.out.println(id[i]);
+                    System.out.println(nombre[i]);
+                    System.out.println(apellido[i]);
+                    System.out.println(user[i]);
+                    System.out.println(rol[i]);
+                    System.out.println(password[i]);
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden."
+                        + " Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+
+        if (idExistente == 1) {
+             JOptionPane.showMessageDialog(null, "Ya existe un usuario con este ID", "Error", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
-    
+    private void txt_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_idActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

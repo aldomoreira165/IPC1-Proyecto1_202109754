@@ -37,6 +37,9 @@ public static ventanaAdministrador getInstancia(){
         jButton10 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        barraMenu = new javax.swing.JMenu();
+        btn_cerrarSesion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,12 +134,26 @@ public static ventanaAdministrador getInstancia(){
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
         );
+
+        barraMenu.setText("Cuenta");
+
+        btn_cerrarSesion.setText("Cerrar Sesión");
+        btn_cerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cerrarSesionActionPerformed(evt);
+            }
+        });
+        barraMenu.add(btn_cerrarSesion);
+
+        jMenuBar1.add(barraMenu);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,6 +178,11 @@ public static ventanaAdministrador getInstancia(){
        mostrarUsuarios.getInstancia().setVisible(true);
         ventanaAdministrador.getInstancia().setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
+        ventanaAdministrador.getInstancia().setVisible(false);
+        pantallaInicio.getInstancia().setVisible(true);
+    }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,6 +220,8 @@ public static ventanaAdministrador getInstancia(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu barraMenu;
+    private javax.swing.JMenuItem btn_cerrarSesion;
     private javax.swing.JButton btn_crearUsuario;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -210,6 +234,7 @@ public static ventanaAdministrador getInstancia(){
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

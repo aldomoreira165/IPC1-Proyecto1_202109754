@@ -128,23 +128,42 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txt_nombre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Aldo"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_id">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="1"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_idActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_apellido">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Moreira"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_usuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="aldomoreira165"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_rol">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Estudiante"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txt_password">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+            <Property name="text" type="java.lang.String" value="contrase&#xf1;a"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txt_confirmarPassword">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+            <Property name="text" type="java.lang.String" value="contrase&#xf1;a"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_confirmarPasswordActionPerformed"/>
