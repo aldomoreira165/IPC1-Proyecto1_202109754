@@ -46,7 +46,6 @@ public class loginUsuario extends javax.swing.JPanel {
             }
         });
 
-        txt_Password.setText("jPasswordField1");
         txt_Password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_PasswordActionPerformed(evt);
@@ -108,7 +107,7 @@ public class loginUsuario extends javax.swing.JPanel {
                     pantallaInicio.getInstancia().setVisible(false);
                 }
                 if (crearUsuario.getInstancia().user[i].equals(usuario) & !crearUsuario.getInstancia().password[i].equals(password)) {
-                     JOptionPane.showMessageDialog(null, "El usuario y contraseña no existen. Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "El usuario y contraseña no coinciden. Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
                 }
                 if (!crearUsuario.getInstancia().user[i].equals(usuario) & !crearUsuario.getInstancia().password[i].equals(password)) {
                      JOptionPane.showMessageDialog(null, "El usuario no existe. Ponerse en contacto con el administrador para solicitar un registro", "Usuario no creado", JOptionPane.WARNING_MESSAGE);

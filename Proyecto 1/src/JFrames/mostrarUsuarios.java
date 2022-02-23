@@ -121,7 +121,7 @@ public static mostrarUsuarios getInstancia(){
 
     private void btn_verUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verUsuariosActionPerformed
         String[][] tabla  = new String[10][6];
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
             for (int j = 0; j < 6; j++) {
                 tabla[i][0] = crearUsuario.getInstancia().id[i];
                 tabla[i][1] = crearUsuario.getInstancia().nombre[i];

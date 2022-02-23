@@ -2,6 +2,8 @@ package JFrames;
 
 import JFrames.crearUsuario;
 import JFrames.mostrarUsuarios;
+import JFrames.modificarUsuario;
+import JFrames.eliminarUsuario;
 
 public class ventanaAdministrador extends javax.swing.JFrame {
 
@@ -46,6 +48,11 @@ public static ventanaAdministrador getInstancia(){
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jButton1.setText("Modificar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btn_crearUsuario.setText("Crear");
         btn_crearUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -55,6 +62,11 @@ public static ventanaAdministrador getInstancia(){
         });
 
         jButton3.setText("Eliminar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Mostrar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +195,16 @@ public static ventanaAdministrador getInstancia(){
         ventanaAdministrador.getInstancia().setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ventanaAdministrador.getInstancia().setVisible(false);
+        modificarUsuario.getInstancia().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ventanaAdministrador.getInstancia().setVisible(false);
+        eliminarUsuario.getInstancia().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
