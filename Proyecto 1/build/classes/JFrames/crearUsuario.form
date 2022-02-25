@@ -58,13 +58,13 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txt_rol" pref="221" max="32767" attributes="0"/>
                               <Component id="txt_usuario" pref="221" max="32767" attributes="0"/>
                               <Component id="txt_apellido" pref="221" max="32767" attributes="0"/>
                               <Component id="txt_id" pref="221" max="32767" attributes="0"/>
                               <Component id="txt_nombre" pref="221" max="32767" attributes="0"/>
                               <Component id="txt_password" alignment="0" max="32767" attributes="0"/>
                               <Component id="txt_confirmarPassword" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txt_rol" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       </Group>
@@ -103,10 +103,15 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txt_rol" min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="txt_rol" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txt_password" min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -121,7 +126,7 @@
                       <Component id="jButton1" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="btn_crearUsuario" alignment="3" min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -148,11 +153,6 @@
         <Component class="javax.swing.JTextField" name="txt_usuario">
           <Properties>
             <Property name="text" type="java.lang.String" value="aldomoreira165"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="txt_rol">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Estudiante"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="txt_password">
@@ -219,6 +219,19 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_crearUsuarioActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="txt_rol">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="2">
+                <StringItem index="0" value="Estudiante"/>
+                <StringItem index="1" value="Profesor"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

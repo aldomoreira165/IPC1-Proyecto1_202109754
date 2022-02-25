@@ -18,6 +18,7 @@ public static modificarUsuario getInstancia(){
 
     public modificarUsuario() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -54,6 +55,7 @@ public static modificarUsuario getInstancia(){
         });
 
         btn_modificar.setText("Modificar");
+        btn_modificar.setEnabled(false);
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_modificarActionPerformed(evt);
@@ -183,9 +185,14 @@ public static modificarUsuario getInstancia(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        boolean usuarioEncontrado;
+        int id=0; 
+        usuarioEncontrado = false;
         for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
             if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
-                JOptionPane.showMessageDialog(null, "¡Usuario con el id " + crearUsuario.getInstancia().id[i] + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
+                usuarioEncontrado = true;
+                btn_modificar.setEnabled(true);
+                id = i;
                 txt_id.setText(crearUsuario.getInstancia().id[i]);
                 txt_nombre.setText(crearUsuario.getInstancia().nombre[i]);
                 txt_apellido.setText(crearUsuario.getInstancia().apellido[i]);
@@ -193,39 +200,56 @@ public static modificarUsuario getInstancia(){
                 txt_rol.setText(crearUsuario.getInstancia().rol[i]);
                 txt_password.setText(crearUsuario.getInstancia().password[i]);
                 txt_confirmarPassword.setText(crearUsuario.getInstancia().password[i]);
-            }else{
-                JOptionPane.showMessageDialog(null, "Usuario no encontrado. Verifica el ID.", "Error", JOptionPane.WARNING_MESSAGE);
-            }
+            } 
+        }
+        if (usuarioEncontrado == true) {
+            JOptionPane.showMessageDialog(null, "¡Usuario con el id " + (id + 1) + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuario no encontrado. Verifica el ID.", "Error", JOptionPane.WARNING_MESSAGE);
+            txt_nombre.setText("");
+            txt_apellido.setText("");
+            txt_user.setText("");
+            txt_rol.setText("");
+            txt_password.setText("");
+            txt_confirmarPassword.setText("");
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
+        boolean usuarioEncontrado;
+        int id = 0;
+        usuarioEncontrado = false;
         for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-
-            if (txt_password.getText().equals(txt_confirmarPassword.getText())) {
-                if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+            if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+                if (txt_password.getText().equals(txt_confirmarPassword.getText())) {
+                    usuarioEncontrado = true;
                     crearUsuario.getInstancia().nombre[i] = txt_nombre.getText();
                     crearUsuario.getInstancia().apellido[i] = txt_apellido.getText();
                     crearUsuario.getInstancia().user[i] = txt_user.getText();
                     crearUsuario.getInstancia().rol[i] = txt_rol.getText();
                     crearUsuario.getInstancia().password[i] = txt_password.getText();
-                    JOptionPane.showMessageDialog(null, "¡La modificación se realiazó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
-                    modificarUsuario.getInstancia().setVisible(false);
-                    ventanaAdministrador.getInstancia().setVisible(true);
-                    txt_id.setText("");
-                    txt_nombre.setText("");
-                    txt_apellido.setText("");
-                    txt_user.setText("");
-                    txt_rol.setText("");
-                    txt_password.setText("");
-                    txt_confirmarPassword.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden."
+                            + " Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
                 }
-            }else{
-               JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden."
-                        + " Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
             }
+        }
 
+        if (txt_id.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ID", "ID no ingresado", JOptionPane.WARNING_MESSAGE);
+        }
 
+        if (usuarioEncontrado == true) {
+            JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
+            modificarUsuario.getInstancia().setVisible(false);
+            ventanaAdministrador.getInstancia().setVisible(true);
+            txt_id.setText("");
+            txt_nombre.setText("");
+            txt_apellido.setText("");
+            txt_user.setText("");
+            txt_rol.setText("");
+            txt_password.setText("");
+            txt_confirmarPassword.setText("");
         }
     }//GEN-LAST:event_btn_modificarActionPerformed
 

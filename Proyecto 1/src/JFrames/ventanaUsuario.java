@@ -17,6 +17,7 @@ public static ventanaUsuario getInstancia(){
 
     public ventanaUsuario() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")

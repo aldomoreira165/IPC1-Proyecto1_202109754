@@ -4,6 +4,7 @@ import JFrames.crearUsuario;
 import JFrames.mostrarUsuarios;
 import JFrames.modificarUsuario;
 import JFrames.eliminarUsuario;
+import JFrames.crearBibliografia;
 
 public class ventanaAdministrador extends javax.swing.JFrame {
 
@@ -21,6 +22,7 @@ public static ventanaAdministrador getInstancia(){
 
     public ventanaAdministrador() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -76,6 +78,11 @@ public static ventanaAdministrador getInstancia(){
         });
 
         jButton5.setText("Crear");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Modificar");
 
@@ -205,6 +212,11 @@ public static ventanaAdministrador getInstancia(){
         ventanaAdministrador.getInstancia().setVisible(false);
         eliminarUsuario.getInstancia().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        ventanaAdministrador.getInstancia().setVisible(false);
+        crearBibliografia.getInstancia().setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

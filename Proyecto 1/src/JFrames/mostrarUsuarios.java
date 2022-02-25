@@ -11,6 +11,7 @@ public static mostrarUsuarios instancia;
 
     public mostrarUsuarios() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
 public static mostrarUsuarios getInstancia(){

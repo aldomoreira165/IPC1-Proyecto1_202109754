@@ -92,8 +92,8 @@ public class loginUsuario extends javax.swing.JPanel {
 
     private void btn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarActionPerformed
 
-        txt_Password.setText(" ");
-        txt_Usuario.setText(" ");
+        txt_Password.setText("");
+        txt_Usuario.setText("");
     }//GEN-LAST:event_btn_CancelarActionPerformed
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed

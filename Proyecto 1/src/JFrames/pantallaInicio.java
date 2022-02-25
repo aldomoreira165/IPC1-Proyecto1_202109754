@@ -29,6 +29,7 @@ public static pantallaInicio getInstancia(){
 
     public pantallaInicio() {
         initComponents();
+        setLocationRelativeTo(null);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -27,6 +27,7 @@ public static crearUsuario getInstancia(){
 
     public crearUsuario() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -38,7 +39,6 @@ public static crearUsuario getInstancia(){
         txt_id = new javax.swing.JTextField();
         txt_apellido = new javax.swing.JTextField();
         txt_usuario = new javax.swing.JTextField();
-        txt_rol = new javax.swing.JTextField();
         txt_password = new javax.swing.JPasswordField();
         txt_confirmarPassword = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
@@ -50,6 +50,7 @@ public static crearUsuario getInstancia(){
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
+        txt_rol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -67,8 +68,6 @@ public static crearUsuario getInstancia(){
         txt_apellido.setText("Moreira");
 
         txt_usuario.setText("aldomoreira165");
-
-        txt_rol.setText("Estudiante");
 
         txt_password.setText("contraseña");
         txt_password.setToolTipText("");
@@ -108,6 +107,8 @@ public static crearUsuario getInstancia(){
             }
         });
 
+        txt_rol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor" }));
+
         javax.swing.GroupLayout panelCrearUsuarioLayout = new javax.swing.GroupLayout(panelCrearUsuario);
         panelCrearUsuario.setLayout(panelCrearUsuarioLayout);
         panelCrearUsuarioLayout.setHorizontalGroup(
@@ -126,13 +127,13 @@ public static crearUsuario getInstancia(){
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_rol, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                             .addComponent(txt_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                             .addComponent(txt_apellido, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                             .addComponent(txt_id, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                             .addComponent(txt_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
                             .addComponent(txt_password)
-                            .addComponent(txt_confirmarPassword))
+                            .addComponent(txt_confirmarPassword)
+                            .addComponent(txt_rol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(54, 54, 54))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearUsuarioLayout.createSequentialGroup()
                         .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,9 +162,12 @@ public static crearUsuario getInstancia(){
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_rol, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(panelCrearUsuarioLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearUsuarioLayout.createSequentialGroup()
+                        .addComponent(txt_rol, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_password, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -175,7 +179,7 @@ public static crearUsuario getInstancia(){
                 .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,14 +243,13 @@ public static crearUsuario getInstancia(){
                 nombre[contador] = txt_nombre.getText();
                 apellido[contador] = txt_apellido.getText();
                 user[contador] = txt_usuario.getText();
-                rol[contador] = txt_rol.getText();
+                rol[contador] = (String)txt_rol.getSelectedItem();
                 password[contador] = txt_password.getText();
 
                 txt_id.setText("");
                 txt_nombre.setText("");
                 txt_apellido.setText("");
                 txt_usuario.setText("");
-                txt_rol.setText("");
 
                 crearUsuario.getInstancia().setVisible(false);
                 ventanaAdministrador.getInstancia().setVisible(true);
@@ -301,7 +304,7 @@ public static crearUsuario getInstancia(){
     private javax.swing.JTextField txt_id;
     private javax.swing.JTextField txt_nombre;
     private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_rol;
+    private javax.swing.JComboBox<String> txt_rol;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 }
