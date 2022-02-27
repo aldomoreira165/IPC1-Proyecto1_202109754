@@ -203,7 +203,7 @@ public static modificarUsuario getInstancia(){
             } 
         }
         if (usuarioEncontrado == true) {
-            JOptionPane.showMessageDialog(null, "¡Usuario con el id " + (id + 1) + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡Usuario con el id " + txt_id.getText() + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Usuario no encontrado. Verifica el ID.", "Error", JOptionPane.WARNING_MESSAGE);
             txt_nombre.setText("");
@@ -243,6 +243,7 @@ public static modificarUsuario getInstancia(){
             JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
             modificarUsuario.getInstancia().setVisible(false);
             ventanaAdministrador.getInstancia().setVisible(true);
+            btn_modificar.setEnabled(false);
             txt_id.setText("");
             txt_nombre.setText("");
             txt_apellido.setText("");
@@ -267,6 +268,7 @@ public static modificarUsuario getInstancia(){
         txt_rol.setText("");
         txt_password.setText("");
         txt_confirmarPassword.setText("");
+        btn_modificar.setEnabled(false);
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     public static void main(String args[]) {

@@ -186,17 +186,23 @@ public class eliminarUsuario extends javax.swing.JFrame {
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         eliminarUsuario.getInstancia().setVisible(false);
         ventanaAdministrador.getInstancia().setVisible(true);
+        btn_eliminar.setEnabled(false);
+        txt_id.setText("");
+        txt_nombre.setText("");
+        txt_apellido.setText("");
+        txt_user.setText("");
+        txt_rol.setText("");
+        txt_contraseña.setText("");
+        txt_confirmarContraseña.setText("");
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         boolean usuarioEncontrado;
-        int id=0; 
         usuarioEncontrado = false;
         for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
             if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
                 usuarioEncontrado = true;
                 btn_eliminar.setEnabled(true);
-                id = i;
                 txt_id.setText(crearUsuario.getInstancia().id[i]);
                 txt_nombre.setText(crearUsuario.getInstancia().nombre[i]);
                 txt_apellido.setText(crearUsuario.getInstancia().apellido[i]);
@@ -207,7 +213,7 @@ public class eliminarUsuario extends javax.swing.JFrame {
             } 
         }
         if (usuarioEncontrado == true) {
-            JOptionPane.showMessageDialog(null, "¡Usuario con el id "+ (id+1) + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "¡Usuario con el id "+ txt_id.getText() + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
         }else{
             JOptionPane.showMessageDialog(null, "Usuario no encontrado. Verifica el ID.", "Error", JOptionPane.WARNING_MESSAGE);
                 txt_nombre.setText("");
@@ -221,7 +227,6 @@ public class eliminarUsuario extends javax.swing.JFrame {
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         boolean usuarioEncontrado;
-        int id = 0;
         usuarioEncontrado = false;
         for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
             if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
@@ -248,6 +253,14 @@ public class eliminarUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "¡El usuario fue eliminado con éxito!", "Usuario eliminado", JOptionPane.INFORMATION_MESSAGE);
             modificarUsuario.getInstancia().setVisible(false);
             ventanaAdministrador.getInstancia().setVisible(true);
+            btn_eliminar.setEnabled(false);
+            txt_id.setText("");
+            txt_nombre.setText("");
+            txt_apellido.setText("");
+            txt_user.setText("");
+            txt_rol.setText("");
+            txt_contraseña.setText("");
+            txt_confirmarContraseña.setText("");
         }
     }//GEN-LAST:event_btn_eliminarActionPerformed
     

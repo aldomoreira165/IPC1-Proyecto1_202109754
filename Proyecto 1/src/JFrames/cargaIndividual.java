@@ -7,9 +7,9 @@ import Clases.Bibliografia;
 
 public class cargaIndividual extends javax.swing.JFrame {
 
-private static cargaIndividual instancia;
+    private static cargaIndividual instancia;
 
-public static cargaIndividual getInstancia() {
+    public static cargaIndividual getInstancia() {
         if (instancia == null) {
             instancia = new cargaIndividual();
         }
@@ -20,7 +20,7 @@ public static cargaIndividual getInstancia() {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,13 +103,6 @@ public static cargaIndividual getInstancia() {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,8 +112,15 @@ public static cargaIndividual getInstancia() {
                             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txt_isbn, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
@@ -146,56 +146,66 @@ public static cargaIndividual getInstancia() {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_año, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_palabras, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_edicion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_temas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_copias, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_area, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBox_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_cargarBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(32, 32, 32)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(32, 32, 32)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                        .addComponent(jLabel4)
+                                                        .addGap(32, 32, 32)
+                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                .addComponent(jLabel5)
+                                                                .addGap(32, 32, 32)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                        .addComponent(jLabel6)
+                                                                        .addGap(32, 32, 32)
+                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                .addComponent(jLabel7)
+                                                                                .addGap(32, 32, 32)
+                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                        .addComponent(jLabel8)
+                                                                                        .addGap(32, 32, 32)
+                                                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                                                                .addComponent(jLabel9)
+                                                                                                .addGap(32, 32, 32)
+                                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                    .addComponent(txt_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                    .addComponent(jLabel10))
+                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                    .addComponent(comboBox_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                    .addComponent(jLabel12))
+                                                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                                                    .addComponent(btn_cargarBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                            .addComponent(txt_area, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                                    .addComponent(txt_copias, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                            .addComponent(txt_temas, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                    .addComponent(txt_edicion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                            .addComponent(txt_palabras, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(txt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txt_año, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txt_isbn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -216,70 +226,87 @@ public static cargaIndividual getInstancia() {
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         crearBibliografia.getInstancia().setVisible(true);
         cargaIndividual.getInstancia().setVisible(false);
+        txt_autor.setText("");
+        txt_año.setText("");
+        txt_titulo.setText("");
+        txt_descripcion.setText("");
+        txt_palabras.setText("");
+        txt_edicion.setText("");
+        txt_temas.setText("");
+        txt_copias.setText("");
+        txt_area.setText("");
+        txt_categoria.setText("");
+        txt_isbn.setText("");
+        comboBox_tipo.setSelectedItem("Libro");
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void btn_cargarBibliografiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cargarBibliografiaActionPerformed
         boolean isbnExistente = false;
         String isbnPrevio = txt_isbn.getText();
 
-        for (int i = 0; i <= Bibliografia.getInstacia().contador; i++) {
-            if (Bibliografia.getInstacia().isbn.equals(isbnPrevio)) {
+        for (int i = 0; i <= Bibliografia.getInstancia().contador; i++) {
+            if (Bibliografia.getInstancia().isbn[i].equals(isbnPrevio)) {
                 isbnExistente = true;
             }
         }
         if (isbnExistente == false) {
-                JOptionPane.showMessageDialog(null, "Nuevo libro: " + txt_titulo.getText(), "Libro añadido con éxito", JOptionPane.INFORMATION_MESSAGE);
-                Bibliografia.getInstacia().contador = Bibliografia.getInstacia().contador + 1;
-                Bibliografia.getInstacia().autor[Bibliografia.getInstacia().contador] = txt_autor.getText();
-                Bibliografia.getInstacia().año[Bibliografia.getInstacia().contador] = txt_año.getText();
-                Bibliografia.getInstacia().titulo[Bibliografia.getInstacia().contador] = txt_titulo.getText();
-                Bibliografia.getInstacia().descripcion[Bibliografia.getInstacia().contador] = txt_descripcion.getText();
-                Bibliografia.getInstacia().palabrasContenedor[Bibliografia.getInstacia().contador] = txt_palabras.getText().split(",");
-                Bibliografia.getInstacia().palabrasMostrar[Bibliografia.getInstacia().contador] = Bibliografia.getInstacia().palabrasMostrar[Bibliografia.getInstacia().contador];
-                Bibliografia.getInstacia().edicion[Bibliografia.getInstacia().contador] = txt_edicion.getText();
-                Bibliografia.getInstacia().temas[Bibliografia.getInstacia().contador] = txt_temas.getText();
-                Bibliografia.getInstacia().copias[Bibliografia.getInstacia().contador] = txt_copias.getText();
-                Bibliografia.getInstacia().area[Bibliografia.getInstacia().contador] = txt_area.getText();
-                Bibliografia.getInstacia().categoria[Bibliografia.getInstacia().contador] = txt_categoria.getText();
-                Bibliografia.getInstacia().area[Bibliografia.getInstacia().contador] = txt_area.getText();
-                Bibliografia.getInstacia().categoria[Bibliografia.getInstacia().contador] = txt_categoria.getText();
-                Bibliografia.getInstacia().isbn[Bibliografia.getInstacia().contador] = txt_isbn.getText();
-                Bibliografia.getInstacia().tipo[Bibliografia.getInstacia().contador] = (String)comboBox_tipo.getSelectedItem();
-  
-                txt_autor.setText("");
-                txt_año.setText("");
-                txt_titulo.setText("");
-                txt_descripcion.setText("");
-                txt_palabras.setText("");
-                txt_edicion.setText("");
-                txt_temas.setText("");
-                txt_copias.setText("");
-                txt_area.setText("");
-                txt_categoria.setText("");
-                txt_isbn.setText("");
+            JOptionPane.showMessageDialog(null, "Nuevo libro: " + txt_titulo.getText(), "Libro añadido con éxito", JOptionPane.INFORMATION_MESSAGE);
+            Bibliografia.getInstancia().contador = Bibliografia.getInstancia().contador + 1;
+            Bibliografia.getInstancia().autor[Bibliografia.getInstancia().contador] = txt_autor.getText();
+            Bibliografia.getInstancia().año[Bibliografia.getInstancia().contador] = txt_año.getText();
+            Bibliografia.getInstancia().titulo[Bibliografia.getInstancia().contador] = txt_titulo.getText();
+            Bibliografia.getInstancia().descripcion[Bibliografia.getInstancia().contador] = txt_descripcion.getText();
+            Bibliografia.getInstancia().palabras[Bibliografia.getInstancia().contador]= txt_palabras.getText();
+            Bibliografia.getInstancia().edicion[Bibliografia.getInstancia().contador] = txt_edicion.getText();
+            Bibliografia.getInstancia().temas[Bibliografia.getInstancia().contador] = txt_temas.getText();
+            Bibliografia.getInstancia().copias[Bibliografia.getInstancia().contador] = txt_copias.getText();
+            Bibliografia.getInstancia().area[Bibliografia.getInstancia().contador] = txt_area.getText();
+            Bibliografia.getInstancia().categoria[Bibliografia.getInstancia().contador] = txt_categoria.getText();
+            Bibliografia.getInstancia().isbn[Bibliografia.getInstancia().contador] = txt_isbn.getText();
+            Bibliografia.getInstancia().tipo[Bibliografia.getInstancia().contador] = (String) comboBox_tipo.getSelectedItem();
 
-                cargaIndividual.getInstancia().setVisible(false);
-                crearBibliografia.getInstancia().setVisible(true);
+            txt_autor.setText("");
+            txt_año.setText("");
+            txt_titulo.setText("");
+            txt_descripcion.setText("");
+            txt_palabras.setText("");
+            txt_edicion.setText("");
+            txt_temas.setText("");
+            txt_copias.setText("");
+            txt_area.setText("");
+            txt_categoria.setText("");
+            txt_isbn.setText("");
+            comboBox_tipo.setSelectedItem("Libro");
 
-                System.out.println(Bibliografia.getInstacia().contador);
-                for (int i = 0; i <= Bibliografia.getInstacia().contador; i++) {
-                    System.out.println(Bibliografia.getInstacia().autor[i]);
-                    System.out.println(Bibliografia.getInstacia().año[i]);
-                    System.out.println(Bibliografia.getInstacia().titulo[i]);
-                    System.out.println(Bibliografia.getInstacia().descripcion[i]);
-                    System.out.println(Bibliografia.getInstacia().palabrasMostrar[i]);
-                    System.out.println(Bibliografia.getInstacia().edicion[i]);
-                    System.out.println(Bibliografia.getInstacia().temas[i]);
-                    System.out.println(Bibliografia.getInstacia().copias[i]);
-                    System.out.println(Bibliografia.getInstacia().area[i]);
-                    System.out.println(Bibliografia.getInstacia().categoria[i]);
-                    System.out.println(Bibliografia.getInstacia().isbn[i]);
-                    System.out.println(Bibliografia.getInstacia().tipo[i]);
+            cargaIndividual.getInstancia().setVisible(false);
+            crearBibliografia.getInstancia().setVisible(true);
+
+            System.out.println(Bibliografia.getInstancia().contador);
+            for (int i = 0; i <= Bibliografia.getInstancia().contador; i++) {
+                System.out.println(Bibliografia.getInstancia().autor[i]);
+                System.out.println(Bibliografia.getInstancia().año[i]);
+                System.out.println(Bibliografia.getInstancia().titulo[i]);
+                System.out.println(Bibliografia.getInstancia().descripcion[i]);
+                String[] arregloPalabras = Bibliografia.getInstancia().palabras[i].split(",", 0);
+                for (int j = 0; j < arregloPalabras.length; j++) {
+                    System.out.print(arregloPalabras[j]+" ");
                 }
+                System.out.println(" ");
+                String[] arregloTemas = Bibliografia.getInstancia().temas[i].split(",", 0);
+                for (int j = 0; j < arregloTemas.length; j++) {
+                    System.out.print(arregloTemas[j]+" ");
+                }
+                System.out.println(" ");
+                System.out.println(Bibliografia.getInstancia().edicion[i]);
+                System.out.println(Bibliografia.getInstancia().copias[i]);
+                System.out.println(Bibliografia.getInstancia().area[i]);
+                System.out.println(Bibliografia.getInstancia().categoria[i]);
+                System.out.println(Bibliografia.getInstancia().isbn[i]);
+                System.out.println(Bibliografia.getInstancia().tipo[i]);
+            }
         }
-
         if (isbnExistente == true) {
-             JOptionPane.showMessageDialog(null, "Ya existe un libro con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ya existe un libro con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btn_cargarBibliografiaActionPerformed
 
