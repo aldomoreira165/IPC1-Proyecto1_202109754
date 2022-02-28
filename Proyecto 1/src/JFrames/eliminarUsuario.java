@@ -1,5 +1,6 @@
 package JFrames;
 
+import Clases.Usuario;
 import JFrames.eliminarUsuario;
 import javax.swing.JOptionPane;
 
@@ -199,17 +200,17 @@ public class eliminarUsuario extends javax.swing.JFrame {
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         boolean usuarioEncontrado;
         usuarioEncontrado = false;
-        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-            if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+            if (Usuario.getInstancia().id[i].equals(txt_id.getText())) {
                 usuarioEncontrado = true;
                 btn_eliminar.setEnabled(true);
-                txt_id.setText(crearUsuario.getInstancia().id[i]);
-                txt_nombre.setText(crearUsuario.getInstancia().nombre[i]);
-                txt_apellido.setText(crearUsuario.getInstancia().apellido[i]);
-                txt_user.setText(crearUsuario.getInstancia().user[i]);
-                txt_rol.setText(crearUsuario.getInstancia().rol[i]);
-                txt_contraseña.setText(crearUsuario.getInstancia().password[i]);
-                txt_confirmarContraseña.setText(crearUsuario.getInstancia().password[i]);
+                txt_id.setText(Usuario.getInstancia().id[i]);
+                txt_nombre.setText(Usuario.getInstancia().nombre[i]);
+                txt_apellido.setText(Usuario.getInstancia().apellido[i]);
+                txt_user.setText(Usuario.getInstancia().user[i]);
+                txt_rol.setText(Usuario.getInstancia().rol[i]);
+                txt_contraseña.setText(Usuario.getInstancia().password[i]);
+                txt_confirmarContraseña.setText(Usuario.getInstancia().password[i]);
             } 
         }
         if (usuarioEncontrado == true) {
@@ -228,10 +229,10 @@ public class eliminarUsuario extends javax.swing.JFrame {
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         boolean usuarioEncontrado;
         usuarioEncontrado = false;
-        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-            if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+            if (Usuario.getInstancia().id[i].equals(txt_id.getText())) {
                 usuarioEncontrado = true;
-                crearUsuario.getInstancia().contador = crearUsuario.getInstancia().contador - 1;
+                Usuario.getInstancia().contador = (Usuario.getInstancia().contador) - 1;
                 txt_id.setText("");
                 txt_nombre.setText("");
                 txt_apellido.setText("");
@@ -239,13 +240,13 @@ public class eliminarUsuario extends javax.swing.JFrame {
                 txt_rol.setText("");
                 txt_contraseña.setText("");
                 txt_confirmarContraseña.setText("");
-                for (int j = i; j <= crearUsuario.getInstancia().contador; j++) {
-                    crearUsuario.getInstancia().nombre[j] = crearUsuario.getInstancia().nombre[j + 1];
-                    crearUsuario.getInstancia().apellido[j] = crearUsuario.getInstancia().apellido[j + 1];
-                    crearUsuario.getInstancia().user[j] = crearUsuario.getInstancia().user[j + 1];
-                    crearUsuario.getInstancia().rol[j] = crearUsuario.getInstancia().rol[j + 1];
-                    crearUsuario.getInstancia().password[j] = crearUsuario.getInstancia().password[j + 1];
-                    crearUsuario.getInstancia().id[j] = crearUsuario.getInstancia().id[j + 1];
+                for (int j = i; j <= Usuario.getInstancia().contador; j++) {
+                    Usuario.getInstancia().nombre[j] = Usuario.getInstancia().nombre[j + 1];
+                    Usuario.getInstancia().apellido[j] = Usuario.getInstancia().apellido[j + 1];
+                    Usuario.getInstancia().user[j] = Usuario.getInstancia().user[j + 1];
+                    Usuario.getInstancia().rol[j] = Usuario.getInstancia().rol[j + 1];
+                    Usuario.getInstancia().password[j] = Usuario.getInstancia().password[j + 1];
+                    Usuario.getInstancia().id[j] = Usuario.getInstancia().id[j + 1];
                 }
             }
         }

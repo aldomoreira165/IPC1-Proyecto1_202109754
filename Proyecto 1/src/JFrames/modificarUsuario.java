@@ -1,6 +1,7 @@
 
 package JFrames;
 
+import Clases.Usuario;
 import JFrames.crearUsuario;
 import javax.swing.JOptionPane;
 
@@ -186,20 +187,17 @@ public static modificarUsuario getInstancia(){
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         boolean usuarioEncontrado;
-        int id=0; 
         usuarioEncontrado = false;
-        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-            if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+            if (Usuario.getInstancia().id[i].equals(txt_id.getText())) {
                 usuarioEncontrado = true;
                 btn_modificar.setEnabled(true);
-                id = i;
-                txt_id.setText(crearUsuario.getInstancia().id[i]);
-                txt_nombre.setText(crearUsuario.getInstancia().nombre[i]);
-                txt_apellido.setText(crearUsuario.getInstancia().apellido[i]);
-                txt_user.setText(crearUsuario.getInstancia().user[i]);
-                txt_rol.setText(crearUsuario.getInstancia().rol[i]);
-                txt_password.setText(crearUsuario.getInstancia().password[i]);
-                txt_confirmarPassword.setText(crearUsuario.getInstancia().password[i]);
+                txt_nombre.setText(Usuario.getInstancia().nombre[i]);
+                txt_apellido.setText(Usuario.getInstancia().apellido[i]);
+                txt_user.setText(Usuario.getInstancia().user[i]);
+                txt_rol.setText(Usuario.getInstancia().rol[i]);
+                txt_password.setText(Usuario.getInstancia().password[i]);
+                txt_confirmarPassword.setText(Usuario.getInstancia().password[i]);
             } 
         }
         if (usuarioEncontrado == true) {
@@ -217,17 +215,16 @@ public static modificarUsuario getInstancia(){
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
         boolean usuarioEncontrado;
-        int id = 0;
         usuarioEncontrado = false;
-        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-            if (crearUsuario.getInstancia().id[i].equals(txt_id.getText())) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+            if (Usuario.getInstancia().id[i].equals(txt_id.getText())) {
                 if (txt_password.getText().equals(txt_confirmarPassword.getText())) {
                     usuarioEncontrado = true;
-                    crearUsuario.getInstancia().nombre[i] = txt_nombre.getText();
-                    crearUsuario.getInstancia().apellido[i] = txt_apellido.getText();
-                    crearUsuario.getInstancia().user[i] = txt_user.getText();
-                    crearUsuario.getInstancia().rol[i] = txt_rol.getText();
-                    crearUsuario.getInstancia().password[i] = txt_password.getText();
+                    Usuario.getInstancia().nombre[i] = txt_nombre.getText();
+                    Usuario.getInstancia().apellido[i] = txt_apellido.getText();
+                    Usuario.getInstancia().user[i] = txt_user.getText();
+                    Usuario.getInstancia().rol[i] = txt_rol.getText();
+                    Usuario.getInstancia().password[i] = txt_password.getText();
                 } else {
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden."
                             + " Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);

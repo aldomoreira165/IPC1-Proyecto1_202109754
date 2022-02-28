@@ -1,14 +1,29 @@
 package JFrames;
 
 import Clases.Usuario;
+import Clases.Administrador;
 import javax.swing.JOptionPane;
 import JFrames.pantallaInicio;
 import JFrames.crearUsuario;
 import JFrames.ventanaUsuario;
+import java.util.HashSet;
+import java.util.Set;
 
 public class loginUsuario extends javax.swing.JPanel {
 
-    Usuario administrador = new Usuario("1", "admin", "admin", "admin", "admin", "admin");
+private static loginUsuario instancia;
+
+    public static loginUsuario getInstancia() {
+        if (instancia == null) {
+            instancia = new loginUsuario();
+        }
+        return instancia;
+    }
+
+    String usuarioLoggeado = "";
+    String nombreLoggeado = "";
+    String apellidoLoggeado = "";
+    String rolLoggeado = "";
 
     public loginUsuario() {
         initComponents();
@@ -97,29 +112,44 @@ public class loginUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btn_CancelarActionPerformed
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
+        Usuario.getInstancia().usuarioConInstanciado = false;
         String usuario = txt_Usuario.getText();
         String password = txt_Password.getText();
-
-        if (!usuario.equals(administrador.getUser())) {
-            for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
-                if (crearUsuario.getInstancia().user[i].equals(usuario) & crearUsuario.getInstancia().password[i].equals(password)) {
-                    ventanaUsuario.getInstancia().setVisible(true);
-                    pantallaInicio.getInstancia().setVisible(false);
+        int op = 0;
+        int posicion = 0;
+        if (!usuario.equals(Administrador.getInstancia().user)) {
+            for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+                if (Usuario.getInstancia().user[i].equals(usuario) & Usuario.getInstancia().password[i].equals(password)) {
+                    op = 1;
+                    posicion = i;
                 }
-                if (crearUsuario.getInstancia().user[i].equals(usuario) & !crearUsuario.getInstancia().password[i].equals(password)) {
-                     JOptionPane.showMessageDialog(null, "El usuario y contraseña no coinciden. Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
-                }
-                if (!crearUsuario.getInstancia().user[i].equals(usuario) & !crearUsuario.getInstancia().password[i].equals(password)) {
-                     JOptionPane.showMessageDialog(null, "El usuario no existe. Ponerse en contacto con el administrador para solicitar un registro", "Usuario no creado", JOptionPane.WARNING_MESSAGE);
+                if (Usuario.getInstancia().user[i].equals(usuario) & !Usuario.getInstancia().password[i].equals(password)) {
+                    op = 2;
                 }
             }
-            if (crearUsuario.getInstancia().contador == -1) {
+            if (op == 1) {
+                loginUsuario.getInstancia().usuarioLoggeado = Usuario.getInstancia().user[posicion];
+                loginUsuario.getInstancia().nombreLoggeado = Usuario.getInstancia().nombre[posicion];
+                loginUsuario.getInstancia().apellidoLoggeado = Usuario.getInstancia().apellido[posicion];
+                loginUsuario.getInstancia().rolLoggeado = Usuario.getInstancia().rol[posicion];
+                Usuario.getInstancia().usuarioConInstanciado = true;
+                ventanaUsuario.getInstancia().setVisible(true);
+                pantallaInicio.getInstancia().setVisible(false);
+            }
+            if (op == 2) {
+                JOptionPane.showMessageDialog(null, "El usuario y contraseña no coinciden. Por favor verifique las credenciales.", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
+            }
+            if (op == 0) {
+                JOptionPane.showMessageDialog(null, "El usuario no existe. Ponerse en contacto con el administrador para solicitar un registro", "Usuario no creado", JOptionPane.WARNING_MESSAGE);
+            }
+
+            if (Usuario.getInstancia().contador == -1) {
                      JOptionPane.showMessageDialog(null, "Aún no hay cuentas de usuario creadas", "Error", JOptionPane.WARNING_MESSAGE);
                 }
         } 
 
-        else if (usuario.equals(administrador.getUser()) & password.equals(administrador.getPassword())) {
-            JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + administrador.getUser(), "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
+        else if (usuario.equals(Administrador.getInstancia().user) & password.equals(Administrador.getInstancia().password)) {
+            JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + Administrador.getInstancia().user, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
             pantallaInicio.getInstancia().setVisible(false);
             ventanaAdministrador.getInstancia().setVisible(true);
         } 

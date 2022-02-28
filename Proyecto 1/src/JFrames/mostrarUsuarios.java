@@ -1,5 +1,6 @@
 package JFrames;
 
+import Clases.Usuario;
 import JFrames.ventanaAdministrador;
 import JFrames.crearUsuario;
 import javax.swing.table.DefaultTableModel;
@@ -122,14 +123,14 @@ public static mostrarUsuarios getInstancia(){
 
     private void btn_verUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verUsuariosActionPerformed
         String[][] tabla  = new String[10][6];
-        for (int i = 0; i <= crearUsuario.getInstancia().contador; i++) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
             for (int j = 0; j < 6; j++) {
-                tabla[i][0] = crearUsuario.getInstancia().id[i];
-                tabla[i][1] = crearUsuario.getInstancia().nombre[i];
-                tabla[i][2] = crearUsuario.getInstancia().apellido[i];
-                tabla[i][3] = crearUsuario.getInstancia().user[i];
-                tabla[i][4] = crearUsuario.getInstancia().rol[i];
-                tabla[i][5] = crearUsuario.getInstancia().password[i];
+                tabla[i][0] = Usuario.getInstancia().id[i];
+                tabla[i][1] = Usuario.getInstancia().nombre[i];
+                tabla[i][2] = Usuario.getInstancia().apellido[i];
+                tabla[i][3] = Usuario.getInstancia().user[i];
+                tabla[i][4] = Usuario.getInstancia().rol[i];
+                tabla[i][5] = Usuario.getInstancia().password[i];
             }
         }
  

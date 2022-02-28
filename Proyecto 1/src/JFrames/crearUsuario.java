@@ -6,17 +6,11 @@ import java.awt.event.*;
 import Clases.Usuario;
 import JFrames.ventanaAdministrador;
 import javax.swing.JOptionPane;
+import Clases.Usuario;
 
 public class crearUsuario extends javax.swing.JFrame {
 
-int contador = -1;
 private static crearUsuario instancia;
-String[] id = new String[10];
-String[] nombre = new String[10];
-String[] apellido = new String[10];
-String[] user = new String[10];
-String[] rol = new String[10];
-String[] password = new String[10];
 
 public static crearUsuario getInstancia(){
     if(instancia == null){
@@ -226,8 +220,8 @@ public static crearUsuario getInstancia(){
         int idExistente = 0;
         String idPrevio = txt_id.getText();
 
-        for (int i = 0; i <= contador; i++) {
-            if (id[i].equals(idPrevio)) {
+        for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+            if (Usuario.getInstancia().id[i].equals(idPrevio)) {
                 idExistente = 1;
             }
         }
@@ -238,13 +232,13 @@ public static crearUsuario getInstancia(){
             if (txt_confirmarPassword.getText().equals(txt_password.getText())) {
                 JOptionPane.showMessageDialog(null, "Nuevo usuario: " + txt_usuario.getText(), "Usuario creado con éxito", JOptionPane.INFORMATION_MESSAGE);
 
-                contador = contador + 1;
-                id[contador] = txt_id.getText();
-                nombre[contador] = txt_nombre.getText();
-                apellido[contador] = txt_apellido.getText();
-                user[contador] = txt_usuario.getText();
-                rol[contador] = (String)txt_rol.getSelectedItem();
-                password[contador] = txt_password.getText();
+                Usuario.getInstancia().contador = Usuario.getInstancia().contador + 1;
+                Usuario.getInstancia().id[Usuario.getInstancia().contador] = txt_id.getText();
+                Usuario.getInstancia().nombre[Usuario.getInstancia().contador] = txt_nombre.getText();
+                Usuario.getInstancia().apellido[Usuario.getInstancia().contador] = txt_apellido.getText();
+                Usuario.getInstancia().user[Usuario.getInstancia().contador] = txt_usuario.getText();
+                Usuario.getInstancia().rol[Usuario.getInstancia().contador] = (String)txt_rol.getSelectedItem();
+                Usuario.getInstancia().password[Usuario.getInstancia().contador] = txt_password.getText();
 
                 txt_id.setText("");
                 txt_nombre.setText("");
@@ -254,14 +248,14 @@ public static crearUsuario getInstancia(){
                 crearUsuario.getInstancia().setVisible(false);
                 ventanaAdministrador.getInstancia().setVisible(true);
 
-                System.out.println(contador);
-                for (int i = 0; i <= contador; i++) {
-                    System.out.println(id[i]);
-                    System.out.println(nombre[i]);
-                    System.out.println(apellido[i]);
-                    System.out.println(user[i]);
-                    System.out.println(rol[i]);
-                    System.out.println(password[i]);
+                System.out.println(Usuario.getInstancia().contador);
+                for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
+                    System.out.println(Usuario.getInstancia().id[i]);
+                    System.out.println(Usuario.getInstancia().nombre[i]);
+                    System.out.println(Usuario.getInstancia().apellido[i]);
+                    System.out.println(Usuario.getInstancia().user[i]);
+                    System.out.println( Usuario.getInstancia().rol[i]);
+                    System.out.println(Usuario.getInstancia().password[i]);
                 }
 
             } else {

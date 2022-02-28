@@ -5,6 +5,9 @@ import JFrames.mostrarUsuarios;
 import JFrames.modificarUsuario;
 import JFrames.eliminarUsuario;
 import JFrames.crearBibliografia;
+import JFrames.eliminarBibliografia;
+import JFrames.mostrarBibliografia;
+
 
 public class ventanaAdministrador extends javax.swing.JFrame {
 
@@ -99,6 +102,11 @@ public static ventanaAdministrador getInstancia(){
         });
 
         jButton8.setText("Mostrar");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("Reporte Usuarios");
 
@@ -235,8 +243,13 @@ public static ventanaAdministrador getInstancia(){
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
-        
+        eliminarBibliografia.getInstancia().setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+       ventanaAdministrador.getInstancia().setVisible(false);
+       mostrarBibliografia.getInstancia().setVisible(true);
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
