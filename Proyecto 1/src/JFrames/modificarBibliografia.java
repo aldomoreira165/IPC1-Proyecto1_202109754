@@ -2,7 +2,7 @@ package JFrames;
 
 import Clases.Bibliografia;
 import javax.swing.JOptionPane;
-import Clases.Bibliografia;
+import Clases.*;
 
 public class modificarBibliografia extends javax.swing.JFrame {
 
@@ -52,12 +52,38 @@ public static modificarBibliografia getInstancia() {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         btn_buscar = new javax.swing.JButton();
+        txt_disponible = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txt_ejemplares = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        txt_tamaño = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
 
-        comboBox_tipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista ", "Tesis", "Libro Digital" }));
+        txt_palabras2.setEnabled(false);
+
+        txt_titulo2.setEnabled(false);
+
+        txt_descripcion2.setEnabled(false);
+
+        txt_año2.setEnabled(false);
+
+        txt_autor2.setEnabled(false);
+
+        txt_edicion2.setEnabled(false);
+
+        txt_temas2.setEnabled(false);
+
+        txt_copias2.setEnabled(false);
+
+        txt_area2.setEnabled(false);
+
+        txt_categoria2.setEnabled(false);
+
+        comboBox_tipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista", "Tesis", "Libro Digital" }));
 
         btn_modificar.setText("Modificar");
         btn_modificar.setEnabled(false);
@@ -105,10 +131,26 @@ public static modificarBibliografia getInstancia() {
             }
         });
 
+        txt_disponible.setEnabled(false);
+
+        jLabel37.setText("Disponibles:");
+
+        txt_ejemplares.setEnabled(false);
+
+        jLabel38.setText("Ejemplares:");
+
+        txt_tamaño.setEnabled(false);
+
+        jLabel39.setText("Tamaño:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
@@ -133,9 +175,16 @@ public static modificarBibliografia getInstancia() {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_ejemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_autor2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -149,27 +198,27 @@ public static modificarBibliografia getInstancia() {
                             .addComponent(txt_descripcion2)
                             .addComponent(txt_titulo2)
                             .addComponent(txt_palabras2)
-                            .addComponent(comboBox_tipo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                                .addComponent(btn_cancelar2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(33, 33, 33)
+                            .addComponent(comboBox_tipo2, 0, 271, Short.MAX_VALUE)
+                            .addComponent(btn_cancelar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(145, 145, 145))
+                .addGap(68, 68, 68))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addComponent(comboBox_tipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_buscar)
                             .addComponent(txt_isbn2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel35)
                         .addGap(29, 29, 29)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,13 +262,21 @@ public static modificarBibliografia getInstancia() {
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(comboBox_tipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
+                    .addComponent(txt_disponible, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_ejemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txt_tamaño, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_cancelar2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -230,7 +287,9 @@ public static modificarBibliografia getInstancia() {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,7 +341,6 @@ public static modificarBibliografia getInstancia() {
 
     private void btn_cancelar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar2ActionPerformed
 
-        txt_isbn2.setText("");
         txt_autor2.setText("");
         txt_año2.setText("");
         txt_titulo2.setText("");
@@ -293,47 +351,278 @@ public static modificarBibliografia getInstancia() {
         txt_copias2.setText("");
         txt_area2.setText("");
         txt_categoria2.setText("");
+        txt_disponible.setText("");
+        txt_ejemplares.setText("");
+        txt_tamaño.setText("");
+        txt_isbn2.setText("");
         comboBox_tipo2.setSelectedItem("Libro");
+        txt_autor2.setEnabled(false);
+        txt_año2.setEnabled(false);
+        txt_titulo2.setEnabled(false);
+        txt_descripcion2.setEnabled(false);
+        txt_palabras2.setEnabled(false);
+        txt_edicion2.setEnabled(false);
+        txt_temas2.setEnabled(false);
+        txt_copias2.setEnabled(false);
+        txt_area2.setEnabled(false);
+        txt_categoria2.setEnabled(false);
+        txt_disponible.setEnabled(false);
+        txt_ejemplares.setEnabled(false);
+        txt_tamaño.setEnabled(false);
         btn_modificar.setEnabled(false);
         modificarBibliografia.getInstancia().setVisible(false);
         ventanaAdministrador.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_cancelar2ActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-       boolean bibliografiaEncontrada;
-        bibliografiaEncontrada = false;
-        for (int i = 0; i <= Bibliografia.getInstancia().contador; i++) {
-            if (Bibliografia.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
-                bibliografiaEncontrada = true;
-                btn_modificar.setEnabled(true);
-                txt_autor2.setText(Bibliografia.getInstancia().autor[i]);
-                txt_año2.setText(Bibliografia.getInstancia().año[i]);
-                txt_titulo2.setText(Bibliografia.getInstancia().titulo[i]);
-                txt_descripcion2.setText(Bibliografia.getInstancia().descripcion[i]);
-                txt_palabras2.setText(Bibliografia.getInstancia().palabras[i]);
-                txt_edicion2.setText(Bibliografia.getInstancia().edicion[i]);
-                txt_temas2.setText(Bibliografia.getInstancia().temas[i]);
-                txt_copias2.setText(Bibliografia.getInstancia().copias[i]);
-                txt_area2.setText(Bibliografia.getInstancia().area[i]);
-                txt_categoria2.setText(Bibliografia.getInstancia().categoria[i]);
-                comboBox_tipo2.setSelectedItem(Bibliografia.getInstancia().tipo[i]);
-            } 
+
+        if (comboBox_tipo2.getSelectedItem().equals("Libro")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Libro.getInstancia().contador; i++) {
+                if (Libro.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    btn_modificar.setEnabled(true);
+                    txt_autor2.setEnabled(true);
+                    txt_año2.setEnabled(true);
+                    txt_titulo2.setEnabled(true);
+                    txt_edicion2.setEnabled(true);
+                    txt_palabras2.setEnabled(true);
+                    txt_descripcion2.setEnabled(true);
+                    txt_temas2.setEnabled(true);
+                    txt_copias2.setEnabled(true);
+                    txt_disponible.setEnabled(true);
+                    txt_autor2.setText(Libro.getInstancia().autor[i]);
+                    txt_año2.setText(Libro.getInstancia().añoPublicacion[i]);
+                    txt_titulo2.setText(Libro.getInstancia().titulo[i]);
+                    txt_edicion2.setText(Libro.getInstancia().titulo[i]);
+                    txt_palabras2.setText(Libro.getInstancia().palabrasClave[i]);
+                    txt_descripcion2.setText(Libro.getInstancia().descripcion[i]);
+                    txt_temas2.setText(Libro.getInstancia().temas[i]);
+                    txt_copias2.setText(Libro.getInstancia().copias[i]);
+                    txt_disponible.setText(Libro.getInstancia().dispobles[i]);
+                }
+            }
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡Libro con el ISBN " + txt_isbn2.getText() + " encontrado!", "Libro encontrado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Libro no encontrado. Verifica el ISBN.", "Error", JOptionPane.WARNING_MESSAGE);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+            }
         }
-        if (bibliografiaEncontrada == true) {
-            JOptionPane.showMessageDialog(null, "¡Bibliografia con el ISBN " + txt_isbn2.getText() + " encontrada!", "Bibliografía encontrada", JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            JOptionPane.showMessageDialog(null, "Bibliografía no encontrada. Verifica el ISBN.", "Error", JOptionPane.WARNING_MESSAGE);
-            txt_autor2.setText("");
-            txt_año2.setText("");
-            txt_titulo2.setText("");
-            txt_descripcion2.setText("");
-            txt_palabras2.setText("");
-            txt_edicion2.setText("");
-            txt_temas2.setText("");
-            txt_copias2.setText("");
-            txt_area2.setText("");
-            txt_categoria2.setText("");
-            comboBox_tipo2.setSelectedItem("Libro");
+        if (comboBox_tipo2.getSelectedItem().equals("Revista")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Revista.getInstancia().contador; i++) {
+                if (Revista.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    btn_modificar.setEnabled(true);
+                    txt_autor2.setEnabled(true);
+                    txt_año2.setEnabled(true);
+                    txt_titulo2.setEnabled(true);
+                    txt_edicion2.setEnabled(true);
+                    txt_palabras2.setEnabled(true);
+                    txt_descripcion2.setEnabled(true);
+                    txt_temas2.setEnabled(true);
+                    txt_copias2.setEnabled(true);
+                    txt_disponible.setEnabled(true);
+                    txt_categoria2.setEnabled(true);
+                    txt_ejemplares.setEnabled(true);
+                    txt_autor2.setText(Revista.getInstancia().autor[i]);
+                    txt_año2.setText(Revista.getInstancia().añoPublicacion[i]);
+                    txt_titulo2.setText(Revista.getInstancia().titulo[i]);
+                    txt_edicion2.setText(Revista.getInstancia().edicion[i]);
+                    txt_descripcion2.setText(Revista.getInstancia().descripcion[i]);
+                    txt_categoria2.setText(Revista.getInstancia().categoria[i]);
+                    txt_ejemplares.setText(Revista.getInstancia().ejemplares[i]);
+                    txt_temas2.setText(Revista.getInstancia().temas[i]);
+                    txt_palabras2.setText(Revista.getInstancia().palabrasClave[i]);
+                    txt_copias2.setText(Revista.getInstancia().copias[i]);
+                    txt_disponible.setText(Revista.getInstancia().dispobles[i]);
+                }
+            }
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡Revista con el ISBN " + txt_isbn2.getText() + " encontrada!", "Revista encontrada", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Revista no encontrada. Verifica el ISBN.", "Error", JOptionPane.WARNING_MESSAGE);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+            }
+        }
+        if (comboBox_tipo2.getSelectedItem().equals("Tesis")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Tesis.getInstancia().contador; i++) {
+                if (Tesis.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    btn_modificar.setEnabled(true);
+                    txt_autor2.setEnabled(true);
+                    txt_año2.setEnabled(true);
+                    txt_titulo2.setEnabled(true);
+                    txt_palabras2.setEnabled(true);
+                    txt_area2.setEnabled(true);
+                    txt_temas2.setEnabled(true);
+                    txt_descripcion2.setEnabled(true);
+                    txt_edicion2.setEnabled(true);
+                    txt_copias2.setEnabled(true);
+                    txt_disponible.setEnabled(true);
+                    txt_autor2.setText(Tesis.getInstancia().autor[i]);
+                    txt_año2.setText(Tesis.getInstancia().añoPublicacion[i]);
+                    txt_titulo2.setText(Tesis.getInstancia().titulo[i]);
+                    txt_palabras2.setText(Tesis.getInstancia().palabrasClave[i]);
+                    txt_area2.setText(Tesis.getInstancia().area[i]);
+                    txt_temas2.setText(Tesis.getInstancia().temas[i]);
+                    txt_descripcion2.setText(Tesis.getInstancia().descripcion[i]);
+                    txt_edicion2.setText(Tesis.getInstancia().edicion[i]);
+                    txt_copias2.setText(Tesis.getInstancia().copias[i]);
+                    txt_disponible.setText(Tesis.getInstancia().dispobles[i]);
+                }
+            }
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡Tesis con el ISBN " + txt_isbn2.getText() + " encontrada!", "Tesis encontrada", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Tesis no encontrada. Verifica el ISBN.", "Error", JOptionPane.WARNING_MESSAGE);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+            }
+        }
+        if (comboBox_tipo2.getSelectedItem().equals("Libro Digital")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= LibroDigital.getInstancia().contador; i++) {
+                if (LibroDigital.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    btn_modificar.setEnabled(true);
+                    txt_autor2.setEnabled(true);
+                    txt_año2.setEnabled(true);
+                    txt_titulo2.setEnabled(true);
+                    txt_edicion2.setEnabled(true);
+                    txt_palabras2.setEnabled(true);
+                    txt_descripcion2.setEnabled(true);
+                    txt_temas2.setEnabled(true);
+                    txt_tamaño.setEnabled(true);
+                    txt_autor2.setText(LibroDigital.getInstancia().autor[i]);
+                    txt_año2.setText(LibroDigital.getInstancia().añoPublicacion[i]);
+                    txt_titulo2.setText(LibroDigital.getInstancia().titulo[i]);
+                    txt_edicion2.setText(LibroDigital.getInstancia().edicion[i]);
+                    txt_palabras2.setText(LibroDigital.getInstancia().palabrasClave[i]);
+                    txt_descripcion2.setText(LibroDigital.getInstancia().descripcion[i]);
+                    txt_temas2.setText(LibroDigital.getInstancia().temas[i]);
+                    txt_tamaño.setText(LibroDigital.getInstancia().tamaño[i]);
+                }
+            }
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡Libro Digital con el ISBN " + txt_isbn2.getText() + " encontrado!", "Libro Digital encontrado", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Libro Digital no encontrado. Verifica el ISBN.", "Error", JOptionPane.WARNING_MESSAGE);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+            }
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
@@ -389,6 +678,9 @@ public static modificarBibliografia getInstancia() {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField txt_area2;
     private javax.swing.JTextField txt_autor2;
@@ -396,9 +688,12 @@ public static modificarBibliografia getInstancia() {
     private javax.swing.JTextField txt_categoria2;
     private javax.swing.JTextField txt_copias2;
     private javax.swing.JTextField txt_descripcion2;
+    private javax.swing.JTextField txt_disponible;
     private javax.swing.JTextField txt_edicion2;
+    private javax.swing.JTextField txt_ejemplares;
     private javax.swing.JTextField txt_isbn2;
     private javax.swing.JTextField txt_palabras2;
+    private javax.swing.JTextField txt_tamaño;
     private javax.swing.JTextField txt_temas2;
     private javax.swing.JTextField txt_titulo2;
     // End of variables declaration//GEN-END:variables
