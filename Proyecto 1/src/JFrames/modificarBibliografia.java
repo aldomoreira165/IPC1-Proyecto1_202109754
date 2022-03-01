@@ -296,46 +296,240 @@ public static modificarBibliografia getInstancia() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-        boolean bibliografiaEncontrada;
-        bibliografiaEncontrada = false;
-        for (int i = 0; i <= Bibliografia.getInstancia().contador; i++) {
-            if (Bibliografia.getInstancia().isbn[i].equals(txt_isbn2.getText())) {             
+
+        if (comboBox_tipo2.getSelectedItem().equals("Libro")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Libro.getInstancia().contador; i++) {
+                if (Libro.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
                     bibliografiaEncontrada = true;
-                    Bibliografia.getInstancia().autor[i] = txt_autor2.getText();            
-                    Bibliografia.getInstancia().año[i] = txt_año2.getText();            
-                    Bibliografia.getInstancia().titulo[i] = txt_titulo2.getText();            
-                    Bibliografia.getInstancia().descripcion[i] = txt_descripcion2.getText();            
-                    Bibliografia.getInstancia().palabras[i] = txt_palabras2.getText();            
-                    Bibliografia.getInstancia().edicion[i] = txt_edicion2.getText();            
-                    Bibliografia.getInstancia().temas[i] = txt_temas2.getText();            
-                    Bibliografia.getInstancia().copias[i] = txt_copias2.getText();            
-                    Bibliografia.getInstancia().area[i] = txt_area2.getText();            
-                    Bibliografia.getInstancia().categoria[i] = txt_categoria2.getText();                     
-                    Bibliografia.getInstancia().tipo[i] = (String) comboBox_tipo2.getSelectedItem();
+                    Libro.getInstancia().autor[i] = txt_autor2.getText();
+                    Libro.getInstancia().añoPublicacion[i] = txt_año2.getText();
+                    Libro.getInstancia().titulo[i] = txt_titulo2.getText();
+                    Libro.getInstancia().edicion[i] = txt_edicion2.getText();
+                    Libro.getInstancia().palabrasClave[i] = txt_palabras2.getText();
+                    Libro.getInstancia().descripcion[i] = txt_descripcion2.getText();
+                    Libro.getInstancia().temas[i] = txt_temas2.getText();
+                    Libro.getInstancia().copias[i] = txt_copias2.getText();
+                    Libro.getInstancia().dispobles[i] = txt_disponible.getText();
+                }
+            }
+
+            if (txt_isbn2.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ISBN", "ISBN no ingresado", JOptionPane.WARNING_MESSAGE);
+            }
+
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
+                modificarBibliografia.getInstancia().setVisible(false);
+                ventanaAdministrador.getInstancia().setVisible(true);
+                btn_modificar.setEnabled(false);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+                btn_modificar.setEnabled(false);
             }
         }
+        if (comboBox_tipo2.getSelectedItem().equals("Revista")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Revista.getInstancia().contador; i++) {
+                if (Revista.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    Revista.getInstancia().autor[i] = txt_autor2.getText();
+                    Revista.getInstancia().añoPublicacion[i] = txt_año2.getText();
+                    Revista.getInstancia().titulo[i] = txt_titulo2.getText();
+                    Revista.getInstancia().edicion[i] = txt_edicion2.getText();
+                    Revista.getInstancia().descripcion[i] = txt_descripcion2.getText();
+                    Revista.getInstancia().categoria[i] = txt_categoria2.getText();
+                    Revista.getInstancia().ejemplares[i] = txt_ejemplares.getText();
+                    Revista.getInstancia().temas[i] = txt_temas2.getText();
+                    Revista.getInstancia().palabrasClave[i] = txt_palabras2.getText();
+                    Revista.getInstancia().copias[i] = txt_copias2.getText();
+                    Revista.getInstancia().dispobles[i] = txt_disponible.getText();
+                }
+            }
 
-        if (txt_isbn2.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ISBN", "ISBN no ingresado", JOptionPane.WARNING_MESSAGE);
+            if (txt_isbn2.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ISBN", "ISBN no ingresado", JOptionPane.WARNING_MESSAGE);
+            }
+
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
+                modificarBibliografia.getInstancia().setVisible(false);
+                ventanaAdministrador.getInstancia().setVisible(true);
+                btn_modificar.setEnabled(false);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+                btn_modificar.setEnabled(false);
+            }
         }
+        if (comboBox_tipo2.getSelectedItem().equals("Tesis")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= Tesis.getInstancia().contador; i++) {
+                if (Tesis.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    Tesis.getInstancia().autor[i] = txt_autor2.getText();
+                    Tesis.getInstancia().añoPublicacion[i] = txt_año2.getText();
+                    Tesis.getInstancia().titulo[i] = txt_titulo2.getText();
+                    Tesis.getInstancia().palabrasClave[i] = txt_palabras2.getText();
+                    Tesis.getInstancia().area[i] = txt_area2.getText();
+                    Tesis.getInstancia().temas[i] = txt_temas2.getText();
+                    Tesis.getInstancia().descripcion[i] = txt_descripcion2.getText();
+                    Tesis.getInstancia().edicion[i] = txt_edicion2.getText();
+                    Tesis.getInstancia().copias[i] = txt_copias2.getText();
+                    Tesis.getInstancia().dispobles[i] = txt_disponible.getText();
+                }
+            }
 
-        if (bibliografiaEncontrada == true) {
-            JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
-            modificarBibliografia.getInstancia().setVisible(false);
-            ventanaAdministrador.getInstancia().setVisible(true);
-            btn_modificar.setEnabled(false);
-            txt_autor2.setText("");
-            txt_año2.setText("");
-            txt_titulo2.setText("");
-            txt_descripcion2.setText("");
-            txt_palabras2.setText("");
-            txt_edicion2.setText("");
-            txt_temas2.setText("");
-            txt_copias2.setText("");
-            txt_area2.setText("");
-            txt_categoria2.setText("");
-            txt_isbn2.setText("");
-            comboBox_tipo2.setSelectedItem("Libro");
+            if (txt_isbn2.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ISBN", "ISBN no ingresado", JOptionPane.WARNING_MESSAGE);
+            }
+
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
+                modificarBibliografia.getInstancia().setVisible(false);
+                ventanaAdministrador.getInstancia().setVisible(true);
+                btn_modificar.setEnabled(false);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+                btn_modificar.setEnabled(false);
+            }
+        }
+        if (comboBox_tipo2.getSelectedItem().equals("Libro Digital")) {
+            boolean bibliografiaEncontrada;
+            bibliografiaEncontrada = false;
+            for (int i = 0; i <= LibroDigital.getInstancia().contador; i++) {
+                if (LibroDigital.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    bibliografiaEncontrada = true;
+                    LibroDigital.getInstancia().autor[i] = txt_autor2.getText();
+                    LibroDigital.getInstancia().añoPublicacion[i] = txt_año2.getText();
+                    LibroDigital.getInstancia().titulo[i] = txt_titulo2.getText();
+                    LibroDigital.getInstancia().edicion[i] = txt_edicion2.getText();
+                    LibroDigital.getInstancia().palabrasClave[i] = txt_palabras2.getText();
+                    LibroDigital.getInstancia().descripcion[i] = txt_descripcion2.getText();
+                    LibroDigital.getInstancia().temas[i] = txt_temas2.getText();
+                    LibroDigital.getInstancia().tamaño[i] = txt_tamaño.getText();
+                }
+            }
+
+            if (txt_isbn2.getText().equals("")) {
+                JOptionPane.showMessageDialog(null, "Asegúrese de ingresar un ISBN", "ISBN no ingresado", JOptionPane.WARNING_MESSAGE);
+            }
+
+            if (bibliografiaEncontrada == true) {
+                JOptionPane.showMessageDialog(null, "¡La modificación se realizó con éxito!", "Modificación realizada", JOptionPane.INFORMATION_MESSAGE);
+                modificarBibliografia.getInstancia().setVisible(false);
+                ventanaAdministrador.getInstancia().setVisible(true);
+                btn_modificar.setEnabled(false);
+                txt_autor2.setText("");
+                txt_año2.setText("");
+                txt_titulo2.setText("");
+                txt_descripcion2.setText("");
+                txt_palabras2.setText("");
+                txt_edicion2.setText("");
+                txt_temas2.setText("");
+                txt_copias2.setText("");
+                txt_area2.setText("");
+                txt_categoria2.setText("");
+                txt_disponible.setText("");
+                txt_ejemplares.setText("");
+                txt_tamaño.setText("");
+                txt_isbn2.setText("");
+                comboBox_tipo2.setSelectedItem("Libro");
+                txt_autor2.setEnabled(false);
+                txt_año2.setEnabled(false);
+                txt_titulo2.setEnabled(false);
+                txt_descripcion2.setEnabled(false);
+                txt_palabras2.setEnabled(false);
+                txt_edicion2.setEnabled(false);
+                txt_temas2.setEnabled(false);
+                txt_copias2.setEnabled(false);
+                txt_area2.setEnabled(false);
+                txt_categoria2.setEnabled(false);
+                txt_disponible.setEnabled(false);
+                txt_ejemplares.setEnabled(false);
+                txt_tamaño.setEnabled(false);
+                btn_modificar.setEnabled(false);
+            }
         }
     }//GEN-LAST:event_btn_modificarActionPerformed
 

@@ -5,25 +5,26 @@
             <url>src/JFrames/modificarBibliografia.java</url>
             <bookmark id="1">
                 <name/>
-                <line>625</line>
+                <line>819</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Tesis.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Usuario.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/LibroDigital.java</file>
-            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/mostrarBibliografia.java</file>
-            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/ventanaUsuario.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/modificarBibliografia.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Libro.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/cargaIndividual.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Revista.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Tesis.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/mostrarBibliografia.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/eliminarBibliografia.java</file>
+            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/ventanaUsuario.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Bibliografia.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/crearBibliografia.java</file>
             <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/bibliotecaVirtual.java</file>
-            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/JFrames/cargaIndividual.java</file>
-            <file>file:/C:/Users/aldov/Desktop/Cursos%20Primer%20Semestre%202022/Laboratorio%20Introuducción%20a%20la%20Programación%20y%20Computación%201/Proyectos/Proyecto%201/IPC1-Proyecto1_202109754/Proyecto%201/src/Clases/Revista.java</file>
         </group>
     </open-files>
 </project-private>
