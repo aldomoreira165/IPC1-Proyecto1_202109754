@@ -1,5 +1,7 @@
 package Clases;
 
+import javax.swing.JButton;
+
 public class LibroDigital {
 
     public int contador = -1;
@@ -12,6 +14,7 @@ public class LibroDigital {
     public String[] descripcion = new String[10];
     public String[] temas = new String[10];
     public String[] tamaño = new String[10];
+    public JButton[] boton;
 
     private static LibroDigital instancia;
 
