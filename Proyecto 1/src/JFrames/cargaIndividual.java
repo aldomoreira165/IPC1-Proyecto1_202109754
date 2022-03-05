@@ -360,8 +360,8 @@ public class cargaIndividual extends javax.swing.JFrame {
                 Libro.getInstancia().palabrasClave[Libro.getInstancia().contador] = txt_palabras.getText();
                 Libro.getInstancia().descripcion[Libro.getInstancia().contador] = txt_descripcion.getText();
                 Libro.getInstancia().temas[Libro.getInstancia().contador] = txt_temas.getText();
-                Libro.getInstancia().copias[Libro.getInstancia().contador] = txt_copias.getText();
-                Libro.getInstancia().dispobles[Libro.getInstancia().contador] = txt_disponibles.getText();
+                Libro.getInstancia().copias[Libro.getInstancia().contador] = Integer.parseInt(txt_copias.getText());
+                Libro.getInstancia().dispobles[Libro.getInstancia().contador] = Integer.parseInt(txt_disponibles.getText());
 
                 txt_autor.setText("");
                 txt_año.setText("");
@@ -422,8 +422,8 @@ public class cargaIndividual extends javax.swing.JFrame {
                 Revista.getInstancia().ejemplares[Revista.getInstancia().contador] = txt_ejemplares.getText();
                 Revista.getInstancia().temas[Revista.getInstancia().contador] = txt_temas.getText();
                 Revista.getInstancia().palabrasClave[Revista.getInstancia().contador] = txt_palabras.getText();
-                Revista.getInstancia().copias[Revista.getInstancia().contador] = txt_copias.getText();
-                Revista.getInstancia().dispobles[Revista.getInstancia().contador] = txt_disponibles.getText();
+                Revista.getInstancia().copias[Revista.getInstancia().contador] = Integer.parseInt(txt_copias.getText());
+                Revista.getInstancia().dispobles[Revista.getInstancia().contador] = Integer.parseInt(txt_disponibles.getText());
 
                 txt_autor.setText("");
                 txt_año.setText("");
@@ -483,8 +483,8 @@ public class cargaIndividual extends javax.swing.JFrame {
                 Tesis.getInstancia().temas[Tesis.getInstancia().contador] = txt_temas.getText();
                 Tesis.getInstancia().descripcion[Tesis.getInstancia().contador] = txt_descripcion.getText();
                 Tesis.getInstancia().edicion[Tesis.getInstancia().contador] = txt_edicion.getText();
-                Tesis.getInstancia().copias[Tesis.getInstancia().contador] = txt_copias.getText();
-                Tesis.getInstancia().dispobles[Tesis.getInstancia().contador] = txt_disponibles.getText();
+                Tesis.getInstancia().copias[Tesis.getInstancia().contador] = Integer.parseInt(txt_copias.getText());
+                Tesis.getInstancia().dispobles[Tesis.getInstancia().contador] = Integer.parseInt(txt_disponibles.getText());
 
                 txt_autor.setText("");
                 txt_año.setText("");

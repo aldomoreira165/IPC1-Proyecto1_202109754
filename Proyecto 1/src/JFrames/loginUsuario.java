@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import JFrames.pantallaInicio;
 import JFrames.crearUsuario;
 import JFrames.ventanaUsuario;
+import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,13 +41,14 @@ private static loginUsuario instancia;
         btn_Ingresar = new javax.swing.JButton();
         txt_Password = new javax.swing.JPasswordField();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(255, 255, 255));
         setRequestFocusEnabled(false);
 
         jLabel1.setText("Usuario:");
 
         jLabel2.setText("Contraseña:");
 
+        btn_Cancelar.setBackground(new java.awt.Color(51, 51, 255));
         btn_Cancelar.setText("Borrar");
         btn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,7 +56,13 @@ private static loginUsuario instancia;
             }
         });
 
+        btn_Ingresar.setBackground(new java.awt.Color(51, 51, 255));
         btn_Ingresar.setLabel("Ingresar");
+        btn_Ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_IngresarMouseEntered(evt);
+            }
+        });
         btn_Ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_IngresarActionPerformed(evt);
@@ -163,6 +171,10 @@ private static loginUsuario instancia;
     private void txt_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_PasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_PasswordActionPerformed
+
+    private void btn_IngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IngresarMouseEntered
+           btn_Ingresar.setBackground(Color.blue);
+    }//GEN-LAST:event_btn_IngresarMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

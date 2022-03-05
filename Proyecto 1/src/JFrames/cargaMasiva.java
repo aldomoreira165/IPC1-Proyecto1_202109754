@@ -121,8 +121,8 @@ public static cargaMasiva getInstancia() {
                 Libro.getInstancia().palabrasClave[Libro.getInstancia().contador] = cadenaTexto[6];
                 Libro.getInstancia().descripcion[Libro.getInstancia().contador] = cadenaTexto[7];
                 Libro.getInstancia().temas[Libro.getInstancia().contador] = cadenaTexto[8];
-                Libro.getInstancia().copias[Libro.getInstancia().contador] = cadenaTexto[9];
-                Libro.getInstancia().dispobles[Libro.getInstancia().contador] = cadenaTexto[10];
+                Libro.getInstancia().copias[Libro.getInstancia().contador] = Integer.parseInt(cadenaTexto[9]);
+                Libro.getInstancia().dispobles[Libro.getInstancia().contador] = Integer.parseInt(cadenaTexto[10]);
 
                 areaTexto.setText("");
 
@@ -155,8 +155,8 @@ public static cargaMasiva getInstancia() {
                 Revista.getInstancia().ejemplares[Revista.getInstancia().contador] = cadenaTexto[8];
                 Revista.getInstancia().temas[Revista.getInstancia().contador] = cadenaTexto[9];
                 Revista.getInstancia().palabrasClave[Revista.getInstancia().contador] = cadenaTexto[10];
-                Revista.getInstancia().copias[Revista.getInstancia().contador] = cadenaTexto[11];
-                Revista.getInstancia().dispobles[Revista.getInstancia().contador] = cadenaTexto[12];
+                Revista.getInstancia().copias[Revista.getInstancia().contador] = Integer.parseInt(cadenaTexto[11]);
+                Revista.getInstancia().dispobles[Revista.getInstancia().contador] = Integer.parseInt(cadenaTexto[12]);
 
                 areaTexto.setText("");
 
@@ -188,8 +188,8 @@ public static cargaMasiva getInstancia() {
                 Tesis.getInstancia().temas[Tesis.getInstancia().contador] = cadenaTexto[7];
                 Tesis.getInstancia().descripcion[Tesis.getInstancia().contador] = cadenaTexto[8];
                 Tesis.getInstancia().edicion[Tesis.getInstancia().contador] = cadenaTexto[9];
-                Tesis.getInstancia().copias[Tesis.getInstancia().contador] = cadenaTexto[10];
-                Tesis.getInstancia().dispobles[Tesis.getInstancia().contador] = cadenaTexto[11];
+                Tesis.getInstancia().copias[Tesis.getInstancia().contador] = Integer.parseInt(cadenaTexto[10]);
+                Tesis.getInstancia().dispobles[Tesis.getInstancia().contador] = Integer.parseInt(cadenaTexto[11]);
 
                 areaTexto.setText("");
 

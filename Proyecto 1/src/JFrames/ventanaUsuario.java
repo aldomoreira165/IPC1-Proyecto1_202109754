@@ -56,6 +56,11 @@ public static ventanaUsuario getInstancia(){
         });
 
         btn_prestamoLibro.setText("Préstamo de Libro");
+        btn_prestamoLibro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_prestamoLibroActionPerformed(evt);
+            }
+        });
 
         btn_logout.setText("LOGOUT");
         btn_logout.addActionListener(new java.awt.event.ActionListener() {
@@ -190,6 +195,11 @@ public static ventanaUsuario getInstancia(){
         ventanaUsuario.getInstancia().setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_logoutActionPerformed
+
+    private void btn_prestamoLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prestamoLibroActionPerformed
+       ventanaUsuario.getInstancia().setVisible(false);
+       prestamoLibros.getInstancia().setVisible(true);
+    }//GEN-LAST:event_btn_prestamoLibroActionPerformed
 
     public static void main(String args[]) {
 

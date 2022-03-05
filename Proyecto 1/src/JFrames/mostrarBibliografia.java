@@ -242,8 +242,8 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaLibros[i][5] = Libro.getInstancia().palabrasClave[i];
                 tablaLibros[i][6] = Libro.getInstancia().descripcion[i];
                 tablaLibros[i][7] = Libro.getInstancia().temas[i];
-                tablaLibros[i][8] = Libro.getInstancia().copias[i];
-                tablaLibros[i][9] = Libro.getInstancia().dispobles[i];
+                tablaLibros[i][8] = Libro.getInstancia().copias[i].toString();
+                tablaLibros[i][9] = Libro.getInstancia().dispobles[i].toString();
             }
         }
         String[] encabezadoLibros = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias"};
@@ -265,8 +265,8 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaRevistas[i][7] = Revista.getInstancia().ejemplares[i];
                 tablaRevistas[i][8] = Revista.getInstancia().temas[i];
                 tablaRevistas[i][9] = Revista.getInstancia().palabrasClave[i];
-                tablaRevistas[i][10] = Revista.getInstancia().copias[i];
-                tablaRevistas[i][11] = Revista.getInstancia().dispobles[i];
+                tablaRevistas[i][10] = Revista.getInstancia().copias[i].toString();
+                tablaRevistas[i][11] = Revista.getInstancia().dispobles[i].toString();
             }
         }
         String[] encabezadoRevistas = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Descripción","Categoría","Ejemplares","Temas","Palabras Clave","Copias","Disponibles"};
@@ -287,8 +287,8 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaTesis[i][6] = Tesis.getInstancia().temas[i];
                 tablaTesis[i][7] = Tesis.getInstancia().descripcion[i];
                 tablaTesis[i][8] = Tesis.getInstancia().edicion[i];
-                tablaTesis[i][9] = Tesis.getInstancia().copias[i];
-                tablaTesis[i][10] = Tesis.getInstancia().dispobles[i];
+                tablaTesis[i][9] = Tesis.getInstancia().copias[i].toString();
+                tablaTesis[i][10] = Tesis.getInstancia().dispobles[i].toString();
             }
         }
         String[] encabezadoTesis = {"ISBN", "Autor", "Año Publicación", "Título", "Palabras Clave", "Área","Temas","Descripción","Edición","Copias","Disponibles"};

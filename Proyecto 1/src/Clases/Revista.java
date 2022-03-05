@@ -13,8 +13,8 @@ public class Revista {
     public String[] ejemplares = new String[10];
     public String[] temas = new String[10];
     public String[] palabrasClave = new String[10];
-    public String[] copias = new String[10];
-    public String[] dispobles = new String[10];
+    public Integer[] copias = new Integer[10];
+    public Integer[] dispobles = new Integer[10];
 
     private static Revista instancia;
 

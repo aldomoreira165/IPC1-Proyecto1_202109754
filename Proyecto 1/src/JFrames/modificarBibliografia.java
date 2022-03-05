@@ -310,8 +310,8 @@ public static modificarBibliografia getInstancia() {
                     Libro.getInstancia().palabrasClave[i] = txt_palabras2.getText();
                     Libro.getInstancia().descripcion[i] = txt_descripcion2.getText();
                     Libro.getInstancia().temas[i] = txt_temas2.getText();
-                    Libro.getInstancia().copias[i] = txt_copias2.getText();
-                    Libro.getInstancia().dispobles[i] = txt_disponible.getText();
+                    Libro.getInstancia().copias[i] = Integer.parseInt(txt_copias2.getText());
+                    Libro.getInstancia().dispobles[i] = Integer.parseInt(txt_disponible.getText());
                 }
             }
 
@@ -370,8 +370,8 @@ public static modificarBibliografia getInstancia() {
                     Revista.getInstancia().ejemplares[i] = txt_ejemplares.getText();
                     Revista.getInstancia().temas[i] = txt_temas2.getText();
                     Revista.getInstancia().palabrasClave[i] = txt_palabras2.getText();
-                    Revista.getInstancia().copias[i] = txt_copias2.getText();
-                    Revista.getInstancia().dispobles[i] = txt_disponible.getText();
+                    Revista.getInstancia().copias[i] = Integer.parseInt(txt_copias2.getText()) ;
+                    Revista.getInstancia().dispobles[i] = Integer.parseInt(txt_disponible.getText());
                 }
             }
 
@@ -429,8 +429,8 @@ public static modificarBibliografia getInstancia() {
                     Tesis.getInstancia().temas[i] = txt_temas2.getText();
                     Tesis.getInstancia().descripcion[i] = txt_descripcion2.getText();
                     Tesis.getInstancia().edicion[i] = txt_edicion2.getText();
-                    Tesis.getInstancia().copias[i] = txt_copias2.getText();
-                    Tesis.getInstancia().dispobles[i] = txt_disponible.getText();
+                    Tesis.getInstancia().copias[i] = Integer.parseInt(txt_copias2.getText());
+                    Tesis.getInstancia().dispobles[i] = Integer.parseInt(txt_disponible.getText());
                 }
             }
 
@@ -593,8 +593,8 @@ public static modificarBibliografia getInstancia() {
                     txt_palabras2.setText(Libro.getInstancia().palabrasClave[i]);
                     txt_descripcion2.setText(Libro.getInstancia().descripcion[i]);
                     txt_temas2.setText(Libro.getInstancia().temas[i]);
-                    txt_copias2.setText(Libro.getInstancia().copias[i]);
-                    txt_disponible.setText(Libro.getInstancia().dispobles[i]);
+                    txt_copias2.setText(Libro.getInstancia().copias[i].toString());
+                    txt_disponible.setText(Libro.getInstancia().dispobles[i].toString());
                 }
             }
             if (bibliografiaEncontrada == true) {
@@ -658,8 +658,8 @@ public static modificarBibliografia getInstancia() {
                     txt_ejemplares.setText(Revista.getInstancia().ejemplares[i]);
                     txt_temas2.setText(Revista.getInstancia().temas[i]);
                     txt_palabras2.setText(Revista.getInstancia().palabrasClave[i]);
-                    txt_copias2.setText(Revista.getInstancia().copias[i]);
-                    txt_disponible.setText(Revista.getInstancia().dispobles[i]);
+                    txt_copias2.setText(Revista.getInstancia().copias[i].toString());
+                    txt_disponible.setText(Revista.getInstancia().dispobles[i].toString());
                 }
             }
             if (bibliografiaEncontrada == true) {
@@ -721,8 +721,8 @@ public static modificarBibliografia getInstancia() {
                     txt_temas2.setText(Tesis.getInstancia().temas[i]);
                     txt_descripcion2.setText(Tesis.getInstancia().descripcion[i]);
                     txt_edicion2.setText(Tesis.getInstancia().edicion[i]);
-                    txt_copias2.setText(Tesis.getInstancia().copias[i]);
-                    txt_disponible.setText(Tesis.getInstancia().dispobles[i]);
+                    txt_copias2.setText(Tesis.getInstancia().copias[i].toString());
+                    txt_disponible.setText(Tesis.getInstancia().dispobles[i].toString());
                 }
             }
             if (bibliografiaEncontrada == true) {
