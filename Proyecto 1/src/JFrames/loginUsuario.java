@@ -37,7 +37,7 @@ private static loginUsuario instancia;
         txt_Usuario = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btn_Cancelar = new javax.swing.JButton();
+        btn_borrar = new javax.swing.JButton();
         btn_Ingresar = new javax.swing.JButton();
         txt_Password = new javax.swing.JPasswordField();
 
@@ -48,15 +48,22 @@ private static loginUsuario instancia;
 
         jLabel2.setText("Contraseña:");
 
-        btn_Cancelar.setBackground(new java.awt.Color(51, 51, 255));
-        btn_Cancelar.setText("Borrar");
-        btn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
+        btn_borrar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_borrar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_borrar.setText("Borrar");
+        btn_borrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_borrarMouseEntered(evt);
+            }
+        });
+        btn_borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_CancelarActionPerformed(evt);
+                btn_borrarActionPerformed(evt);
             }
         });
 
         btn_Ingresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_Ingresar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Ingresar.setLabel("Ingresar");
         btn_Ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -89,7 +96,7 @@ private static loginUsuario instancia;
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btn_borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txt_Usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE))
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(63, 63, 63))
@@ -107,17 +114,17 @@ private static loginUsuario instancia;
                 .addComponent(txt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_Ingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(83, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarActionPerformed
+    private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
 
         txt_Password.setText("");
         txt_Usuario.setText("");
-    }//GEN-LAST:event_btn_CancelarActionPerformed
+    }//GEN-LAST:event_btn_borrarActionPerformed
 
     private void btn_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_IngresarActionPerformed
         Usuario.getInstancia().usuarioConInstanciado = false;
@@ -173,13 +180,23 @@ private static loginUsuario instancia;
     }//GEN-LAST:event_txt_PasswordActionPerformed
 
     private void btn_IngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IngresarMouseEntered
-           btn_Ingresar.setBackground(Color.blue);
+        btn_Ingresar.setBackground(Color.white);
+        btn_Ingresar.setForeground(Color.blue);
+        btn_borrar.setBackground(Color.blue);
+        btn_borrar.setForeground(Color.white);
     }//GEN-LAST:event_btn_IngresarMouseEntered
+
+    private void btn_borrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_borrarMouseEntered
+        btn_borrar.setBackground(Color.white);
+        btn_borrar.setForeground(Color.blue);
+        btn_Ingresar.setBackground(Color.blue);
+        btn_Ingresar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_borrarMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Cancelar;
     private javax.swing.JButton btn_Ingresar;
+    private javax.swing.JButton btn_borrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField txt_Password;

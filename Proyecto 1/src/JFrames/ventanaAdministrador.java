@@ -7,6 +7,8 @@ import JFrames.eliminarUsuario;
 import JFrames.crearBibliografia;
 import JFrames.eliminarBibliografia;
 import JFrames.mostrarBibliografia;
+import JFrames.ventana_reportePrestamos;
+import java.awt.Color;
 
 
 public class ventanaAdministrador extends javax.swing.JFrame {
@@ -32,149 +34,236 @@ public static ventanaAdministrador getInstancia(){
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        btn_modificarUsuario = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        btn_eliminarUsuario = new javax.swing.JButton();
+        btn_mostrarUsuario = new javax.swing.JButton();
+        btn_crearB = new javax.swing.JButton();
+        btn_modificarB = new javax.swing.JButton();
+        btn_eliminarB = new javax.swing.JButton();
+        btn_mostrarB = new javax.swing.JButton();
+        btn_reporteU = new javax.swing.JButton();
+        btn_reporteL = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         barraMenu = new javax.swing.JMenu();
         btn_cerrarSesion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Modificar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificarUsuario.setBackground(new java.awt.Color(51, 51, 255));
+        btn_modificarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btn_modificarUsuario.setText("Modificar");
+        btn_modificarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_modificarUsuarioMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_modificarUsuarioMouseEntered(evt);
+            }
+        });
+        btn_modificarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_modificarUsuarioActionPerformed(evt);
             }
         });
 
+        btn_crearUsuario.setBackground(new java.awt.Color(51, 51, 255));
+        btn_crearUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btn_crearUsuario.setText("Crear");
+        btn_crearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_crearUsuarioMouseEntered(evt);
+            }
+        });
         btn_crearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_crearUsuarioActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Eliminar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_eliminarUsuario.setBackground(new java.awt.Color(51, 51, 255));
+        btn_eliminarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btn_eliminarUsuario.setText("Eliminar");
+        btn_eliminarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_eliminarUsuarioMouseEntered(evt);
+            }
+        });
+        btn_eliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_eliminarUsuarioActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Mostrar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_mostrarUsuario.setBackground(new java.awt.Color(51, 51, 255));
+        btn_mostrarUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btn_mostrarUsuario.setText("Mostrar");
+        btn_mostrarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_mostrarUsuarioMouseEntered(evt);
+            }
+        });
+        btn_mostrarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_mostrarUsuarioActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Crear");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btn_crearB.setBackground(new java.awt.Color(51, 51, 255));
+        btn_crearB.setForeground(new java.awt.Color(255, 255, 255));
+        btn_crearB.setText("Crear");
+        btn_crearB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_crearBMouseEntered(evt);
+            }
+        });
+        btn_crearB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btn_crearBActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Modificar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificarB.setBackground(new java.awt.Color(51, 51, 255));
+        btn_modificarB.setForeground(new java.awt.Color(255, 255, 255));
+        btn_modificarB.setText("Modificar");
+        btn_modificarB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_modificarBMouseEntered(evt);
+            }
+        });
+        btn_modificarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btn_modificarBActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Eliminar");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btn_eliminarB.setBackground(new java.awt.Color(51, 51, 255));
+        btn_eliminarB.setForeground(new java.awt.Color(255, 255, 255));
+        btn_eliminarB.setText("Eliminar");
+        btn_eliminarB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_eliminarBMouseEntered(evt);
+            }
+        });
+        btn_eliminarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btn_eliminarBActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Mostrar");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        btn_mostrarB.setBackground(new java.awt.Color(51, 51, 255));
+        btn_mostrarB.setForeground(new java.awt.Color(255, 255, 255));
+        btn_mostrarB.setText("Mostrar");
+        btn_mostrarB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_mostrarBMouseEntered(evt);
+            }
+        });
+        btn_mostrarB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                btn_mostrarBActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Reporte Usuarios");
+        btn_reporteU.setBackground(new java.awt.Color(51, 51, 255));
+        btn_reporteU.setForeground(new java.awt.Color(255, 255, 255));
+        btn_reporteU.setText("Reporte Usuarios");
+        btn_reporteU.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_reporteUMouseEntered(evt);
+            }
+        });
 
-        jButton10.setText("Reporte Libros");
+        btn_reporteL.setBackground(new java.awt.Color(51, 51, 255));
+        btn_reporteL.setForeground(new java.awt.Color(255, 255, 255));
+        btn_reporteL.setText("Reporte Libros");
+        btn_reporteL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_reporteLMouseEntered(evt);
+            }
+        });
+        btn_reporteL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reporteLActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Usuarios");
 
         jLabel2.setText("Bibliografías");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/images.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_reporteU, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_reporteL, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_crearB, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_mostrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(btn_modificarB, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn_eliminarB, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btn_mostrarB, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(258, 258, 258))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(258, 258, 258)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_modificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_eliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_mostrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(btn_crearB, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_modificarB, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_eliminarB, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_mostrarB, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_reporteU, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_reporteL, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
         );
 
@@ -211,45 +300,284 @@ public static ventanaAdministrador getInstancia(){
         ventanaAdministrador.getInstancia().setVisible(false);
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_mostrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarUsuarioActionPerformed
        mostrarUsuarios.getInstancia().setVisible(true);
         ventanaAdministrador.getInstancia().setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_mostrarUsuarioActionPerformed
 
     private void btn_cerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrarSesionActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_cerrarSesionActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_modificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarUsuarioActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         modificarUsuario.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_modificarUsuarioActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_eliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarUsuarioActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         eliminarUsuario.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_eliminarUsuarioActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btn_crearBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearBActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         crearBibliografia.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btn_crearBActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btn_modificarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarBActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         modificarBibliografia.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btn_modificarBActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void btn_eliminarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarBActionPerformed
         ventanaAdministrador.getInstancia().setVisible(false);
         eliminarBibliografia.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btn_eliminarBActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void btn_mostrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarBActionPerformed
        ventanaAdministrador.getInstancia().setVisible(false);
        mostrarBibliografia.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_btn_mostrarBActionPerformed
+
+    private void btn_reporteLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteLActionPerformed
+        ventanaAdministrador.getInstancia().setVisible(false);
+        ventana_reportePrestamos.getInstancia().setVisible(true);
+    }//GEN-LAST:event_btn_reporteLActionPerformed
+
+    private void btn_crearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearUsuarioMouseEntered
+        btn_crearUsuario.setBackground(Color.white);
+        btn_crearUsuario.setForeground(Color.blue);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_crearUsuarioMouseEntered
+
+    private void btn_modificarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarUsuarioMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_modificarUsuarioMouseClicked
+
+    private void btn_modificarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarUsuarioMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.white);
+        btn_modificarUsuario.setForeground(Color.blue);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_modificarUsuarioMouseEntered
+
+    private void btn_eliminarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarUsuarioMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.white);
+        btn_eliminarUsuario.setForeground(Color.blue);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_eliminarUsuarioMouseEntered
+
+    private void btn_mostrarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mostrarUsuarioMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.white);
+        btn_mostrarUsuario.setForeground(Color.blue);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_mostrarUsuarioMouseEntered
+
+    private void btn_crearBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearBMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.white);
+        btn_crearB.setForeground(Color.blue);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_crearBMouseEntered
+
+    private void btn_modificarBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarBMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.white);
+        btn_modificarB.setForeground(Color.blue);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_modificarBMouseEntered
+
+    private void btn_eliminarBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarBMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.white);
+        btn_eliminarB.setForeground(Color.blue);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_eliminarBMouseEntered
+
+    private void btn_mostrarBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mostrarBMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.white);
+        btn_mostrarB.setForeground(Color.blue);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_mostrarBMouseEntered
+
+    private void btn_reporteUMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporteUMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.white);
+        btn_reporteU.setForeground(Color.blue);
+        btn_reporteL.setBackground(Color.blue);
+        btn_reporteL.setForeground(Color.white);
+    }//GEN-LAST:event_btn_reporteUMouseEntered
+
+    private void btn_reporteLMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporteLMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_modificarUsuario.setBackground(Color.blue);
+        btn_modificarUsuario.setForeground(Color.white);
+        btn_eliminarUsuario.setBackground(Color.blue);
+        btn_eliminarUsuario.setForeground(Color.white);
+        btn_mostrarUsuario.setBackground(Color.blue);
+        btn_mostrarUsuario.setForeground(Color.white);
+        btn_crearB.setBackground(Color.blue);
+        btn_crearB.setForeground(Color.white);
+        btn_modificarB.setBackground(Color.blue);
+        btn_modificarB.setForeground(Color.white);
+        btn_eliminarB.setBackground(Color.blue);
+        btn_eliminarB.setForeground(Color.white);
+        btn_mostrarB.setBackground(Color.blue);
+        btn_mostrarB.setForeground(Color.white);
+        btn_reporteU.setBackground(Color.blue);
+        btn_reporteU.setForeground(Color.white);
+        btn_reporteL.setBackground(Color.white);
+        btn_reporteL.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_reporteLMouseEntered
 
     /**
      * @param args the command line arguments
@@ -289,18 +617,19 @@ public static ventanaAdministrador getInstancia(){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu barraMenu;
     private javax.swing.JMenuItem btn_cerrarSesion;
+    private javax.swing.JButton btn_crearB;
     private javax.swing.JButton btn_crearUsuario;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btn_eliminarB;
+    private javax.swing.JButton btn_eliminarUsuario;
+    private javax.swing.JButton btn_modificarB;
+    private javax.swing.JButton btn_modificarUsuario;
+    private javax.swing.JButton btn_mostrarB;
+    private javax.swing.JButton btn_mostrarUsuario;
+    private javax.swing.JButton btn_reporteL;
+    private javax.swing.JButton btn_reporteU;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

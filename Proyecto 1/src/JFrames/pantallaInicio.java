@@ -105,6 +105,7 @@ public class pantallaInicio extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_login.setBackground(new java.awt.Color(51, 51, 255));
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_login.setText("Login");
         btn_login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -119,6 +120,7 @@ public class pantallaInicio extends javax.swing.JFrame {
         jPanel1.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 100));
 
         btn_Cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_Cancelar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Cancelar.setText("Cancelar");
         btn_Cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -133,6 +135,7 @@ public class pantallaInicio extends javax.swing.JFrame {
         jPanel1.add(btn_Cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 160, 100));
 
         btn_about.setBackground(new java.awt.Color(51, 51, 255));
+        btn_about.setForeground(new java.awt.Color(255, 255, 255));
         btn_about.setText("About");
         btn_about.setToolTipText("");
         btn_about.addMouseListener(new java.awt.event.MouseAdapter() {

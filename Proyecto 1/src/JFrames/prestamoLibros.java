@@ -2,6 +2,9 @@ package JFrames;
 
 import Clases.*;
 import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
@@ -12,6 +15,10 @@ import javax.swing.table.TableRowSorter;
 
 
 public class prestamoLibros extends javax.swing.JFrame {
+
+    public int fila1 = 0;
+    public int columna1 = 0;
+    public Object[][] tablaLibros;
 
     private static prestamoLibros instancia;
 
@@ -30,7 +37,7 @@ public class prestamoLibros extends javax.swing.JFrame {
   private void filter(String query) {
          TableRowSorter<TableModel> tr = new TableRowSorter<>(tbl_detalle.getModel());
          tbl_detalle.setRowSorter(tr);
-         tr.setRowFilter(RowFilter.regexFilter(query));
+        tr.setRowFilter(RowFilter.regexFilter(query));
     }
 
     @SuppressWarnings("unchecked")
@@ -177,10 +184,11 @@ public class prestamoLibros extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_actualizarTabla)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btn_actualizarTabla)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -213,13 +221,109 @@ public class prestamoLibros extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        String reporte = "<!DOCTYPE html>\n"
+                + "<html lang=\"en\">\n"
+                + "<head>\n"
+                + "    <meta charset=\"UTF-8\">\n"
+                + "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                + "    <title>Reporte de existencialibros</title>\n"
+                + " <style>\n"
+                + "        h1, h2{\n"
+                + "        color: white;\n"
+                + "        text-align: center;\n"
+                + "        padding: 5px;\n"
+                + "        margin: 5px;\n"
+                + "    }\n"
+                + "    body{\n"
+                + "        background-color: #242a63;\n"
+                + "        font-family: Arial;\n"
+                + "    }\n"
+                + "    \n"
+                + "    #main-container{\n"
+                + "        margin: 80px auto;\n"
+                + "        width: 600px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    table{\n"
+                + "        background-color: white;\n"
+                + "        text-align: left;\n"
+                + "        border-collapse: collapse;\n"
+                + "        width: 100%;\n"
+                + "    }\n"
+                + "    \n"
+                + "    th, td{\n"
+                + "        padding: 20px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    thead{\n"
+                + "        background-color: #246355;\n"
+                + "        border-bottom: solid 5px #0F362D;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:nth-child(even){\n"
+                + "        background-color: #ddd;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:hover td{\n"
+                + "        background-color: #369681;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    </style>"
+                + "</head>\n"
+                + "<body>\n"
+                + "<h1>REPORTE DE LIBROS PRESTADOS</h1>"
+                + "    <div id=\"main-container\">\n"
+                + "        <table>\n"
+                + "            <tr>\n"
+                + "                <th>ISBN/ID</th>\n"
+                + "                <th>Tipo</th>\n"
+                + "                <th>Autor</th>\n"
+                + "                <th>Año Publicación</th>\n"
+                + "                <th>Título</th>\n"
+                + "                <th>Edición</th>\n"
+                + "                <th>Palabras Clave</th>\n"
+                + "                <th>Descripción</th>\n"
+                + "                <th>Categoría</th>\n"
+                + "                <th>Ejemplares</th>\n"
+                + "                <th>Temas</th>\n"
+                + "                <th>Área</th>\n"
+                + "                <th>Palabras clave</th>\n"
+                + "                <th>Disponibles</th>\n"
+                + "            </tr>\n";
+        for (int i = 0; i < prestamoLibros.getInstancia().fila1; i++) {
+            reporte += "<tr>";
+            for (int j = 0; j < prestamoLibros.getInstancia().columna1; j++) {
+                if (prestamoLibros.getInstancia().tablaLibros[i][0] != null) {
+                    if (prestamoLibros.getInstancia().tablaLibros[i][j] == null) {
+                        prestamoLibros.getInstancia().tablaLibros[i][j] = reporte += "<td>" + "-" + "</td>";
+                    } else {
+                        reporte += "<td>" + prestamoLibros.getInstancia().tablaLibros[i][j] + "</td>";
+                    }
+
+                }
+            }
+            reporte += "</tr>";
+        }
+        reporte += "        </table>\n"
+                + "    </div>\n"
+                + "</body>\n"
+                + "</html>";
+        File reporteExistenciaLibros = new File("reporteExistenciaLibros_usuarios.html");
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(reporteExistenciaLibros));
+            bw.write(reporte);
+            bw.close();
+            JOptionPane.showMessageDialog(null, "Reporte de existencia de libros realizado correctamente", "Reporte ", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btn_actualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarTablaActionPerformed
         int filas;
         filas = -1;
-        Object[][] tablaDetalle = new Object[20][15];
+        Object[][] tablaDetalle = new Object[6][15];
         this.tbl_detalle.setDefaultRenderer(Object.class, new RenderTable());
         for (int i = 0; i <= Libro.getInstancia().contador; i++) {
             filas = filas + 1;
@@ -280,6 +384,27 @@ public class prestamoLibros extends javax.swing.JFrame {
                 tablaDetalle,
                 encabezado
         ));
+
+        tablaLibros = new Object[tbl_detalle.getRowCount()][tbl_detalle.getColumnCount()];
+        fila1 = tbl_detalle.getRowCount();
+        columna1 = tbl_detalle.getColumnCount()-1;
+
+        for (int i = 0; i < fila1; i++) {
+            for (int j = 0; j < columna1; j++) {
+                if (tbl_detalle.getValueAt(i, j) != null) {
+                    tablaLibros[i][j] = tbl_detalle.getValueAt(i, j);
+                }
+            }
+
+        }
+
+        for (int i = 0; i < fila1; i++) {
+            for (int j = 0; j < columna1; j++) {
+                if (tbl_detalle.getValueAt(i, j) != null) {
+                    System.out.println(tablaLibros[i][j]);
+                }
+            }
+        }
 
     }//GEN-LAST:event_btn_actualizarTablaActionPerformed
 
