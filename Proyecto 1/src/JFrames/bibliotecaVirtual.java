@@ -5,6 +5,7 @@ import Clases.LibroDigital;
 import Clases.RenderTable;
 import Clases.cuentaLibroVIrtual;
 import JFrames.verBibliotecaVirtual;
+import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.table.TableModel;
@@ -45,8 +46,8 @@ public static bibliotecaVirtual getInstancia(){
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_mostrarLibrosDigitales = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_regresar = new javax.swing.JButton();
+        btn_logout = new javax.swing.JButton();
         btn_actualizar = new javax.swing.JButton();
         txt_busqueda = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -54,7 +55,7 @@ public static bibliotecaVirtual getInstancia(){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tbl_mostrarLibrosDigitales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,21 +76,42 @@ public static bibliotecaVirtual getInstancia(){
         });
         jScrollPane1.setViewportView(tbl_mostrarLibrosDigitales);
 
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_regresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_regresar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_regresar.setText("Regresar");
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseEntered(evt);
+            }
+        });
+        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_regresarActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Logout");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_logout.setBackground(new java.awt.Color(51, 51, 255));
+        btn_logout.setForeground(new java.awt.Color(255, 255, 255));
+        btn_logout.setText("Logout");
+        btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_logoutMouseEntered(evt);
+            }
+        });
+        btn_logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_logoutActionPerformed(evt);
             }
         });
 
+        btn_actualizar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_actualizar.setForeground(new java.awt.Color(255, 255, 255));
         btn_actualizar.setText("Actualizar Tabla");
+        btn_actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_actualizarMouseEntered(evt);
+            }
+        });
         btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_actualizarActionPerformed(evt);
@@ -103,10 +125,18 @@ public static bibliotecaVirtual getInstancia(){
             }
         });
 
+        jComboBox1.setBackground(new java.awt.Color(51, 51, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autor", "Año", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Tamaño" }));
         jComboBox1.setPreferredSize(new java.awt.Dimension(121, 32));
 
+        btn_verBibliotecaVirtual.setBackground(new java.awt.Color(51, 51, 255));
+        btn_verBibliotecaVirtual.setForeground(new java.awt.Color(255, 255, 255));
         btn_verBibliotecaVirtual.setText("Ver biblioteca virtual");
+        btn_verBibliotecaVirtual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_verBibliotecaVirtualMouseEntered(evt);
+            }
+        });
         btn_verBibliotecaVirtual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_verBibliotecaVirtualActionPerformed(evt);
@@ -123,8 +153,8 @@ public static bibliotecaVirtual getInstancia(){
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btn_regresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 933, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,9 +173,9 @@ public static bibliotecaVirtual getInstancia(){
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(btn_logout)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btn_regresar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_actualizar)
@@ -175,15 +205,15 @@ public static bibliotecaVirtual getInstancia(){
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
         ventanaUsuario.getInstancia().setVisible(true);
         bibliotecaVirtual.getInstancia().setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_regresarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
         bibliotecaVirtual.getInstancia().setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_logoutActionPerformed
 
     private void btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarActionPerformed
 
@@ -286,6 +316,50 @@ public static bibliotecaVirtual getInstancia(){
         bibliotecaVirtual.getInstancia().setVisible(false);
     }//GEN-LAST:event_btn_verBibliotecaVirtualActionPerformed
 
+    private void btn_actualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarMouseEntered
+        btn_actualizar.setBackground(Color.white);
+        btn_actualizar.setForeground(Color.blue);
+        btn_verBibliotecaVirtual.setBackground(Color.blue);
+        btn_verBibliotecaVirtual.setForeground(Color.white);
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+    }//GEN-LAST:event_btn_actualizarMouseEntered
+
+    private void btn_verBibliotecaVirtualMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_verBibliotecaVirtualMouseEntered
+        btn_actualizar.setBackground(Color.blue);
+        btn_actualizar.setForeground(Color.white);
+        btn_verBibliotecaVirtual.setBackground(Color.white);
+        btn_verBibliotecaVirtual.setForeground(Color.blue);
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+    }//GEN-LAST:event_btn_verBibliotecaVirtualMouseEntered
+
+    private void btn_logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseEntered
+        btn_actualizar.setBackground(Color.blue);
+        btn_actualizar.setForeground(Color.white);
+        btn_verBibliotecaVirtual.setBackground(Color.blue);
+        btn_verBibliotecaVirtual.setForeground(Color.white);
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_logout.setBackground(Color.white);
+        btn_logout.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_logoutMouseEntered
+
+    private void btn_regresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseEntered
+        btn_actualizar.setBackground(Color.blue);
+        btn_actualizar.setForeground(Color.white);
+        btn_verBibliotecaVirtual.setBackground(Color.blue);
+        btn_verBibliotecaVirtual.setForeground(Color.white);
+        btn_regresar.setBackground(Color.white);
+        btn_regresar.setForeground(Color.blue);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+    }//GEN-LAST:event_btn_regresarMouseEntered
+
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -297,9 +371,9 @@ public static bibliotecaVirtual getInstancia(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_actualizar;
+    private javax.swing.JButton btn_logout;
+    private javax.swing.JButton btn_regresar;
     private javax.swing.JButton btn_verBibliotecaVirtual;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -1,12 +1,11 @@
 package JFrames;
 
 import Clases.*;
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
+import java.awt.Color;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -45,33 +44,50 @@ public class prestamoLibros extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_logout = new javax.swing.JButton();
+        btn_regresar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_detalle = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_verPrestamos = new javax.swing.JButton();
+        btn_reporteExistencias = new javax.swing.JButton();
         txt_buscar = new javax.swing.JTextField();
         btn_actualizarTabla = new javax.swing.JButton();
         comboBox_filtrar = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
+        btnFiltrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_logout.setBackground(new java.awt.Color(51, 51, 255));
+        btn_logout.setForeground(new java.awt.Color(255, 255, 255));
+        btn_logout.setText("Logout");
+        btn_logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_logoutMouseEntered(evt);
+            }
+        });
+        btn_logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_logoutActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Regresar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_regresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_regresar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_regresar.setText("Regresar");
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseExited(evt);
+            }
+        });
+        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_regresarActionPerformed(evt);
             }
         });
 
@@ -93,20 +109,35 @@ public class prestamoLibros extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_detalle);
 
-        jButton3.setText("Ver préstamos");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_verPrestamos.setBackground(new java.awt.Color(51, 51, 255));
+        btn_verPrestamos.setForeground(new java.awt.Color(255, 255, 255));
+        btn_verPrestamos.setText("Ver préstamos");
+        btn_verPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_verPrestamosMouseEntered(evt);
+            }
+        });
+        btn_verPrestamos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_verPrestamosActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Reporte existencias");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_reporteExistencias.setBackground(new java.awt.Color(51, 51, 255));
+        btn_reporteExistencias.setForeground(new java.awt.Color(255, 255, 255));
+        btn_reporteExistencias.setText("Reporte existencias");
+        btn_reporteExistencias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_reporteExistenciasMouseEntered(evt);
+            }
+        });
+        btn_reporteExistencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_reporteExistenciasActionPerformed(evt);
             }
         });
 
+        txt_buscar.setBackground(new java.awt.Color(51, 51, 255));
         txt_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_buscarActionPerformed(evt);
@@ -118,21 +149,39 @@ public class prestamoLibros extends javax.swing.JFrame {
             }
         });
 
+        btn_actualizarTabla.setBackground(new java.awt.Color(51, 51, 255));
+        btn_actualizarTabla.setForeground(new java.awt.Color(255, 255, 255));
         btn_actualizarTabla.setText("Actualizar tabla");
+        btn_actualizarTabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_actualizarTablaMouseEntered(evt);
+            }
+        });
         btn_actualizarTabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_actualizarTablaActionPerformed(evt);
             }
         });
 
+        comboBox_filtrar.setBackground(new java.awt.Color(51, 51, 255));
+        comboBox_filtrar.setForeground(new java.awt.Color(255, 255, 255));
         comboBox_filtrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Tesis", "Revista" }));
 
+        jComboBox2.setBackground(new java.awt.Color(0, 51, 255));
+        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autor", "Año Publicación", "ISBN", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias", "Disponibles" }));
 
-        jButton6.setText("Filtrar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnFiltrar.setBackground(new java.awt.Color(51, 51, 255));
+        btnFiltrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnFiltrar.setText("Filtrar");
+        btnFiltrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnFiltrarMouseEntered(evt);
+            }
+        });
+        btnFiltrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnFiltrarActionPerformed(evt);
             }
         });
 
@@ -141,59 +190,54 @@ public class prestamoLibros extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_actualizarTabla)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton4)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addComponent(comboBox_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_regresar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_verPrestamos, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_reporteExistencias, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(23, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_actualizarTabla)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(comboBox_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFiltrar))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btn_logout)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                        .addComponent(btn_regresar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(comboBox_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(13, 13, 13)
+                        .addComponent(btn_verPrestamos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_reporteExistencias)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(btnFiltrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(btn_actualizarTabla)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton6)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_actualizarTabla)
+                    .addComponent(comboBox_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -210,17 +254,17 @@ public class prestamoLibros extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
         prestamoLibros.getInstancia().setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_logoutActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
         prestamoLibros.getInstancia().setVisible(false);
-        ventanaAdministrador.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        ventanaUsuario.getInstancia().setVisible(true);
+    }//GEN-LAST:event_btn_regresarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_reporteExistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteExistenciasActionPerformed
         String reporte = "<!DOCTYPE html>\n"
                 + "<html lang=\"en\">\n"
                 + "<head>\n"
@@ -318,7 +362,7 @@ public class prestamoLibros extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Reporte de existencia de libros realizado correctamente", "Reporte ", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_reporteExistenciasActionPerformed
 
     private void btn_actualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarTablaActionPerformed
         int filas;
@@ -408,7 +452,7 @@ public class prestamoLibros extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_actualizarTablaActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnFiltrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiltrarActionPerformed
         String tipo;
         tipo = (String) comboBox_filtrar.getSelectedItem();
         int filas;
@@ -490,7 +534,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                     encabezado
             ));
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnFiltrarActionPerformed
 
     private void txt_buscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_buscarKeyReleased
         String query = txt_buscar.getText().toLowerCase();
@@ -597,10 +641,104 @@ public class prestamoLibros extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tbl_detalleMouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_verPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verPrestamosActionPerformed
         prestamoLibros.getInstancia().setVisible(false);
         verPrestamos.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_verPrestamosActionPerformed
+
+    private void btn_logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_actualizarTabla.setBackground(Color.blue);
+        btn_actualizarTabla.setForeground(Color.white);
+        btn_logout.setBackground(Color.white);
+        btn_logout.setForeground(Color.blue);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+        btn_reporteExistencias.setBackground(Color.blue);
+        btn_reporteExistencias.setForeground(Color.white);
+        btnFiltrar.setBackground(Color.blue);
+        btnFiltrar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_logoutMouseEntered
+
+    private void btn_regresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_regresarMouseExited
+
+    private void btn_regresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseEntered
+        btn_regresar.setBackground(Color.white);
+        btn_regresar.setForeground(Color.blue);
+        btn_actualizarTabla.setBackground(Color.blue);
+        btn_actualizarTabla.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+        btn_reporteExistencias.setBackground(Color.blue);
+        btn_reporteExistencias.setForeground(Color.white);
+        btnFiltrar.setBackground(Color.blue);
+        btnFiltrar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_regresarMouseEntered
+
+    private void btn_actualizarTablaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarTablaMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_actualizarTabla.setBackground(Color.white);
+        btn_actualizarTabla.setForeground(Color.blue);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+        btn_reporteExistencias.setBackground(Color.blue);
+        btn_reporteExistencias.setForeground(Color.white);
+        btnFiltrar.setBackground(Color.blue);
+        btnFiltrar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_actualizarTablaMouseEntered
+
+    private void btn_verPrestamosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_verPrestamosMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_actualizarTabla.setBackground(Color.blue);
+        btn_actualizarTabla.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.white);
+        btn_verPrestamos.setForeground(Color.blue);
+        btn_reporteExistencias.setBackground(Color.blue);
+        btn_reporteExistencias.setForeground(Color.white);
+        btnFiltrar.setBackground(Color.blue);
+        btnFiltrar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_verPrestamosMouseEntered
+
+    private void btn_reporteExistenciasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_reporteExistenciasMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_actualizarTabla.setBackground(Color.blue);
+        btn_actualizarTabla.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+        btn_reporteExistencias.setBackground(Color.white);
+        btn_reporteExistencias.setForeground(Color.blue);
+        btnFiltrar.setBackground(Color.blue);
+        btnFiltrar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_reporteExistenciasMouseEntered
+
+    private void btnFiltrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFiltrarMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_actualizarTabla.setBackground(Color.blue);
+        btn_actualizarTabla.setForeground(Color.white);
+        btn_logout.setBackground(Color.blue);
+        btn_logout.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+        btn_reporteExistencias.setBackground(Color.blue);
+        btn_reporteExistencias.setForeground(Color.white);
+        btnFiltrar.setBackground(Color.white);
+        btnFiltrar.setForeground(Color.blue);
+    }//GEN-LAST:event_btnFiltrarMouseEntered
 
     public static void main(String args[]) {
 
@@ -612,13 +750,13 @@ public class prestamoLibros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFiltrar;
     private javax.swing.JButton btn_actualizarTabla;
+    private javax.swing.JButton btn_logout;
+    private javax.swing.JButton btn_regresar;
+    private javax.swing.JButton btn_reporteExistencias;
+    private javax.swing.JButton btn_verPrestamos;
     private javax.swing.JComboBox<String> comboBox_filtrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -3,6 +3,7 @@ package JFrames;
 
 import Clases.Usuario;
 import JFrames.crearUsuario;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class modificarUsuario extends javax.swing.JFrame {
@@ -47,7 +48,7 @@ public static modificarUsuario getInstancia(){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txt_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,22 +56,43 @@ public static modificarUsuario getInstancia(){
             }
         });
 
+        btn_modificar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_modificar.setForeground(new java.awt.Color(255, 255, 255));
         btn_modificar.setText("Modificar");
         btn_modificar.setEnabled(false);
+        btn_modificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_modificarMouseEntered(evt);
+            }
+        });
         btn_modificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_modificarActionPerformed(evt);
             }
         });
 
+        btn_cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelarMouseEntered(evt);
+            }
+        });
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
             }
         });
 
+        btn_buscar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_buscar.setForeground(new java.awt.Color(255, 255, 255));
         btn_buscar.setText("Buscar");
+        btn_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_buscarMouseEntered(evt);
+            }
+        });
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
@@ -129,15 +151,15 @@ public static modificarUsuario getInstancia(){
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
+                        .addGap(46, 46, 46)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(12, 12, 12))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(91, 91, 91)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(49, Short.MAX_VALUE)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(48, 48, 48)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -179,7 +201,7 @@ public static modificarUsuario getInstancia(){
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -268,8 +290,35 @@ public static modificarUsuario getInstancia(){
         btn_modificar.setEnabled(false);
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
+    private void btn_modificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_modificarMouseEntered
+        btn_modificar.setBackground(Color.white);
+        btn_modificar.setForeground(Color.blue);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_modificarMouseEntered
+
+    private void btn_cancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelarMouseEntered
+        btn_modificar.setBackground(Color.blue);
+        btn_modificar.setForeground(Color.white);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.white);
+        btn_cancelar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_cancelarMouseEntered
+
+    private void btn_buscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscarMouseEntered
+        btn_modificar.setBackground(Color.blue);
+        btn_modificar.setForeground(Color.white);
+        btn_buscar.setBackground(Color.white);
+        btn_buscar.setForeground(Color.blue);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_buscarMouseEntered
+
     public static void main(String args[]) {
- 
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new modificarUsuario().setVisible(true);

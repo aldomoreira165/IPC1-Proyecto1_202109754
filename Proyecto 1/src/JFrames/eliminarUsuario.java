@@ -2,6 +2,7 @@ package JFrames;
 
 import Clases.Usuario;
 import JFrames.eliminarUsuario;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class eliminarUsuario extends javax.swing.JFrame {
@@ -46,7 +47,7 @@ public class eliminarUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         txt_nombre.setEnabled(false);
 
@@ -60,14 +61,28 @@ public class eliminarUsuario extends javax.swing.JFrame {
 
         txt_confirmarContraseña.setEnabled(false);
 
+        btn_buscar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_buscar.setForeground(new java.awt.Color(255, 255, 255));
         btn_buscar.setText("Buscar");
+        btn_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_buscarMouseExited(evt);
+            }
+        });
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
             }
         });
 
+        btn_cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelarMouseEntered(evt);
+            }
+        });
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
@@ -88,8 +103,15 @@ public class eliminarUsuario extends javax.swing.JFrame {
 
         jLabel7.setText("Confirmar contraseña:");
 
+        btn_eliminar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_eliminar.setForeground(new java.awt.Color(255, 255, 255));
         btn_eliminar.setText("Eliminar");
         btn_eliminar.setEnabled(false);
+        btn_eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_eliminarMouseEntered(evt);
+            }
+        });
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_eliminarActionPerformed(evt);
@@ -125,7 +147,7 @@ public class eliminarUsuario extends javax.swing.JFrame {
                     .addComponent(txt_confirmarContraseña))
                 .addGap(43, 43, 43)
                 .addComponent(btn_buscar)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,6 +286,33 @@ public class eliminarUsuario extends javax.swing.JFrame {
             txt_confirmarContraseña.setText("");
         }
     }//GEN-LAST:event_btn_eliminarActionPerformed
+
+    private void btn_eliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMouseEntered
+        btn_eliminar.setBackground(Color.white);
+        btn_eliminar.setForeground(Color.blue);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_eliminarMouseEntered
+
+    private void btn_cancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelarMouseEntered
+        btn_eliminar.setBackground(Color.blue);
+        btn_eliminar.setForeground(Color.white);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.white);
+        btn_cancelar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_cancelarMouseEntered
+
+    private void btn_buscarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscarMouseExited
+        btn_eliminar.setBackground(Color.blue);
+        btn_eliminar.setForeground(Color.white);
+        btn_buscar.setBackground(Color.white);
+        btn_buscar.setForeground(Color.blue);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_buscarMouseExited
     
 
     public static void main(String args[]) {

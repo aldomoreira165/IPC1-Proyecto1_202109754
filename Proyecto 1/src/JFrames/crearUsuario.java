@@ -7,6 +7,7 @@ import Clases.Usuario;
 import JFrames.ventanaAdministrador;
 import javax.swing.JOptionPane;
 import Clases.Usuario;
+import java.awt.Color;
 
 public class crearUsuario extends javax.swing.JFrame {
 
@@ -42,13 +43,13 @@ public static crearUsuario getInstancia(){
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
         txt_rol = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        panelCrearUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        panelCrearUsuario.setBackground(new java.awt.Color(255, 255, 255));
 
         txt_nombre.setText("Aldo");
 
@@ -87,14 +88,28 @@ public static crearUsuario getInstancia(){
 
         jLabel7.setText("Confirmar contraseña");
 
-        jButton1.setText("Cancelar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cancelar.setText("Cancelar");
+        btn_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelarMouseEntered(evt);
+            }
+        });
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
 
+        btn_crearUsuario.setBackground(new java.awt.Color(51, 51, 255));
+        btn_crearUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btn_crearUsuario.setText("Crear");
+        btn_crearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_crearUsuarioMouseEntered(evt);
+            }
+        });
         btn_crearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_crearUsuarioActionPerformed(evt);
@@ -132,13 +147,13 @@ public static crearUsuario getInstancia(){
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearUsuarioLayout.createSequentialGroup()
                         .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(96, 96, 96))))
         );
         panelCrearUsuarioLayout.setVerticalGroup(
             panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearUsuarioLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(29, 29, 29)
                 .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -171,9 +186,9 @@ public static crearUsuario getInstancia(){
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,7 +199,7 @@ public static crearUsuario getInstancia(){
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelCrearUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -206,10 +221,10 @@ public static crearUsuario getInstancia(){
         this.txt_password = txt_password;
     }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         crearUsuario.getInstancia().setVisible(false);
         ventanaAdministrador.getInstancia().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void txt_confirmarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_confirmarPasswordActionPerformed
         // TODO add your handling code here:
@@ -244,6 +259,9 @@ public static crearUsuario getInstancia(){
                 txt_nombre.setText("");
                 txt_apellido.setText("");
                 txt_usuario.setText("");
+                txt_password.setText("");
+                txt_confirmarPassword.setText("");
+                txt_rol.setSelectedItem("Estudiante");
 
                 crearUsuario.getInstancia().setVisible(false);
                 ventanaAdministrador.getInstancia().setVisible(true);
@@ -274,6 +292,20 @@ public static crearUsuario getInstancia(){
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_idActionPerformed
 
+    private void btn_crearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearUsuarioMouseEntered
+        btn_crearUsuario.setBackground(Color.white);
+        btn_crearUsuario.setForeground(Color.blue);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_crearUsuarioMouseEntered
+
+    private void btn_cancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelarMouseEntered
+        btn_crearUsuario.setBackground(Color.blue);
+        btn_crearUsuario.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.white);
+        btn_cancelar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_cancelarMouseEntered
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -283,8 +315,8 @@ public static crearUsuario getInstancia(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cancelar;
     private javax.swing.JButton btn_crearUsuario;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -8,6 +8,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import Clases.cuentaBibliografia;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -42,30 +43,51 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         reporte_libros = new javax.swing.JButton();
         reporte_librosExistentes = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_cancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        reporte_libros.setBackground(new java.awt.Color(51, 51, 255));
+        reporte_libros.setForeground(new java.awt.Color(255, 255, 255));
         reporte_libros.setText("Reporte por libros");
+        reporte_libros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                reporte_librosMouseEntered(evt);
+            }
+        });
         reporte_libros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reporte_librosActionPerformed(evt);
             }
         });
 
+        reporte_librosExistentes.setBackground(new java.awt.Color(51, 51, 255));
+        reporte_librosExistentes.setForeground(new java.awt.Color(255, 255, 255));
         reporte_librosExistentes.setText("Reporte de libros existentes");
+        reporte_librosExistentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                reporte_librosExistentesMouseEntered(evt);
+            }
+        });
         reporte_librosExistentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reporte_librosExistentesActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Regresar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cancelar.setText("Regresar");
+        btn_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelarMouseEntered(evt);
+            }
+        });
+        btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_cancelarActionPerformed(evt);
             }
         });
 
@@ -81,14 +103,14 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
                 .addGap(55, 55, 55))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btn_cancelar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btn_cancelar)
                 .addGap(112, 112, 112)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(reporte_libros, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,10 +232,10 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reporte_librosExistentesActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed
         ventanaAdministrador.getInstancia().setVisible(true);
         ventana_reportePrestamos.getInstancia().setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_cancelarActionPerformed
 
     private void reporte_librosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reporte_librosActionPerformed
         String reporte = "<!DOCTYPE html>\n"
@@ -303,6 +325,33 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reporte_librosActionPerformed
 
+    private void btn_cancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelarMouseEntered
+        btn_cancelar.setBackground(Color.white);
+        btn_cancelar.setForeground(Color.blue);
+        reporte_libros.setBackground(Color.blue);
+        reporte_libros.setForeground(Color.white);
+        reporte_librosExistentes.setBackground(Color.blue);
+        reporte_librosExistentes.setForeground(Color.white);
+    }//GEN-LAST:event_btn_cancelarMouseEntered
+
+    private void reporte_librosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reporte_librosMouseEntered
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+        reporte_libros.setBackground(Color.white);
+        reporte_libros.setForeground(Color.blue);
+        reporte_librosExistentes.setBackground(Color.blue);
+        reporte_librosExistentes.setForeground(Color.white);
+    }//GEN-LAST:event_reporte_librosMouseEntered
+
+    private void reporte_librosExistentesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reporte_librosExistentesMouseEntered
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+        reporte_libros.setBackground(Color.blue);
+        reporte_libros.setForeground(Color.white);
+        reporte_librosExistentes.setBackground(Color.white);
+        reporte_librosExistentes.setForeground(Color.blue);
+    }//GEN-LAST:event_reporte_librosExistentesMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -339,7 +388,7 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_cancelar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton reporte_libros;
     private javax.swing.JButton reporte_librosExistentes;

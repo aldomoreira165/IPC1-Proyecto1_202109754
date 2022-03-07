@@ -4,6 +4,7 @@ package JFrames;
 import Clases.LibroDigital;
 import Clases.RenderTable;
 import Clases.cuentaLibroVIrtual;
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -35,7 +36,7 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tbl_verBibliotecaVirtual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -52,14 +53,28 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_verBibliotecaVirtual);
 
+        btn_actualizar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_actualizar.setForeground(new java.awt.Color(255, 255, 255));
         btn_actualizar.setText("Actualizar Tabla");
+        btn_actualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_actualizarMouseEntered(evt);
+            }
+        });
         btn_actualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_actualizarActionPerformed(evt);
             }
         });
 
+        btn_regresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_regresar.setForeground(new java.awt.Color(255, 255, 255));
         btn_regresar.setText("Regresar");
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseEntered(evt);
+            }
+        });
         btn_regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_regresarActionPerformed(evt);
@@ -87,11 +102,11 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btn_regresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btn_actualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152))
+                .addGap(114, 114, 114))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -185,6 +200,20 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_tbl_verBibliotecaVirtualMouseClicked
+
+    private void btn_regresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseEntered
+        btn_actualizar.setBackground(Color.blue);
+        btn_actualizar.setForeground(Color.white);
+        btn_regresar.setBackground(Color.white);
+        btn_regresar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_regresarMouseEntered
+
+    private void btn_actualizarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_actualizarMouseEntered
+        btn_actualizar.setBackground(Color.white);
+        btn_actualizar.setForeground(Color.blue);
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_actualizarMouseEntered
 
 
 

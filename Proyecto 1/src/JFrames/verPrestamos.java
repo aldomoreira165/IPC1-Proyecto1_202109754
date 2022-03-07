@@ -2,6 +2,7 @@
 package JFrames;
 
 import Clases.*;
+import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -33,7 +34,7 @@ public class verPrestamos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tbl_verPrestamos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -53,14 +54,28 @@ public class verPrestamos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tbl_verPrestamos);
 
+        btn_verPrestamos.setBackground(new java.awt.Color(51, 51, 255));
+        btn_verPrestamos.setForeground(new java.awt.Color(255, 255, 255));
         btn_verPrestamos.setText("Ver préstamos");
+        btn_verPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_verPrestamosMouseEntered(evt);
+            }
+        });
         btn_verPrestamos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_verPrestamosActionPerformed(evt);
             }
         });
 
+        btn_regresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_regresar.setForeground(new java.awt.Color(255, 255, 255));
         btn_regresar.setText("Regresar");
+        btn_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_regresarMouseEntered(evt);
+            }
+        });
         btn_regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_regresarActionPerformed(evt);
@@ -199,6 +214,20 @@ public class verPrestamos extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_tbl_verPrestamosMouseClicked
+
+    private void btn_regresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_regresarMouseEntered
+        btn_regresar.setBackground(Color.white);
+        btn_regresar.setForeground(Color.blue);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+    }//GEN-LAST:event_btn_regresarMouseEntered
+
+    private void btn_verPrestamosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_verPrestamosMouseEntered
+        btn_regresar.setBackground(Color.blue);
+        btn_regresar.setForeground(Color.white);
+        btn_verPrestamos.setBackground(Color.blue);
+        btn_verPrestamos.setForeground(Color.white);
+    }//GEN-LAST:event_btn_verPrestamosMouseEntered
 
     public static void main(String args[]) {
 

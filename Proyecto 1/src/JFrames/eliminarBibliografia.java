@@ -8,6 +8,7 @@ import Clases.Tesis;
 import JFrames.crearUsuario;
 import JFrames.modificarUsuario;
 import JFrames.ventanaAdministrador;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 public class eliminarBibliografia extends javax.swing.JFrame {
@@ -67,7 +68,7 @@ public class eliminarBibliografia extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         txt_palabras2.setEnabled(false);
 
@@ -91,15 +92,29 @@ public class eliminarBibliografia extends javax.swing.JFrame {
 
         comboBox_tipo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista", "Tesis", "Libro Digital" }));
 
+        btn_eliminar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_eliminar.setForeground(new java.awt.Color(255, 255, 255));
         btn_eliminar.setText("Eliminar");
         btn_eliminar.setEnabled(false);
+        btn_eliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_eliminarMouseEntered(evt);
+            }
+        });
         btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_eliminarActionPerformed(evt);
             }
         });
 
+        btn_cancelar2.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar2.setForeground(new java.awt.Color(255, 255, 255));
         btn_cancelar2.setText("Cancelar");
+        btn_cancelar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelar2MouseEntered(evt);
+            }
+        });
         btn_cancelar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelar2ActionPerformed(evt);
@@ -130,7 +145,14 @@ public class eliminarBibliografia extends javax.swing.JFrame {
 
         jLabel36.setText("Tipo:");
 
+        btn_buscar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_buscar.setForeground(new java.awt.Color(255, 255, 255));
         btn_buscar.setText("Buscar");
+        btn_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_buscarMouseEntered(evt);
+            }
+        });
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
@@ -692,6 +714,33 @@ public class eliminarBibliografia extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void btn_eliminarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarMouseEntered
+        btn_eliminar.setBackground(Color.white);
+        btn_eliminar.setForeground(Color.blue);
+        btn_cancelar2.setBackground(Color.blue);
+        btn_cancelar2.setForeground(Color.white);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_eliminarMouseEntered
+
+    private void btn_cancelar2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelar2MouseEntered
+        btn_eliminar.setBackground(Color.blue);
+        btn_eliminar.setForeground(Color.white);
+        btn_cancelar2.setBackground(Color.white);
+        btn_cancelar2.setForeground(Color.blue);
+        btn_buscar.setBackground(Color.blue);
+        btn_buscar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_cancelar2MouseEntered
+
+    private void btn_buscarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_buscarMouseEntered
+        btn_eliminar.setBackground(Color.blue);
+        btn_eliminar.setForeground(Color.white);
+        btn_cancelar2.setBackground(Color.blue);
+        btn_cancelar2.setForeground(Color.white);
+        btn_buscar.setBackground(Color.white);
+        btn_buscar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_buscarMouseEntered
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

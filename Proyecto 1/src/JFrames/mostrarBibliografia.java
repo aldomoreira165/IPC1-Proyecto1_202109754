@@ -41,33 +41,24 @@ public class mostrarBibliografia extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tbl_mostrarLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias", "Disponibles"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         tbl_mostrarLibros.setRowHeight(35);
         jScrollPane1.setViewportView(tbl_mostrarLibros);
-        if (tbl_mostrarLibros.getColumnModel().getColumnCount() > 0) {
-            tbl_mostrarLibros.getColumnModel().getColumn(8).setHeaderValue("Copias");
-        }
 
+        btn_Regresar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_Regresar.setForeground(new java.awt.Color(255, 255, 255));
         btn_Regresar.setText("Regresar");
         btn_Regresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +66,8 @@ public class mostrarBibliografia extends javax.swing.JFrame {
             }
         });
 
+        btn_verBibliografia.setBackground(new java.awt.Color(51, 51, 255));
+        btn_verBibliografia.setForeground(new java.awt.Color(255, 255, 255));
         btn_verBibliografia.setText("Ver bibliografía");
         btn_verBibliografia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,73 +77,43 @@ public class mostrarBibliografia extends javax.swing.JFrame {
 
         tbl_mostrarRevistas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ISBN", "Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Palabras Clave", "Copias", "Disponibles"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true, true, true
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         tbl_mostrarRevistas.setRowHeight(35);
         jScrollPane2.setViewportView(tbl_mostrarRevistas);
-        if (tbl_mostrarRevistas.getColumnModel().getColumnCount() > 0) {
-            tbl_mostrarRevistas.getColumnModel().getColumn(8).setHeaderValue("Copias");
-        }
 
         tbl_mostrarTesis.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ISBN", "Autor", "Año Publicación", "Título", "alabras Clave", "Área", "Temas", "Descripción", "Edición", "Copias", "Disponibles"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true, true, true
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         tbl_mostrarTesis.setRowHeight(35);
         jScrollPane3.setViewportView(tbl_mostrarTesis);
-        if (tbl_mostrarTesis.getColumnModel().getColumnCount() > 0) {
-            tbl_mostrarTesis.getColumnModel().getColumn(8).setHeaderValue("Copias");
-        }
 
         tbl_mostrarLibroDigital.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Tamaño"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, true, true, true, true
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         tbl_mostrarLibroDigital.setRowHeight(35);
         jScrollPane4.setViewportView(tbl_mostrarLibroDigital);
 
@@ -246,7 +209,7 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaLibros[i][9] = Libro.getInstancia().dispobles[i].toString();
             }
         }
-        String[] encabezadoLibros = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias"};
+        String[] encabezadoLibros = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias","Disponibles"};
         tbl_mostrarLibros.setModel(new DefaultTableModel(
                 tablaLibros,
                 encabezadoLibros

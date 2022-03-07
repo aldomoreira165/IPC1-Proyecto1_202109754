@@ -7,6 +7,7 @@ import Clases.Libro;
 import Clases.Revista;
 import Clases.Tesis;
 import Clases.LibroDigital;
+import java.awt.Color;
 
 public class cargaIndividual extends javax.swing.JFrame {
 
@@ -65,7 +66,8 @@ public class cargaIndividual extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setToolTipText("");
 
         txt_palabras.setEnabled(false);
 
@@ -91,15 +93,29 @@ public class cargaIndividual extends javax.swing.JFrame {
 
         comboBox_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Revista", "Tesis", "Libro Digital" }));
 
+        btn_cargarBibliografia.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cargarBibliografia.setForeground(new java.awt.Color(255, 255, 255));
         btn_cargarBibliografia.setText("Cargar");
         btn_cargarBibliografia.setEnabled(false);
+        btn_cargarBibliografia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cargarBibliografiaMouseEntered(evt);
+            }
+        });
         btn_cargarBibliografia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cargarBibliografiaActionPerformed(evt);
             }
         });
 
+        btn_cancelar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cancelar.setForeground(new java.awt.Color(255, 255, 255));
         btn_cancelar.setText("Cancelar");
+        btn_cancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_cancelarMouseEntered(evt);
+            }
+        });
         btn_cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cancelarActionPerformed(evt);
@@ -126,7 +142,7 @@ public class cargaIndividual extends javax.swing.JFrame {
 
         jLabel10.setText("Categoría:");
 
-        jLabel11.setText("ISBN:");
+        jLabel11.setText("ISBN/ID:");
 
         jLabel12.setText("Tipo:");
 
@@ -142,7 +158,14 @@ public class cargaIndividual extends javax.swing.JFrame {
 
         jLabel15.setText("Tamaño:");
 
+        btn_activar.setBackground(new java.awt.Color(51, 51, 255));
+        btn_activar.setForeground(new java.awt.Color(255, 255, 255));
         btn_activar.setText("Activar Celdas");
+        btn_activar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_activarMouseEntered(evt);
+            }
+        });
         btn_activar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_activarActionPerformed(evt);
@@ -459,7 +482,7 @@ public class cargaIndividual extends javax.swing.JFrame {
                 crearBibliografia.getInstancia().setVisible(true);
             }
             if (isbnExistente == true) {
-                JOptionPane.showMessageDialog(null, "Ya existe una revista con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ya existe una revista con ese ID", "Error", JOptionPane.WARNING_MESSAGE);
             }
         }
         if (comboBox_tipo.getSelectedItem().equals("Tesis")) {
@@ -520,7 +543,7 @@ public class cargaIndividual extends javax.swing.JFrame {
                 crearBibliografia.getInstancia().setVisible(true);
             }
             if (isbnExistente == true) {
-                JOptionPane.showMessageDialog(null, "Ya existe una tesis con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ya existe una tesis con ese ID", "Error", JOptionPane.WARNING_MESSAGE);
             }
         }
         if (comboBox_tipo.getSelectedItem().equals("Libro Digital")) {
@@ -579,7 +602,7 @@ public class cargaIndividual extends javax.swing.JFrame {
                 crearBibliografia.getInstancia().setVisible(true);
             }
             if (isbnExistente == true) {
-                JOptionPane.showMessageDialog(null, "Ya existe un libro digital con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Ya existe un libro digital con ese ID", "Error", JOptionPane.WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_btn_cargarBibliografiaActionPerformed
@@ -668,6 +691,33 @@ public class cargaIndividual extends javax.swing.JFrame {
             btn_cargarBibliografia.setEnabled(true);
         }
     }//GEN-LAST:event_btn_activarActionPerformed
+
+    private void btn_activarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_activarMouseEntered
+        btn_activar.setBackground(Color.white);
+        btn_activar.setForeground(Color.blue);
+        btn_cargarBibliografia.setBackground(Color.blue);
+        btn_cargarBibliografia.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_activarMouseEntered
+
+    private void btn_cargarBibliografiaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cargarBibliografiaMouseEntered
+        btn_activar.setBackground(Color.blue);
+        btn_activar.setForeground(Color.white);
+        btn_cargarBibliografia.setBackground(Color.white);
+        btn_cargarBibliografia.setForeground(Color.blue);
+        btn_cancelar.setBackground(Color.blue);
+        btn_cancelar.setForeground(Color.white);
+    }//GEN-LAST:event_btn_cargarBibliografiaMouseEntered
+
+    private void btn_cancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cancelarMouseEntered
+        btn_activar.setBackground(Color.blue);
+        btn_activar.setForeground(Color.white);
+        btn_cargarBibliografia.setBackground(Color.blue);
+        btn_cargarBibliografia.setForeground(Color.white);
+        btn_cancelar.setBackground(Color.white);
+        btn_cancelar.setForeground(Color.blue);
+    }//GEN-LAST:event_btn_cancelarMouseEntered
 
     public static void main(String args[]) {
 
