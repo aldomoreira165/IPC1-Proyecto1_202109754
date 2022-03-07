@@ -21,6 +21,7 @@ private static loginUsuario instancia;
         return instancia;
     }
 
+    String idLoggeado = "";
     String usuarioLoggeado = "";
     String nombreLoggeado = "";
     String apellidoLoggeado = "";
@@ -143,6 +144,7 @@ private static loginUsuario instancia;
                 }
             }
             if (op == 1) {
+                loginUsuario.getInstancia().idLoggeado = Usuario.getInstancia().id[posicion];
                 loginUsuario.getInstancia().usuarioLoggeado = Usuario.getInstancia().user[posicion];
                 loginUsuario.getInstancia().nombreLoggeado = Usuario.getInstancia().nombre[posicion];
                 loginUsuario.getInstancia().apellidoLoggeado = Usuario.getInstancia().apellido[posicion];
