@@ -359,7 +359,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reporteExistenciaLibros = new File("reportes\\reporteExistenciaLibros_usuarios.html");
+        File reporteExistenciaLibros = new File("reporteExistenciaLibros_usuarios.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reporteExistenciaLibros));
             bw.write(reporte);

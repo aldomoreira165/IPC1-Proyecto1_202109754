@@ -426,7 +426,7 @@ public class ventanaAdministrador extends javax.swing.JFrame {
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reportePrestamos = new File("reportes\\reportePrestamos.html");
+        File reportePrestamos = new File("reportePrestamos.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reportePrestamos));
             bw.write(reporte);
@@ -784,7 +784,7 @@ public class ventanaAdministrador extends javax.swing.JFrame {
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reportePrestamosUsuarios = new File("reportes\\reporteUsuarios_prestamos.html");
+        File reportePrestamosUsuarios = new File("reporteUsuarios_prestamos.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reportePrestamosUsuarios));
             bw.write(reporte);
