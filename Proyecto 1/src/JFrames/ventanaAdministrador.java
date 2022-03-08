@@ -401,13 +401,13 @@ public class ventanaAdministrador extends javax.swing.JFrame {
                 + "    </style>"
                 + "</head>\n"
                 + "<body>\n"
-                + "<h1>REPORTE DE BIBLIOGRAFÍA PRESTADA</h1>"
+                + "<h1>REPORTE DE BIBLIOGRAFIA PRESTADA</h1>"
                 + "    <div id=\"main-container\">\n"
                 + "        <table>\n"
                 + "            <tr>\n"
-                + "                <th>ISBN/ID Bibliografía</th>\n"
-                + "                <th>Título Bibliografía</th>\n"
-                + "                <th>Tipo Bibliografía</th>\n"
+                + "                <th>ISBN/ID Bibliografia</th>\n"
+                + "                <th>Titulo Bibliografia</th>\n"
+                + "                <th>Tipo Bibliografia</th>\n"
                 + "            </tr>\n";
         for (int i = 0; i <= cuentaBibliografia.contador; i++) {
             reporte += "<tr>";
@@ -732,9 +732,9 @@ public class ventanaAdministrador extends javax.swing.JFrame {
                 + "                <th>Apellido usuario</th>\n"
                 + "                <th>Usuario usuario</th>\n"
                 + "                <th>Rol usuario</th>\n"
-                + "                <th>ISBN Bibliografía</th>\n"
-                + "                <th>Tipo Bibliografía</th>\n"
-                + "                <th>Título Bibliografía</th>\n"
+                + "                <th>ISBN Bibliografia</th>\n"
+                + "                <th>Tipo Bibliografia</th>\n"
+                + "                <th>Titulo Bibliografia</th>\n"
                 + "            </tr>\n";
         for (int i = 0; i < cuentaBibliografia.contador; i++) {
             reporte += "<tr>";
