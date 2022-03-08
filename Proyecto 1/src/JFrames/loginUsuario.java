@@ -155,18 +155,14 @@ public class loginUsuario extends javax.swing.JPanel {
             }
 
             if (Usuario.getInstancia().contador == -1) {
-                     JOptionPane.showMessageDialog(null, "Aún no hay cuentas de usuario creadas", "Error", JOptionPane.WARNING_MESSAGE);
-                }
-        } 
-
-        else if (usuario.equals(Administrador.getInstancia().user) & password.equals(Administrador.getInstancia().password)) {
+                JOptionPane.showMessageDialog(null, "Aún no hay cuentas de usuario creadas", "Error", JOptionPane.WARNING_MESSAGE);
+            }
+        } else if (usuario.equals(Administrador.getInstancia().user) & password.equals(Administrador.getInstancia().password)) {
             JOptionPane.showMessageDialog(null, "Bienvenido al sistema " + Administrador.getInstancia().user, "Bienvenido", JOptionPane.INFORMATION_MESSAGE);
             pantallaInicio.getInstancia().setVisible(false);
             ventanaAdministrador.getInstancia().setVisible(true);
-        } 
-        
-        else {
-             JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "Error de credenciales", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_btn_IngresarActionPerformed

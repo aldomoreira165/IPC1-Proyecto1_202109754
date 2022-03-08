@@ -233,18 +233,18 @@ public class eliminarUsuario extends javax.swing.JFrame {
                 txt_rol.setText(Usuario.getInstancia().rol[i]);
                 txt_contraseña.setText(Usuario.getInstancia().password[i]);
                 txt_confirmarContraseña.setText(Usuario.getInstancia().password[i]);
-            } 
+            }
         }
         if (usuarioEncontrado == true) {
-            JOptionPane.showMessageDialog(null, "¡Usuario con el id "+ txt_id.getText() + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
-        }else{
+            JOptionPane.showMessageDialog(null, "¡Usuario con el id " + txt_id.getText() + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
+        } else {
             JOptionPane.showMessageDialog(null, "Usuario no encontrado. Verifica el ID.", "Error", JOptionPane.WARNING_MESSAGE);
-                txt_nombre.setText("");
-                txt_apellido.setText("");
-                txt_user.setText("");
-                txt_rol.setText("");
-                txt_contraseña.setText("");
-                txt_confirmarContraseña.setText("");
+            txt_nombre.setText("");
+            txt_apellido.setText("");
+            txt_user.setText("");
+            txt_rol.setText("");
+            txt_contraseña.setText("");
+            txt_confirmarContraseña.setText("");
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
 
@@ -313,7 +313,6 @@ public class eliminarUsuario extends javax.swing.JFrame {
         btn_cancelar.setBackground(Color.blue);
         btn_cancelar.setForeground(Color.white);
     }//GEN-LAST:event_btn_buscarMouseExited
-    
 
     public static void main(String args[]) {
 

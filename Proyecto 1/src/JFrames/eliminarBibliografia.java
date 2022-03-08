@@ -561,7 +561,7 @@ public class eliminarBibliografia extends javax.swing.JFrame {
             for (int i = 0; i <= Libro.getInstancia().contador; i++) {
                 if (Libro.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
                     bibliografiaEncontrada = true;
-                    btn_eliminar.setEnabled(true);                
+                    btn_eliminar.setEnabled(true);
                     txt_autor2.setText(Libro.getInstancia().autor[i]);
                     txt_año2.setText(Libro.getInstancia().añoPublicacion[i]);
                     txt_titulo2.setText(Libro.getInstancia().titulo[i]);

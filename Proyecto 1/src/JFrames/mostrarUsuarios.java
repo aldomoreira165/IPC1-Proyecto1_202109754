@@ -8,21 +8,20 @@ import javax.swing.table.DefaultTableModel;
 
 public class mostrarUsuarios extends javax.swing.JFrame {
 
-
-public static mostrarUsuarios instancia;
+    public static mostrarUsuarios instancia;
 
     public mostrarUsuarios() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-public static mostrarUsuarios getInstancia(){
-    if (instancia == null) {
-        instancia = new mostrarUsuarios();
+    public static mostrarUsuarios getInstancia() {
+        if (instancia == null) {
+            instancia = new mostrarUsuarios();
+        }
+        return instancia;
     }
-    return instancia;
-}
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -116,7 +115,7 @@ public static mostrarUsuarios getInstancia(){
     }//GEN-LAST:event_btn_RegresarActionPerformed
 
     private void btn_verUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verUsuariosActionPerformed
-        String[][] tabla  = new String[10][6];
+        String[][] tabla = new String[10][6];
         for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
             for (int j = 0; j < 6; j++) {
                 tabla[i][0] = Usuario.getInstancia().id[i];
@@ -127,24 +126,16 @@ public static mostrarUsuarios getInstancia(){
                 tabla[i][5] = Usuario.getInstancia().password[i];
             }
         }
- 
-        System.out.println("PRUEBA DE IMPORTACIÓN DE USUARIOS");
-        for (int i = 0; i < 10; i++) {
-            System.out.println(" ");
-            for (int j = 0; j < 6; j++) {
-                 System.out.print(tabla[i][j] + " "); 
-            }
-        }
         String[] encabezado = {"ID", "Nombre", "Apellido", "Usuario", "Rol", "Contraseña"};
         tablaUsuarios.setModel(new DefaultTableModel(
-            tabla,
-            encabezado
+                tabla,
+                encabezado
         ));
 
     }//GEN-LAST:event_btn_verUsuariosActionPerformed
 
     public static void main(String args[]) {
-    
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new mostrarUsuarios().setVisible(true);

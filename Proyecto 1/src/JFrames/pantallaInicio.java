@@ -8,6 +8,7 @@ import Clases.Usuario;
 import java.awt.Color;
 import java.awt.HeadlessException;
 import javax.swing.JButton;
+import JFrames.panelAbout;
 
 public class pantallaInicio extends javax.swing.JFrame {
 
@@ -169,7 +170,13 @@ public class pantallaInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aboutActionPerformed
-        // TODO add your handling code here:
+        panelAbout pAbout = new panelAbout();
+        pAbout.setSize(440, 500);
+        pAbout.setLocation(0, 0);
+        panelContenido.removeAll();
+        panelContenido.add(pAbout, BorderLayout.CENTER);
+        panelContenido.revalidate();
+        panelContenido.repaint();
     }//GEN-LAST:event_btn_aboutActionPerformed
 
     private void btn_aboutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_aboutMouseEntered

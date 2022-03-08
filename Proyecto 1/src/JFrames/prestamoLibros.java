@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
-
 public class prestamoLibros extends javax.swing.JFrame {
 
     public int fila1 = 0;
@@ -34,9 +33,9 @@ public class prestamoLibros extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-  private void filter(String query) {
-         TableRowSorter<TableModel> tr = new TableRowSorter<>(tbl_detalle.getModel());
-         tbl_detalle.setRowSorter(tr);
+    private void filter(String query) {
+        TableRowSorter<TableModel> tr = new TableRowSorter<>(tbl_detalle.getModel());
+        tbl_detalle.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(query));
     }
 
@@ -103,6 +102,7 @@ public class prestamoLibros extends javax.swing.JFrame {
 
             }
         ));
+        tbl_detalle.setRowHeight(35);
         tbl_detalle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbl_detalleMouseClicked(evt);
@@ -138,7 +138,7 @@ public class prestamoLibros extends javax.swing.JFrame {
             }
         });
 
-        txt_buscar.setBackground(new java.awt.Color(51, 51, 255));
+        txt_buscar.setBackground(new java.awt.Color(255, 255, 255));
         txt_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_buscarActionPerformed(evt);
@@ -164,11 +164,11 @@ public class prestamoLibros extends javax.swing.JFrame {
             }
         });
 
-        comboBox_filtrar.setBackground(new java.awt.Color(51, 51, 255));
+        comboBox_filtrar.setBackground(new java.awt.Color(204, 204, 204));
         comboBox_filtrar.setForeground(new java.awt.Color(255, 255, 255));
         comboBox_filtrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Tesis", "Revista" }));
 
-        jComboBox2.setBackground(new java.awt.Color(0, 51, 255));
+        jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autor", "Año Publicación", "ISBN", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias", "Disponibles" }));
 
@@ -191,17 +191,10 @@ public class prestamoLibros extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_regresar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_verPrestamos, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_reporteExistencias, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(23, Short.MAX_VALUE)
+                        .addGap(0, 17, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_actualizarTabla)
@@ -209,10 +202,18 @@ public class prestamoLibros extends javax.swing.JFrame {
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBox_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnFiltrar))))
+                                .addGap(147, 147, 147)
+                                .addComponent(comboBox_filtrar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_regresar)
+                            .addComponent(btn_logout, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnFiltrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_reporteExistencias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_verPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -220,17 +221,19 @@ public class prestamoLibros extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_logout)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_regresar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
                         .addComponent(btn_verPrestamos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_reporteExistencias)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addComponent(btnFiltrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_reporteExistencias)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addComponent(btnFiltrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(btn_logout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_regresar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -272,7 +275,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                 + "    <meta charset=\"UTF-8\">\n"
                 + "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
                 + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-                + "    <title>Reporte de existencialibros</title>\n"
+                + "    <title>Reporte de existencia</title>\n"
                 + " <style>\n"
                 + "        h1, h2{\n"
                 + "        color: white;\n"
@@ -318,7 +321,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                 + "    </style>"
                 + "</head>\n"
                 + "<body>\n"
-                + "<h1>REPORTE DE LIBROS PRESTADOS</h1>"
+                + "<h1>REPORTE DE BIBLIOGRAFÍA EXISTENTE</h1>"
                 + "    <div id=\"main-container\">\n"
                 + "        <table>\n"
                 + "            <tr>\n"
@@ -339,23 +342,24 @@ public class prestamoLibros extends javax.swing.JFrame {
                 + "            </tr>\n";
         for (int i = 0; i < prestamoLibros.getInstancia().fila1; i++) {
             reporte += "<tr>";
-            for (int j = 0; j < prestamoLibros.getInstancia().columna1; j++) {
-                if (prestamoLibros.getInstancia().tablaLibros[i][0] != null) {
+            if (prestamoLibros.getInstancia().tablaLibros[i][0] != null) {
+                for (int j = 0; j < prestamoLibros.getInstancia().columna1; j++) {
                     if (prestamoLibros.getInstancia().tablaLibros[i][j] == null) {
                         prestamoLibros.getInstancia().tablaLibros[i][j] = reporte += "<td>" + "-" + "</td>";
                     } else {
                         reporte += "<td>" + prestamoLibros.getInstancia().tablaLibros[i][j] + "</td>";
                     }
-
                 }
+            } else {
+                reporte += "</tr>";
             }
-            reporte += "</tr>";
+
         }
         reporte += "        </table>\n"
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reporteExistenciaLibros = new File("reporteExistenciaLibros_usuarios.html");
+        File reporteExistenciaLibros = new File("reportes\\reporteExistenciaLibros_usuarios.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reporteExistenciaLibros));
             bw.write(reporte);
@@ -424,7 +428,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                 tablaDetalle[filas][14] = new JButton("Prestar");
             }
         }
-        String[] encabezado = {"ISBN/ID", "Tipo","Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Área", "Palabras Clave", "Copias", "Disponibles", "Préstamo"};
+        String[] encabezado = {"ISBN/ID", "Tipo", "Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Área", "Palabras Clave", "Copias", "Disponibles", "Préstamo"};
         tbl_detalle.setModel(new DefaultTableModel(
                 tablaDetalle,
                 encabezado
@@ -432,7 +436,7 @@ public class prestamoLibros extends javax.swing.JFrame {
 
         tablaLibros = new Object[tbl_detalle.getRowCount()][tbl_detalle.getColumnCount()];
         fila1 = tbl_detalle.getRowCount();
-        columna1 = tbl_detalle.getColumnCount()-1;
+        columna1 = tbl_detalle.getColumnCount() - 1;
 
         for (int i = 0; i < fila1; i++) {
             for (int j = 0; j < columna1; j++) {
@@ -478,7 +482,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                     tablaDetalle[filas][11] = new JButton("Prestar");
                 }
             }
-            String[] encabezado = {"ISBN/ID","Tipo", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave","Descripción", "Temas", "Copias", "Disponibles", "Préstamo"};
+            String[] encabezado = {"ISBN/ID", "Tipo", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias", "Disponibles", "Préstamo"};
             tbl_detalle.setModel(new DefaultTableModel(
                     tablaDetalle,
                     encabezado
@@ -488,23 +492,23 @@ public class prestamoLibros extends javax.swing.JFrame {
             for (int i = 0; i <= Libro.getInstancia().contador; i++) {
                 filas = filas + 1;
                 for (int j = 0; j < 13; j++) {
-                tablaDetalle[filas][0] = Revista.getInstancia().isbn[i];
-                tablaDetalle[filas][1] = "Revista";
-                tablaDetalle[filas][2] = Revista.getInstancia().autor[i];
-                tablaDetalle[filas][3] = Revista.getInstancia().añoPublicacion[i];
-                tablaDetalle[filas][4] = Revista.getInstancia().titulo[i];
-                tablaDetalle[filas][5] = Revista.getInstancia().edicion[i];
-                tablaDetalle[filas][6] = Revista.getInstancia().descripcion[i];
-                tablaDetalle[filas][7] = Revista.getInstancia().categoria[i];
-                tablaDetalle[filas][8] = Revista.getInstancia().ejemplares[i];
-                tablaDetalle[filas][9] = Revista.getInstancia().temas[i];
-                tablaDetalle[filas][10] = Revista.getInstancia().palabrasClave[i];
-                tablaDetalle[filas][11] = Revista.getInstancia().copias[i];
-                tablaDetalle[filas][12] = Revista.getInstancia().dispobles[i];
-                tablaDetalle[filas][13] = new JButton("Prestar");
+                    tablaDetalle[filas][0] = Revista.getInstancia().isbn[i];
+                    tablaDetalle[filas][1] = "Revista";
+                    tablaDetalle[filas][2] = Revista.getInstancia().autor[i];
+                    tablaDetalle[filas][3] = Revista.getInstancia().añoPublicacion[i];
+                    tablaDetalle[filas][4] = Revista.getInstancia().titulo[i];
+                    tablaDetalle[filas][5] = Revista.getInstancia().edicion[i];
+                    tablaDetalle[filas][6] = Revista.getInstancia().descripcion[i];
+                    tablaDetalle[filas][7] = Revista.getInstancia().categoria[i];
+                    tablaDetalle[filas][8] = Revista.getInstancia().ejemplares[i];
+                    tablaDetalle[filas][9] = Revista.getInstancia().temas[i];
+                    tablaDetalle[filas][10] = Revista.getInstancia().palabrasClave[i];
+                    tablaDetalle[filas][11] = Revista.getInstancia().copias[i];
+                    tablaDetalle[filas][12] = Revista.getInstancia().dispobles[i];
+                    tablaDetalle[filas][13] = new JButton("Prestar");
                 }
             }
-            String[] encabezado = {"ISBN/ID","Tipo","Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Palabras Clave", "Copias", "Disponibles", "Préstamo"};
+            String[] encabezado = {"ISBN/ID", "Tipo", "Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Palabras Clave", "Copias", "Disponibles", "Préstamo"};
             tbl_detalle.setModel(new DefaultTableModel(
                     tablaDetalle,
                     encabezado
@@ -529,7 +533,7 @@ public class prestamoLibros extends javax.swing.JFrame {
                     tablaDetalle[filas][12] = new JButton("Prestar");
                 }
             }
-            String[] encabezado = {"ISBN/ID", "Autor", "Año Publicación", "Título", "Palabras Clave", "Área", "Temas", "Descripción", "Edición", "Copias","Disponibles", "Préstamo"};
+            String[] encabezado = {"ISBN/ID", "Autor", "Año Publicación", "Título", "Palabras Clave", "Área", "Temas", "Descripción", "Edición", "Copias", "Disponibles", "Préstamo"};
             tbl_detalle.setModel(new DefaultTableModel(
                     tablaDetalle,
                     encabezado

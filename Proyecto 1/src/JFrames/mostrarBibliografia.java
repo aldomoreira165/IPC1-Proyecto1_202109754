@@ -209,7 +209,7 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaLibros[i][9] = Libro.getInstancia().dispobles[i].toString();
             }
         }
-        String[] encabezadoLibros = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias","Disponibles"};
+        String[] encabezadoLibros = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Copias", "Disponibles"};
         tbl_mostrarLibros.setModel(new DefaultTableModel(
                 tablaLibros,
                 encabezadoLibros
@@ -232,7 +232,7 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaRevistas[i][11] = Revista.getInstancia().dispobles[i].toString();
             }
         }
-        String[] encabezadoRevistas = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Descripción","Categoría","Ejemplares","Temas","Palabras Clave","Copias","Disponibles"};
+        String[] encabezadoRevistas = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Descripción", "Categoría", "Ejemplares", "Temas", "Palabras Clave", "Copias", "Disponibles"};
         tbl_mostrarRevistas.setModel(new DefaultTableModel(
                 tablaRevistas,
                 encabezadoRevistas
@@ -254,7 +254,7 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaTesis[i][10] = Tesis.getInstancia().dispobles[i].toString();
             }
         }
-        String[] encabezadoTesis = {"ISBN", "Autor", "Año Publicación", "Título", "Palabras Clave", "Área","Temas","Descripción","Edición","Copias","Disponibles"};
+        String[] encabezadoTesis = {"ISBN", "Autor", "Año Publicación", "Título", "Palabras Clave", "Área", "Temas", "Descripción", "Edición", "Copias", "Disponibles"};
         tbl_mostrarTesis.setModel(new DefaultTableModel(
                 tablaTesis,
                 encabezadoTesis
@@ -274,7 +274,7 @@ public class mostrarBibliografia extends javax.swing.JFrame {
                 tablaLibroDigital[i][8] = LibroDigital.getInstancia().tamaño[i];
             }
         }
-        String[] encabezadoLibroDigital = {"ISBN", "Autor", "Año Publicación", "Título","Edición","Palabras Clave","Descripción","Temas", "Tamaño"};
+        String[] encabezadoLibroDigital = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Tamaño"};
         tbl_mostrarLibroDigital.setModel(new DefaultTableModel(
                 tablaLibroDigital,
                 encabezadoLibroDigital

@@ -12,7 +12,6 @@ import javax.swing.Icon;
 
 public class ventanaUsuario extends javax.swing.JFrame {
 
-
     public ventanaUsuario() {
         initComponents();
         setLocationRelativeTo(null);
@@ -21,7 +20,6 @@ public class ventanaUsuario extends javax.swing.JFrame {
         lblFoto.setIcon(icono);
         this.repaint();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -227,8 +225,8 @@ public class ventanaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_logoutActionPerformed
 
     private void btn_prestamoLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prestamoLibroActionPerformed
-       this.setVisible(false);
-       prestamoLibros.getInstancia().setVisible(true);
+        this.setVisible(false);
+        prestamoLibros.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_prestamoLibroActionPerformed
 
     private void btn_prestamoLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_prestamoLibroMouseEntered

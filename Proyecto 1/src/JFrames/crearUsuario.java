@@ -1,6 +1,5 @@
 package JFrames;
 
-
 import javax.swing.JPasswordField;
 import java.awt.event.*;
 import Clases.Usuario;
@@ -11,14 +10,14 @@ import java.awt.Color;
 
 public class crearUsuario extends javax.swing.JFrame {
 
-private static crearUsuario instancia;
+    private static crearUsuario instancia;
 
-public static crearUsuario getInstancia(){
-    if(instancia == null){
-       instancia = new crearUsuario();
+    public static crearUsuario getInstancia() {
+        if (instancia == null) {
+            instancia = new crearUsuario();
+        }
+        return instancia;
     }
-    return instancia;
-}
 
     public crearUsuario() {
         initComponents();
@@ -51,23 +50,15 @@ public static crearUsuario getInstancia(){
 
         panelCrearUsuario.setBackground(new java.awt.Color(255, 255, 255));
 
-        txt_nombre.setText("Aldo");
-
-        txt_id.setText("1");
+        txt_id.setToolTipText("");
         txt_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_idActionPerformed(evt);
             }
         });
 
-        txt_apellido.setText("Moreira");
-
-        txt_usuario.setText("aldomoreira165");
-
-        txt_password.setText("contraseña");
         txt_password.setToolTipText("");
 
-        txt_confirmarPassword.setText("contraseña");
         txt_confirmarPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_confirmarPasswordActionPerformed(evt);
@@ -241,7 +232,6 @@ public static crearUsuario getInstancia(){
             }
         }
 
-
         if (idExistente == 0) {
 
             if (txt_confirmarPassword.getText().equals(txt_password.getText())) {
@@ -252,7 +242,7 @@ public static crearUsuario getInstancia(){
                 Usuario.getInstancia().nombre[Usuario.getInstancia().contador] = txt_nombre.getText();
                 Usuario.getInstancia().apellido[Usuario.getInstancia().contador] = txt_apellido.getText();
                 Usuario.getInstancia().user[Usuario.getInstancia().contador] = txt_usuario.getText();
-                Usuario.getInstancia().rol[Usuario.getInstancia().contador] = (String)txt_rol.getSelectedItem();
+                Usuario.getInstancia().rol[Usuario.getInstancia().contador] = (String) txt_rol.getSelectedItem();
                 Usuario.getInstancia().password[Usuario.getInstancia().contador] = txt_password.getText();
 
                 txt_id.setText("");
@@ -272,7 +262,7 @@ public static crearUsuario getInstancia(){
                     System.out.println(Usuario.getInstancia().nombre[i]);
                     System.out.println(Usuario.getInstancia().apellido[i]);
                     System.out.println(Usuario.getInstancia().user[i]);
-                    System.out.println( Usuario.getInstancia().rol[i]);
+                    System.out.println(Usuario.getInstancia().rol[i]);
                     System.out.println(Usuario.getInstancia().password[i]);
                 }
 
@@ -283,7 +273,7 @@ public static crearUsuario getInstancia(){
         }
 
         if (idExistente == 1) {
-             JOptionPane.showMessageDialog(null, "Ya existe un usuario con este ID", "Error", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Ya existe un usuario con este ID", "Error", JOptionPane.WARNING_MESSAGE);
         }
 
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed

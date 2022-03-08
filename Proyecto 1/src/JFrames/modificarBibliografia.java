@@ -7,9 +7,9 @@ import java.awt.Color;
 
 public class modificarBibliografia extends javax.swing.JFrame {
 
-public static modificarBibliografia instancia;
+    public static modificarBibliografia instancia;
 
-public static modificarBibliografia getInstancia() {
+    public static modificarBibliografia getInstancia() {
         if (instancia == null) {
             instancia = new modificarBibliografia();
         }
@@ -361,6 +361,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -392,7 +393,7 @@ public static modificarBibliografia getInstancia() {
                     Revista.getInstancia().ejemplares[i] = txt_ejemplares.getText();
                     Revista.getInstancia().temas[i] = txt_temas2.getText();
                     Revista.getInstancia().palabrasClave[i] = txt_palabras2.getText();
-                    Revista.getInstancia().copias[i] = Integer.parseInt(txt_copias2.getText()) ;
+                    Revista.getInstancia().copias[i] = Integer.parseInt(txt_copias2.getText());
                     Revista.getInstancia().dispobles[i] = Integer.parseInt(txt_disponible.getText());
                 }
             }
@@ -421,6 +422,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -480,6 +482,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -537,6 +540,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -572,6 +576,7 @@ public static modificarBibliografia getInstancia() {
         txt_tamaño.setText("");
         txt_isbn2.setText("");
         comboBox_tipo2.setSelectedItem("Libro");
+        txt_isbn2.setEnabled(true);
         txt_autor2.setEnabled(false);
         txt_año2.setEnabled(false);
         txt_titulo2.setEnabled(false);
@@ -598,6 +603,7 @@ public static modificarBibliografia getInstancia() {
             for (int i = 0; i <= Libro.getInstancia().contador; i++) {
                 if (Libro.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
                     bibliografiaEncontrada = true;
+                    txt_isbn2.setEnabled(false);
                     btn_modificar.setEnabled(true);
                     txt_autor2.setEnabled(true);
                     txt_año2.setEnabled(true);
@@ -638,6 +644,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -659,6 +666,7 @@ public static modificarBibliografia getInstancia() {
             for (int i = 0; i <= Revista.getInstancia().contador; i++) {
                 if (Revista.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
                     bibliografiaEncontrada = true;
+                    txt_isbn2.setEnabled(false);
                     btn_modificar.setEnabled(true);
                     txt_autor2.setEnabled(true);
                     txt_año2.setEnabled(true);
@@ -703,6 +711,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -723,6 +732,7 @@ public static modificarBibliografia getInstancia() {
             bibliografiaEncontrada = false;
             for (int i = 0; i <= Tesis.getInstancia().contador; i++) {
                 if (Tesis.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    txt_isbn2.setEnabled(false);
                     bibliografiaEncontrada = true;
                     btn_modificar.setEnabled(true);
                     txt_autor2.setEnabled(true);
@@ -766,6 +776,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);
@@ -786,6 +797,7 @@ public static modificarBibliografia getInstancia() {
             bibliografiaEncontrada = false;
             for (int i = 0; i <= LibroDigital.getInstancia().contador; i++) {
                 if (LibroDigital.getInstancia().isbn[i].equals(txt_isbn2.getText())) {
+                    txt_isbn2.setEnabled(false);
                     bibliografiaEncontrada = true;
                     btn_modificar.setEnabled(true);
                     txt_autor2.setEnabled(true);
@@ -825,6 +837,7 @@ public static modificarBibliografia getInstancia() {
                 txt_tamaño.setText("");
                 txt_isbn2.setText("");
                 comboBox_tipo2.setSelectedItem("Libro");
+                txt_isbn2.setEnabled(true);
                 txt_autor2.setEnabled(false);
                 txt_año2.setEnabled(false);
                 txt_titulo2.setEnabled(false);

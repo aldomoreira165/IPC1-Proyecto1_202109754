@@ -19,11 +19,10 @@ import javax.swing.RowFilter;
 
 public class bibliotecaVirtual extends javax.swing.JFrame {
 
+    private static bibliotecaVirtual instancia;
 
-private static bibliotecaVirtual instancia;
-
-public static bibliotecaVirtual getInstancia(){
-    if (instancia == null) {
+    public static bibliotecaVirtual getInstancia() {
+        if (instancia == null) {
             instancia = new bibliotecaVirtual();
         }
         return instancia;
@@ -35,9 +34,9 @@ public static bibliotecaVirtual getInstancia(){
     }
 
     private void filter(String query) {
-         TableRowSorter<TableModel> tr = new TableRowSorter<>(tbl_mostrarLibrosDigitales.getModel());
-         tbl_mostrarLibrosDigitales.setRowSorter(tr);
-         tr.setRowFilter(RowFilter.regexFilter(query));
+        TableRowSorter<TableModel> tr = new TableRowSorter<>(tbl_mostrarLibrosDigitales.getModel());
+        tbl_mostrarLibrosDigitales.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(query));
     }
 
     @SuppressWarnings("unchecked")
@@ -126,7 +125,7 @@ public static bibliotecaVirtual getInstancia(){
             }
         });
 
-        jComboBox1.setBackground(new java.awt.Color(51, 51, 255));
+        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autor", "Año", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Tamaño" }));
         jComboBox1.setPreferredSize(new java.awt.Dimension(121, 32));
 
@@ -162,10 +161,11 @@ public static bibliotecaVirtual getInstancia(){
                             .addGap(36, 36, 36)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txt_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_actualizar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_verBibliotecaVirtual, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(616, 616, 616))))
@@ -250,7 +250,7 @@ public static bibliotecaVirtual getInstancia(){
         int column = tbl_mostrarLibrosDigitales.getColumnModel().getColumnIndexAtX(evt.getX());
         int row = evt.getY() / tbl_mostrarLibrosDigitales.getRowHeight();
         String isbnTabla = "";
-        String idActual = "" ,isbn = "", autor= "", añoPublicacion= "", titulo= "", edicion= "", palabrasClave= "", descripcion= "", temas= "", tamaño= "";
+        String idActual = "", isbn = "", autor = "", añoPublicacion = "", titulo = "", edicion = "", palabrasClave = "", descripcion = "", temas = "", tamaño = "";
         boolean libroExistente = false;
 
         if (row < tbl_mostrarLibrosDigitales.getRowCount() && row >= 0 && column < tbl_mostrarLibrosDigitales.getColumnCount() && column >= 0) {

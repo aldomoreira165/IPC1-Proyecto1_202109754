@@ -7,7 +7,6 @@ import JFrames.eliminarUsuario;
 import JFrames.crearBibliografia;
 import JFrames.eliminarBibliografia;
 import JFrames.mostrarBibliografia;
-import JFrames.ventana_reportePrestamos;
 import Clases.cuentaBibliografia;
 import Clases.Usuario;
 import java.awt.Color;
@@ -16,25 +15,23 @@ import java.io.File;
 import java.io.FileWriter;
 import javax.swing.JOptionPane;
 
-
 public class ventanaAdministrador extends javax.swing.JFrame {
 
-crearUsuario[] crearUsuarios = new crearUsuario[10];
-private static ventanaAdministrador instancia;
+    crearUsuario[] crearUsuarios = new crearUsuario[10];
+    private static ventanaAdministrador instancia;
 
-
-public static ventanaAdministrador getInstancia(){
-    if (instancia == null) {
-        instancia = new ventanaAdministrador();
+    public static ventanaAdministrador getInstancia() {
+        if (instancia == null) {
+            instancia = new ventanaAdministrador();
+        }
+        return instancia;
     }
-    return instancia;
-}
-
 
     public ventanaAdministrador() {
         initComponents();
         setLocationRelativeTo(null);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -312,7 +309,7 @@ public static ventanaAdministrador getInstancia(){
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
     private void btn_mostrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarUsuarioActionPerformed
-       mostrarUsuarios.getInstancia().setVisible(true);
+        mostrarUsuarios.getInstancia().setVisible(true);
         ventanaAdministrador.getInstancia().setVisible(false);
     }//GEN-LAST:event_btn_mostrarUsuarioActionPerformed
 
@@ -347,13 +344,96 @@ public static ventanaAdministrador getInstancia(){
     }//GEN-LAST:event_btn_eliminarBActionPerformed
 
     private void btn_mostrarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarBActionPerformed
-       ventanaAdministrador.getInstancia().setVisible(false);
-       mostrarBibliografia.getInstancia().setVisible(true);
+        ventanaAdministrador.getInstancia().setVisible(false);
+        mostrarBibliografia.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_mostrarBActionPerformed
 
     private void btn_reporteLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteLActionPerformed
-        ventanaAdministrador.getInstancia().setVisible(false);
-        ventana_reportePrestamos.getInstancia().setVisible(true);
+        String reporte = "<!DOCTYPE html>\n"
+                + "<html lang=\"en\">\n"
+                + "<head>\n"
+                + "    <meta charset=\"UTF-8\">\n"
+                + "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                + "    <title>Reporte de libros prestados</title>\n"
+                + " <style>\n"
+                + "        h1, h2{\n"
+                + "        color: white;\n"
+                + "        text-align: center;\n"
+                + "        padding: 5px;\n"
+                + "        margin: 5px;\n"
+                + "    }\n"
+                + "    body{\n"
+                + "        background-color: #242a63;\n"
+                + "        font-family: Arial;\n"
+                + "    }\n"
+                + "    \n"
+                + "    #main-container{\n"
+                + "        margin: 80px auto;\n"
+                + "        width: 600px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    table{\n"
+                + "        background-color: white;\n"
+                + "        text-align: left;\n"
+                + "        border-collapse: collapse;\n"
+                + "        width: 100%;\n"
+                + "    }\n"
+                + "    \n"
+                + "    th, td{\n"
+                + "        padding: 20px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    thead{\n"
+                + "        background-color: #246355;\n"
+                + "        border-bottom: solid 5px #0F362D;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:nth-child(even){\n"
+                + "        background-color: #ddd;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:hover td{\n"
+                + "        background-color: #369681;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    </style>"
+                + "</head>\n"
+                + "<body>\n"
+                + "<h1>REPORTE DE BIBLIOGRAFÍA PRESTADA</h1>"
+                + "    <div id=\"main-container\">\n"
+                + "        <table>\n"
+                + "            <tr>\n"
+                + "                <th>ISBN/ID Bibliografía</th>\n"
+                + "                <th>Título Bibliografía</th>\n"
+                + "                <th>Tipo Bibliografía</th>\n"
+                + "            </tr>\n";
+        for (int i = 0; i <= cuentaBibliografia.contador; i++) {
+            reporte += "<tr>";
+            if (cuentaBibliografia.isbn[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.isbn[i] + "</td>";
+            }
+            if (cuentaBibliografia.titulo[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.titulo[i] + "</td>";
+            }
+            if (cuentaBibliografia.tipo[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.tipo[i] + "</td>";
+            }
+            reporte += "</tr>";
+        }
+        reporte += "        </table>\n"
+                + "    </div>\n"
+                + "</body>\n"
+                + "</html>";
+        File reportePrestamos = new File("reportes\\reportePrestamos.html");
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(reportePrestamos));
+            bw.write(reporte);
+            bw.close();
+            JOptionPane.showMessageDialog(null, "Reporte de libros prestados realizado correctamente", "Reporte ", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btn_reporteLActionPerformed
 
     private void btn_crearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_crearUsuarioMouseEntered
@@ -591,7 +671,7 @@ public static ventanaAdministrador getInstancia(){
     }//GEN-LAST:event_btn_reporteLMouseEntered
 
     private void btn_reporteUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteUActionPerformed
-String reporte = "<!DOCTYPE html>\n"
+        String reporte = "<!DOCTYPE html>\n"
                 + "<html lang=\"en\">\n"
                 + "<head>\n"
                 + "    <meta charset=\"UTF-8\">\n"
@@ -704,7 +784,7 @@ String reporte = "<!DOCTYPE html>\n"
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reportePrestamosUsuarios = new File("reporteUsuarios_prestamos.html");
+        File reportePrestamosUsuarios = new File("reportes\\reporteUsuarios_prestamos.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reportePrestamosUsuarios));
             bw.write(reporte);

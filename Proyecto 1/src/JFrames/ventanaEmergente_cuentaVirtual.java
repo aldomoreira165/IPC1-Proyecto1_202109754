@@ -5,12 +5,12 @@ import javax.swing.table.DefaultTableModel;
 
 public class ventanaEmergente_cuentaVirtual extends javax.swing.JFrame {
 
-private static ventanaEmergente_cuentaVirtual instancia;
+    private static ventanaEmergente_cuentaVirtual instancia;
 
-public String[][] Datos;
-public String []encabezado;
+    public String[][] Datos;
+    public String[] encabezado;
 
- public void DatosTabla(String[][] Datos, String[] encabezado) {
+    public void DatosTabla(String[][] Datos, String[] encabezado) {
         this.Datos = Datos;
         this.encabezado = encabezado;
     }
@@ -30,8 +30,6 @@ public String []encabezado;
                 encabezado
         ));
     }
-
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -124,7 +122,7 @@ public String []encabezado;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
-      
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -141,7 +139,7 @@ public String []encabezado;
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ventanaEmergente_cuentaVirtual.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-     
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ventanaEmergente_cuentaVirtual().setVisible(true);

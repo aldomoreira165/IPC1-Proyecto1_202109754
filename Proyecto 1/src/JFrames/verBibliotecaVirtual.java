@@ -24,6 +24,7 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,6 +47,7 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
 
             }
         ));
+        tbl_verBibliotecaVirtual.setRowHeight(35);
         tbl_verBibliotecaVirtual.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbl_verBibliotecaVirtualMouseClicked(evt);
@@ -105,8 +107,8 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(btn_actualizar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,7 +144,7 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
                 }
             }
         }
-        String[] encabezado_verBibliotecaVirtual = {"ID","Libro", "Ver", "Eliminar"};
+        String[] encabezado_verBibliotecaVirtual = {"ID", "Libro", "Ver", "Eliminar"};
         tbl_verBibliotecaVirtual.setModel(new DefaultTableModel(
                 tabla_verBibliotecaVirtual,
                 encabezado_verBibliotecaVirtual
@@ -219,8 +221,6 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
         btn_regresar.setBackground(Color.blue);
         btn_regresar.setForeground(Color.white);
     }//GEN-LAST:event_btn_actualizarMouseEntered
-
-
 
     public static void main(String args[]) {
 

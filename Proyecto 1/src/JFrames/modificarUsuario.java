@@ -8,15 +8,14 @@ import javax.swing.JOptionPane;
 
 public class modificarUsuario extends javax.swing.JFrame {
 
-private static modificarUsuario instancia;
+    private static modificarUsuario instancia;
 
-
-public static modificarUsuario getInstancia(){
-    if(instancia == null){
-       instancia = new modificarUsuario();
+    public static modificarUsuario getInstancia() {
+        if (instancia == null) {
+            instancia = new modificarUsuario();
+        }
+        return instancia;
     }
-    return instancia;
-}
 
     public modificarUsuario() {
         initComponents();
@@ -213,6 +212,7 @@ public static modificarUsuario getInstancia(){
         for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
             if (Usuario.getInstancia().id[i].equals(txt_id.getText())) {
                 usuarioEncontrado = true;
+                txt_id.setEnabled(false);
                 btn_modificar.setEnabled(true);
                 txt_nombre.setText(Usuario.getInstancia().nombre[i]);
                 txt_apellido.setText(Usuario.getInstancia().apellido[i]);
@@ -220,7 +220,7 @@ public static modificarUsuario getInstancia(){
                 txt_rol.setText(Usuario.getInstancia().rol[i]);
                 txt_password.setText(Usuario.getInstancia().password[i]);
                 txt_confirmarPassword.setText(Usuario.getInstancia().password[i]);
-            } 
+            }
         }
         if (usuarioEncontrado == true) {
             JOptionPane.showMessageDialog(null, "¡Usuario con el id " + txt_id.getText() + " encontrado!", "Usuario encontrado", JOptionPane.INFORMATION_MESSAGE);
@@ -264,6 +264,7 @@ public static modificarUsuario getInstancia(){
             ventanaAdministrador.getInstancia().setVisible(true);
             btn_modificar.setEnabled(false);
             txt_id.setText("");
+            txt_id.setEnabled(true);
             txt_nombre.setText("");
             txt_apellido.setText("");
             txt_user.setText("");
@@ -281,6 +282,7 @@ public static modificarUsuario getInstancia(){
         modificarUsuario.getInstancia().setVisible(false);
         ventanaAdministrador.getInstancia().setVisible(true);
         txt_id.setText("");
+        txt_id.setEnabled(true);
         txt_nombre.setText("");
         txt_apellido.setText("");
         txt_user.setText("");

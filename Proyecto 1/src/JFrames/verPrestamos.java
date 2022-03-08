@@ -6,6 +6,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
 public class verPrestamos extends javax.swing.JFrame {
 
     public verPrestamos() {
@@ -40,6 +41,7 @@ public class verPrestamos extends javax.swing.JFrame {
 
             }
         ));
+        tbl_verPrestamos.setRowHeight(35);
         tbl_verPrestamos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbl_verPrestamosMouseClicked(evt);
@@ -99,8 +101,8 @@ public class verPrestamos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(btn_verPrestamos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,7 +126,7 @@ public class verPrestamos extends javax.swing.JFrame {
         for (int i = 0; i <= cuentaBibliografia.contador; i++) {
             if (cuentaBibliografia.idUsuarioActual[i].equals(loginUsuario.idLoggeado)) {
                 for (int j = 0; j < 10; j++) {
-                this.tbl_verPrestamos.setDefaultRenderer(Object.class, new RenderTable());
+                    this.tbl_verPrestamos.setDefaultRenderer(Object.class, new RenderTable());
                     tablaVerPrestamos[i][0] = noIndice;
                     tablaVerPrestamos[i][1] = cuentaBibliografia.isbn[i];
                     tablaVerPrestamos[i][2] = cuentaBibliografia.titulo[i];
@@ -151,8 +153,6 @@ public class verPrestamos extends javax.swing.JFrame {
         int row = evt.getY() / tbl_verPrestamos.getRowHeight();
         String isbnTabla = "";
         String tipoTabla = "";
-
-
 
         if (row < tbl_verPrestamos.getRowCount() && row >= 0 && column < tbl_verPrestamos.getColumnCount() && column >= 0) {
             Object value = tbl_verPrestamos.getValueAt(row, column);

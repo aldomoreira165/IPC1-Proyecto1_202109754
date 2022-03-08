@@ -4,9 +4,9 @@ import java.awt.Color;
 
 public class crearBibliografia extends javax.swing.JFrame {
 
-public static crearBibliografia instancia;
+    public static crearBibliografia instancia;
 
-public static crearBibliografia getInstancia() {
+    public static crearBibliografia getInstancia() {
         if (instancia == null) {
             instancia = new crearBibliografia();
         }
@@ -17,7 +17,6 @@ public static crearBibliografia getInstancia() {
         initComponents();
         setLocationRelativeTo(null);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

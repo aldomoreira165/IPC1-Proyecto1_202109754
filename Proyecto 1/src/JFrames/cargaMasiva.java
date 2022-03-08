@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
 
 public class cargaMasiva extends javax.swing.JFrame {
 
-public static cargaMasiva instancia;
+    public static cargaMasiva instancia;
 
-public static cargaMasiva getInstancia() {
+    public static cargaMasiva getInstancia() {
         if (instancia == null) {
             instancia = new cargaMasiva();
         }
@@ -120,10 +120,10 @@ public static cargaMasiva getInstancia() {
         int saltoLinea = -14;
 
         for (int j = 0; j < saltoTexto.length; j++) {
-        saltoLinea = saltoLinea + 14;
-         if (cadenaTexto[saltoLinea + 0].equals("0")||cadenaTexto[saltoLinea + 0].equals("\n"+"0")) {
+            saltoLinea = saltoLinea + 14;
+            if (cadenaTexto[saltoLinea + 0].equals("0") || cadenaTexto[saltoLinea + 0].equals("\n" + "0")) {
                 boolean isbnExistente = false;
-                String isbnPrevio = cadenaTexto[saltoLinea +3];
+                String isbnPrevio = cadenaTexto[saltoLinea + 3];
 
                 for (int i = 0; i <= Libro.getInstancia().contador; i++) {
                     if (Libro.getInstancia().isbn[i].equals(isbnPrevio)) {
@@ -148,7 +148,7 @@ public static cargaMasiva getInstancia() {
                     JOptionPane.showMessageDialog(null, "Ya existe un libro con ese isbn", "Error", JOptionPane.WARNING_MESSAGE);
                 }
             }
-            if (cadenaTexto[saltoLinea + 0].equals("1")||cadenaTexto[saltoLinea + 0].equals("\n"+"1")) {
+            if (cadenaTexto[saltoLinea + 0].equals("1") || cadenaTexto[saltoLinea + 0].equals("\n" + "1")) {
                 boolean isbnExistente = false;
                 String isbnPrevio = cadenaTexto[saltoLinea + 3];
 
@@ -177,7 +177,7 @@ public static cargaMasiva getInstancia() {
                     JOptionPane.showMessageDialog(null, "Ya existe una revista con ese ID", "Error", JOptionPane.WARNING_MESSAGE);
                 }
             }
-            if (cadenaTexto[saltoLinea + 0].equals("2")||cadenaTexto[saltoLinea + 0].equals("\n"+"2")) {
+            if (cadenaTexto[saltoLinea + 0].equals("2") || cadenaTexto[saltoLinea + 0].equals("\n" + "2")) {
                 boolean isbnExistente = false;
                 String isbnPrevio = cadenaTexto[saltoLinea + 3];
 
