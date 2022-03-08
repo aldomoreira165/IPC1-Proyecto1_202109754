@@ -12,20 +12,13 @@ import java.util.Set;
 
 public class loginUsuario extends javax.swing.JPanel {
 
-private static loginUsuario instancia;
-
-    public static loginUsuario getInstancia() {
-        if (instancia == null) {
-            instancia = new loginUsuario();
-        }
-        return instancia;
-    }
-
-    String idLoggeado = "";
-    String usuarioLoggeado = "";
-    String nombreLoggeado = "";
-    String apellidoLoggeado = "";
-    String rolLoggeado = "";
+    public static int posicion = 0;
+    public static String idLoggeado = "";
+    public static String usuarioLoggeado = "";
+    public static String nombreLoggeado = "";
+    public static String apellidoLoggeado = "";
+    public static String rolLoggeado = "";
+    public static ventanaUsuario ventanaUsuarioActual;
 
     public loginUsuario() {
         initComponents();
@@ -132,7 +125,6 @@ private static loginUsuario instancia;
         String usuario = txt_Usuario.getText();
         String password = txt_Password.getText();
         int op = 0;
-        int posicion = 0;
         if (!usuario.equals(Administrador.getInstancia().user)) {
             for (int i = 0; i <= Usuario.getInstancia().contador; i++) {
                 if (Usuario.getInstancia().user[i].equals(usuario) & Usuario.getInstancia().password[i].equals(password)) {
@@ -144,13 +136,15 @@ private static loginUsuario instancia;
                 }
             }
             if (op == 1) {
-                loginUsuario.getInstancia().idLoggeado = Usuario.getInstancia().id[posicion];
-                loginUsuario.getInstancia().usuarioLoggeado = Usuario.getInstancia().user[posicion];
-                loginUsuario.getInstancia().nombreLoggeado = Usuario.getInstancia().nombre[posicion];
-                loginUsuario.getInstancia().apellidoLoggeado = Usuario.getInstancia().apellido[posicion];
-                loginUsuario.getInstancia().rolLoggeado = Usuario.getInstancia().rol[posicion];
-                Usuario.getInstancia().usuarioConInstanciado = true;
-                ventanaUsuario.getInstancia().setVisible(true);
+                idLoggeado = Usuario.getInstancia().id[posicion];
+                usuarioLoggeado = Usuario.getInstancia().user[posicion];
+                nombreLoggeado = Usuario.getInstancia().nombre[posicion];
+                apellidoLoggeado = Usuario.getInstancia().apellido[posicion];
+                rolLoggeado = Usuario.getInstancia().rol[posicion];
+                //Usuario.getInstancia().usuarioConInstanciado = true;
+                ventanaUsuario veUsuario = new ventanaUsuario();
+                ventanaUsuarioActual = veUsuario;
+                veUsuario.setVisible(true);
                 pantallaInicio.getInstancia().setVisible(false);
             }
             if (op == 2) {

@@ -8,19 +8,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 public class verPrestamos extends javax.swing.JFrame {
 
-    private static verPrestamos instancia;
-
-    public static verPrestamos getInstancia() {
-        if (instancia == null) {
-            instancia = new verPrestamos();
-        }
-        return instancia;
-    }
-
     public verPrestamos() {
         initComponents();
         setLocationRelativeTo(null);
     }
+
+    public static verPrestamos prestamosActuales;
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -128,16 +121,18 @@ public class verPrestamos extends javax.swing.JFrame {
         int noIndice;
         noIndice = 0;
         Object[][] tablaVerPrestamos = new Object[10][5];
-        for (int i = 0; i <= cuentaBibliografia.getInstancia().contador; i++) {
-            noIndice = noIndice + 1;
-            for (int j = 0; j < 10; j++) {
+        for (int i = 0; i <= cuentaBibliografia.contador; i++) {
+            if (cuentaBibliografia.idUsuarioActual[i].equals(loginUsuario.idLoggeado)) {
+                for (int j = 0; j < 10; j++) {
                 this.tbl_verPrestamos.setDefaultRenderer(Object.class, new RenderTable());
                     tablaVerPrestamos[i][0] = noIndice;
-                    tablaVerPrestamos[i][1] = cuentaBibliografia.getInstancia().isbn[i];
-                    tablaVerPrestamos[i][2] = cuentaBibliografia.getInstancia().titulo[i];
-                    tablaVerPrestamos[i][3] = cuentaBibliografia.getInstancia().tipo[i];
+                    tablaVerPrestamos[i][1] = cuentaBibliografia.isbn[i];
+                    tablaVerPrestamos[i][2] = cuentaBibliografia.titulo[i];
+                    tablaVerPrestamos[i][3] = cuentaBibliografia.tipo[i];
                     tablaVerPrestamos[i][4] = new JButton("Devolver");
+                }
             }
+            noIndice = noIndice + 1;
         }
         String[] encabezado = {"No. Índice", "ID/ISBN", "Título", "Tipo", "Devolver"};
         tbl_verPrestamos.setModel(new DefaultTableModel(
@@ -147,7 +142,7 @@ public class verPrestamos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_verPrestamosActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
-        verPrestamos.getInstancia().setVisible(false);
+        verPrestamos.prestamosActuales.setVisible(false);
         prestamoLibros.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
@@ -171,11 +166,11 @@ public class verPrestamos extends javax.swing.JFrame {
                     for (int i = 0; i <= Libro.getInstancia().contador; i++) {
                         if (Libro.getInstancia().isbn[i].equals(isbnTabla)) {
                             Libro.getInstancia().dispobles[i] = Libro.getInstancia().dispobles[i] + 1;
-                            cuentaBibliografia.getInstancia().contador = ((cuentaBibliografia.getInstancia().contador) - 1);
-                            for (int j = row; j <= cuentaBibliografia.getInstancia().contador; j++) {
-                                cuentaBibliografia.getInstancia().isbn[j] = cuentaBibliografia.getInstancia().isbn[j + 1];
-                                cuentaBibliografia.getInstancia().titulo[j] = cuentaBibliografia.getInstancia().titulo[j + 1];
-                                cuentaBibliografia.getInstancia().tipo[j] = cuentaBibliografia.getInstancia().tipo[j + 1];
+                            cuentaBibliografia.contador = ((cuentaBibliografia.contador) - 1);
+                            for (int j = row; j <= cuentaBibliografia.contador; j++) {
+                                cuentaBibliografia.isbn[j] = cuentaBibliografia.isbn[j + 1];
+                                cuentaBibliografia.titulo[j] = cuentaBibliografia.titulo[j + 1];
+                                cuentaBibliografia.tipo[j] = cuentaBibliografia.tipo[j + 1];
                             }
                         }
                     }
@@ -184,13 +179,14 @@ public class verPrestamos extends javax.swing.JFrame {
                 if (tipoTabla.equals("Revista")) {
                     for (int i = 0; i <= Revista.getInstancia().contador; i++) {
                         if (Revista.getInstancia().isbn[i].equals(isbnTabla)) {
-                            cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador - 1;
+                            cuentaBibliografia.contador = cuentaBibliografia.contador - 1;
                             Revista.getInstancia().dispobles[i] = Revista.getInstancia().dispobles[i] + 1;
-                            for (int j = row; j <= cuentaBibliografia.getInstancia().contador; j++) {
-                                cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador - 1;
-                                cuentaBibliografia.getInstancia().isbn[j] = cuentaBibliografia.getInstancia().isbn[j + 1];
-                                cuentaBibliografia.getInstancia().titulo[j] = cuentaBibliografia.getInstancia().titulo[j + 1];
-                                cuentaBibliografia.getInstancia().tipo[j] = cuentaBibliografia.getInstancia().tipo[j + 1];
+                            for (int j = row; j <= cuentaBibliografia.contador; j++) {
+                                cuentaBibliografia.contador = cuentaBibliografia.contador - 1;
+                                cuentaBibliografia.idUsuarioActual[j] = cuentaBibliografia.idUsuarioActual[j + 1];
+                                cuentaBibliografia.isbn[j] = cuentaBibliografia.isbn[j + 1];
+                                cuentaBibliografia.titulo[j] = cuentaBibliografia.titulo[j + 1];
+                                cuentaBibliografia.tipo[j] = cuentaBibliografia.tipo[j + 1];
                             }
                         }
                     }
@@ -200,11 +196,11 @@ public class verPrestamos extends javax.swing.JFrame {
                     for (int i = 0; i <= Tesis.getInstancia().contador; i++) {
                         if (Tesis.getInstancia().isbn[i].equals(isbnTabla)) {
                             Tesis.getInstancia().dispobles[i] = Tesis.getInstancia().dispobles[i] + 1;
-                            cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador - 1;
-                            for (int j = row; j <= cuentaBibliografia.getInstancia().contador; j++) {
-                                cuentaBibliografia.getInstancia().isbn[j] = cuentaBibliografia.getInstancia().isbn[j + 1];
-                                cuentaBibliografia.getInstancia().titulo[j] = cuentaBibliografia.getInstancia().titulo[j + 1];
-                                cuentaBibliografia.getInstancia().tipo[j] = cuentaBibliografia.getInstancia().tipo[j + 1];
+                            cuentaBibliografia.contador = cuentaBibliografia.contador - 1;
+                            for (int j = row; j <= cuentaBibliografia.contador; j++) {
+                                cuentaBibliografia.isbn[j] = cuentaBibliografia.isbn[j + 1];
+                                cuentaBibliografia.titulo[j] = cuentaBibliografia.titulo[j + 1];
+                                cuentaBibliografia.tipo[j] = cuentaBibliografia.tipo[j + 1];
                             }
                         }
                     }

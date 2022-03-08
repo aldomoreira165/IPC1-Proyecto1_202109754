@@ -222,7 +222,7 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
                 + "    </div>\n"
                 + "</body>\n"
                 + "</html>";
-        File reporteExistenciaLibros = new File("reporteExistenciaLibros_administrador.html");
+        File reporteExistenciaLibros = new File("reporteExistenciaLibros_usuarios.html");
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(reporteExistenciaLibros));
             bw.write(reporte);
@@ -298,16 +298,16 @@ public class ventana_reportePrestamos extends javax.swing.JFrame {
                 + "                <th>Título</th>\n"
                 + "                <th>Tipo</th>\n"
                 + "            </tr>\n";
-        for (int i = 0; i <= cuentaBibliografia.getInstancia().contador; i++) {
+        for (int i = 0; i <= cuentaBibliografia.contador; i++) {
             reporte += "<tr>";
-            if (cuentaBibliografia.getInstancia().isbn[i] != null) {
-                reporte += "<td>" + cuentaBibliografia.getInstancia().isbn[i] + "</td>";
+            if (cuentaBibliografia.isbn[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.isbn[i] + "</td>";
             }
-            if (cuentaBibliografia.getInstancia().titulo[i] != null) {
-                reporte += "<td>" + cuentaBibliografia.getInstancia().titulo[i] + "</td>";
+            if (cuentaBibliografia.titulo[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.titulo[i] + "</td>";
             }
-            if (cuentaBibliografia.getInstancia().tipo[i] != null) {
-                reporte += "<td>" + cuentaBibliografia.getInstancia().tipo[i] + "</td>";
+            if (cuentaBibliografia.tipo[i] != null) {
+                reporte += "<td>" + cuentaBibliografia.tipo[i] + "</td>";
             }
             reporte += "</tr>";
         }

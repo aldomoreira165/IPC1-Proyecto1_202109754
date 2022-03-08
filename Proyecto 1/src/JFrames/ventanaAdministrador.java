@@ -8,7 +8,13 @@ import JFrames.crearBibliografia;
 import JFrames.eliminarBibliografia;
 import JFrames.mostrarBibliografia;
 import JFrames.ventana_reportePrestamos;
+import Clases.cuentaBibliografia;
+import Clases.Usuario;
 import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import javax.swing.JOptionPane;
 
 
 public class ventanaAdministrador extends javax.swing.JFrame {
@@ -176,6 +182,11 @@ public static ventanaAdministrador getInstancia(){
         btn_reporteU.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_reporteUMouseEntered(evt);
+            }
+        });
+        btn_reporteU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reporteUActionPerformed(evt);
             }
         });
 
@@ -578,6 +589,130 @@ public static ventanaAdministrador getInstancia(){
         btn_reporteL.setBackground(Color.white);
         btn_reporteL.setForeground(Color.blue);
     }//GEN-LAST:event_btn_reporteLMouseEntered
+
+    private void btn_reporteUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteUActionPerformed
+String reporte = "<!DOCTYPE html>\n"
+                + "<html lang=\"en\">\n"
+                + "<head>\n"
+                + "    <meta charset=\"UTF-8\">\n"
+                + "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+                + "    <title>Reporte de existencialibros</title>\n"
+                + " <style>\n"
+                + "        h1, h2{\n"
+                + "        color: white;\n"
+                + "        text-align: center;\n"
+                + "        padding: 5px;\n"
+                + "        margin: 5px;\n"
+                + "    }\n"
+                + "    body{\n"
+                + "        background-color: #242a63;\n"
+                + "        font-family: Arial;\n"
+                + "    }\n"
+                + "    \n"
+                + "    #main-container{\n"
+                + "        margin: 80px auto;\n"
+                + "        width: 600px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    table{\n"
+                + "        background-color: white;\n"
+                + "        text-align: left;\n"
+                + "        border-collapse: collapse;\n"
+                + "        width: 100%;\n"
+                + "    }\n"
+                + "    \n"
+                + "    th, td{\n"
+                + "        padding: 20px;\n"
+                + "    }\n"
+                + "    \n"
+                + "    thead{\n"
+                + "        background-color: #246355;\n"
+                + "        border-bottom: solid 5px #0F362D;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:nth-child(even){\n"
+                + "        background-color: #ddd;\n"
+                + "    }\n"
+                + "    \n"
+                + "    tr:hover td{\n"
+                + "        background-color: #369681;\n"
+                + "        color: white;\n"
+                + "    }\n"
+                + "    </style>"
+                + "</head>\n"
+                + "<body>\n"
+                + "<h1>REPORTE DE LIBROS PRESTADOS</h1>"
+                + "    <div id=\"main-container\">\n"
+                + "        <table>\n"
+                + "            <tr>\n"
+                + "                <th>ID usuario</th>\n"
+                + "                <th>Nombre usuario</th>\n"
+                + "                <th>Apellido usuario</th>\n"
+                + "                <th>Usuario usuario</th>\n"
+                + "                <th>Rol usuario</th>\n"
+                + "                <th>ISBN Bibliografía</th>\n"
+                + "                <th>Tipo Bibliografía</th>\n"
+                + "                <th>Título Bibliografía</th>\n"
+                + "            </tr>\n";
+        for (int i = 0; i < cuentaBibliografia.contador; i++) {
+            reporte += "<tr>";
+            if (cuentaBibliografia.idUsuarioActual[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.idUsuarioActual[i] + "</td>";
+            }
+            if (cuentaBibliografia.nombreActual[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.nombreActual[i] + "</td>";
+            }
+            if (cuentaBibliografia.apellidoActual[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.apellidoActual[i] + "</td>";
+            }
+            if (cuentaBibliografia.usuarioActual[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.usuarioActual[i] + "</td>";
+            }
+            if (cuentaBibliografia.rolActual[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.rolActual[i] + "</td>";
+            }
+            if (cuentaBibliografia.isbn[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.isbn[i] + "</td>";
+            }
+            if (cuentaBibliografia.tipo[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.tipo[i] + "</td>";
+            }
+            if (cuentaBibliografia.titulo[i] == null) {
+                reporte += "<td>" + "-" + "</td>";
+            } else {
+                reporte += "<td>" + cuentaBibliografia.titulo[i] + "</td>";
+            }
+            reporte += "</tr>";
+        }
+        reporte += "        </table>\n"
+                + "    </div>\n"
+                + "</body>\n"
+                + "</html>";
+        File reportePrestamosUsuarios = new File("reporteUsuarios_prestamos.html");
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(reportePrestamosUsuarios));
+            bw.write(reporte);
+            bw.close();
+            JOptionPane.showMessageDialog(null, "Reporte de préstamos por usuario realizado correctamente", "Reporte ", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_reporteUActionPerformed
 
     /**
      * @param args the command line arguments

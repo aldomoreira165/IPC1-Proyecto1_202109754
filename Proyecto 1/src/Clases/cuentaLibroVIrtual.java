@@ -1,27 +1,15 @@
-
 package Clases;
 
 public class cuentaLibroVIrtual {
-
- public int contador = -1;
-    public String[] isbn = new String[10];
-    public String[] autor = new String[10];
-    public String[] añoPublicacion = new String[10];
-    public String[] titulo = new String[10];
-    public String[] edicion = new String[10];
-    public String[] palabrasClave = new String[10];
-    public String[] descripcion = new String[10];
-    public String[] temas = new String[10];
-    public String[] tamaño = new String[10];
-
-    private static cuentaLibroVIrtual instancia;
-
-    public static cuentaLibroVIrtual getInstancia() {
-        if (instancia == null) {
-            instancia = new cuentaLibroVIrtual();
-        }
-        return instancia;
-    }
-;
-    
+    public static String[] idUsuarioActual = new String[100];
+    public static int contador = -1;
+    public static String[] isbn = new String[10];
+    public static String[] autor = new String[10];
+    public static String[] añoPublicacion = new String[10];
+    public static String[] titulo = new String[10];
+    public static String[] edicion = new String[10];
+    public static String[] palabrasClave = new String[10];
+    public static String[] descripcion = new String[10];
+    public static String[] temas = new String[10];
+    public static String[] tamaño = new String[10];
 }

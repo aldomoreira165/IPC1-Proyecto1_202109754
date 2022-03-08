@@ -130,16 +130,19 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
         JButton btn2 = new JButton("Eliminar");
         btn2.setName("e");
 
-        Object[][] tabla_verBibliotecaVirtual = new Object[5][3];
-        for (int i = 0; i <= cuentaLibroVIrtual.getInstancia().contador; i++) {
-            for (int j = 0; j < 3; j++) {
-                this.tbl_verBibliotecaVirtual.setDefaultRenderer(Object.class, new RenderTable());
-                tabla_verBibliotecaVirtual[i][0] = cuentaLibroVIrtual.getInstancia().titulo[i];
-                tabla_verBibliotecaVirtual[i][1] = btn1;
-                tabla_verBibliotecaVirtual[i][2] = btn2;
+        Object[][] tabla_verBibliotecaVirtual = new Object[5][4];
+        for (int i = 0; i <= cuentaLibroVIrtual.contador; i++) {
+            if (cuentaLibroVIrtual.idUsuarioActual[i].equals(loginUsuario.idLoggeado)) {
+                for (int j = 0; j < 4; j++) {
+                    this.tbl_verBibliotecaVirtual.setDefaultRenderer(Object.class, new RenderTable());
+                    tabla_verBibliotecaVirtual[i][0] = cuentaLibroVIrtual.isbn[i];
+                    tabla_verBibliotecaVirtual[i][1] = cuentaLibroVIrtual.titulo[i];
+                    tabla_verBibliotecaVirtual[i][2] = btn1;
+                    tabla_verBibliotecaVirtual[i][3] = btn2;
+                }
             }
         }
-        String[] encabezado_verBibliotecaVirtual = {"Libro", "Ver", "Eliminar"};
+        String[] encabezado_verBibliotecaVirtual = {"ID","Libro", "Ver", "Eliminar"};
         tbl_verBibliotecaVirtual.setModel(new DefaultTableModel(
                 tabla_verBibliotecaVirtual,
                 encabezado_verBibliotecaVirtual
@@ -163,35 +166,37 @@ public class verBibliotecaVirtual extends javax.swing.JFrame {
                 ((JButton) value).doClick();
                 JButton boton = (JButton) value;
                 if (boton.getName().equals("v")) {
+                    System.out.println(row);
                     ventanaEmergente_cuentaVirtual.getInstancia().setVisible(true);
                     String[][] tablaDetalle = new String[1][10];
-                    tablaDetalle[0][0] = cuentaLibroVIrtual.getInstancia().isbn[row];
-                    tablaDetalle[0][1] = cuentaLibroVIrtual.getInstancia().autor[row];
-                    tablaDetalle[0][2] = cuentaLibroVIrtual.getInstancia().añoPublicacion[row];
-                    tablaDetalle[0][3] = cuentaLibroVIrtual.getInstancia().titulo[row];
-                    tablaDetalle[0][4] = cuentaLibroVIrtual.getInstancia().edicion[row];
-                    tablaDetalle[0][5] = cuentaLibroVIrtual.getInstancia().palabrasClave[row];
-                    tablaDetalle[0][6] = cuentaLibroVIrtual.getInstancia().descripcion[row];
-                    tablaDetalle[0][7] = cuentaLibroVIrtual.getInstancia().temas[row];
-                    tablaDetalle[0][8] = cuentaLibroVIrtual.getInstancia().tamaño[row];
+                    tablaDetalle[0][0] = cuentaLibroVIrtual.isbn[row];
+                    tablaDetalle[0][1] = cuentaLibroVIrtual.autor[row];
+                    tablaDetalle[0][2] = cuentaLibroVIrtual.añoPublicacion[row];
+                    tablaDetalle[0][3] = cuentaLibroVIrtual.titulo[row];
+                    tablaDetalle[0][4] = cuentaLibroVIrtual.edicion[row];
+                    tablaDetalle[0][5] = cuentaLibroVIrtual.palabrasClave[row];
+                    tablaDetalle[0][6] = cuentaLibroVIrtual.descripcion[row];
+                    tablaDetalle[0][7] = cuentaLibroVIrtual.temas[row];
+                    tablaDetalle[0][8] = cuentaLibroVIrtual.tamaño[row];
                     String[] encabezadoDetalle = {"ISBN", "Autor", "Año Publicación", "Título", "Edición", "Palabras Clave", "Descripción", "Temas", "Tamaño"};
                     ventanaEmergente_cuentaVirtual.getInstancia().DatosTabla(tablaDetalle, encabezadoDetalle);
                 }
                 if (boton.getName().equals("e")) {
-
-                    for (int i = 0; i <= cuentaLibroVIrtual.getInstancia().contador; i++) {
-                        if (cuentaLibroVIrtual.getInstancia().isbn[i].equals(isbnTabla)) {
-                            cuentaLibroVIrtual.getInstancia().contador = cuentaLibroVIrtual.getInstancia().contador - 1;
-                            for (int j = i; j <= cuentaLibroVIrtual.getInstancia().contador; j++) {
-                                cuentaLibroVIrtual.getInstancia().isbn[j] = cuentaLibroVIrtual.getInstancia().isbn[j + 1];
-                                cuentaLibroVIrtual.getInstancia().autor[j] = cuentaLibroVIrtual.getInstancia().autor[j + 1];
-                                cuentaLibroVIrtual.getInstancia().añoPublicacion[j] = cuentaLibroVIrtual.getInstancia().añoPublicacion[j + 1];
-                                cuentaLibroVIrtual.getInstancia().titulo[j] = cuentaLibroVIrtual.getInstancia().titulo[j + 1];
-                                cuentaLibroVIrtual.getInstancia().palabrasClave[j] = cuentaLibroVIrtual.getInstancia().palabrasClave[j + 1];
-                                cuentaLibroVIrtual.getInstancia().edicion[j] = cuentaLibroVIrtual.getInstancia().edicion[j + 1];
-                                cuentaLibroVIrtual.getInstancia().descripcion[j] = cuentaLibroVIrtual.getInstancia().descripcion[j + 1];
-                                cuentaLibroVIrtual.getInstancia().temas[j] = cuentaLibroVIrtual.getInstancia().temas[j + 1];
-                                cuentaLibroVIrtual.getInstancia().tamaño[j] = cuentaLibroVIrtual.getInstancia().tamaño[j + 1];
+                    System.out.println(row);
+                    System.out.println(isbnTabla);
+                    for (int i = 0; i <= cuentaLibroVIrtual.contador; i++) {
+                        if (cuentaLibroVIrtual.isbn[i].equals(isbnTabla)) {
+                            cuentaLibroVIrtual.contador = (cuentaLibroVIrtual.contador) - 1;
+                            for (int j = row; j <= cuentaLibroVIrtual.contador; j++) {
+                                cuentaLibroVIrtual.isbn[j] = cuentaLibroVIrtual.isbn[j + 1];
+                                cuentaLibroVIrtual.autor[j] = cuentaLibroVIrtual.autor[j + 1];
+                                cuentaLibroVIrtual.añoPublicacion[j] = cuentaLibroVIrtual.añoPublicacion[j + 1];
+                                cuentaLibroVIrtual.titulo[j] = cuentaLibroVIrtual.titulo[j + 1];
+                                cuentaLibroVIrtual.palabrasClave[j] = cuentaLibroVIrtual.palabrasClave[j + 1];
+                                cuentaLibroVIrtual.edicion[j] = cuentaLibroVIrtual.edicion[j + 1];
+                                cuentaLibroVIrtual.descripcion[j] = cuentaLibroVIrtual.descripcion[j + 1];
+                                cuentaLibroVIrtual.temas[j] = cuentaLibroVIrtual.temas[j + 1];
+                                cuentaLibroVIrtual.tamaño[j] = cuentaLibroVIrtual.tamaño[j + 1];
                             }
                         }
                     }

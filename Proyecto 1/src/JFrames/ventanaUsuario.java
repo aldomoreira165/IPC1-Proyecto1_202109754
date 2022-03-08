@@ -12,15 +12,6 @@ import javax.swing.Icon;
 
 public class ventanaUsuario extends javax.swing.JFrame {
 
-private static ventanaUsuario instancia;
-
-public static ventanaUsuario getInstancia(){
-    if (instancia == null) {
-        instancia = new ventanaUsuario();
-    }
-    return instancia;
-}
-
 
     public ventanaUsuario() {
         initComponents();
@@ -104,23 +95,21 @@ public static ventanaUsuario getInstancia(){
 
         jLabel2.setText("Usuario:");
 
-        lbl_username.setText(loginUsuario.getInstancia().usuarioLoggeado
-        );
+        lbl_username.setText(loginUsuario.usuarioLoggeado);
 
         jLabel3.setText("Nombre:");
 
-        lbl_username1.setText(loginUsuario.getInstancia().nombreLoggeado
+        lbl_username1.setText(loginUsuario.nombreLoggeado
         );
 
         jLabel4.setText("Apellido:");
 
-        lbl_username2.setText(loginUsuario.getInstancia().apellidoLoggeado
+        lbl_username2.setText(loginUsuario.apellidoLoggeado
         );
 
         jLabel5.setText("Rol:");
 
-        lbl_username3.setText(loginUsuario.getInstancia().rolLoggeado
-        );
+        lbl_username3.setText(loginUsuario.rolLoggeado);
 
         lblFoto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/23154.png"))); // NOI18N
 
@@ -223,22 +212,22 @@ public static ventanaUsuario getInstancia(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        ventanaUsuario.getInstancia().setVisible(false);
+        this.setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void btn_bibliotecaVirtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bibliotecaVirtualActionPerformed
-        ventanaUsuario.getInstancia().setVisible(false);
+        this.setVisible(false);
         bibliotecaVirtual.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_bibliotecaVirtualActionPerformed
 
     private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logoutActionPerformed
-        ventanaUsuario.getInstancia().setVisible(false);
+        this.setVisible(false);
         pantallaInicio.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_logoutActionPerformed
 
     private void btn_prestamoLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prestamoLibroActionPerformed
-       ventanaUsuario.getInstancia().setVisible(false);
+       this.setVisible(false);
        prestamoLibros.getInstancia().setVisible(true);
     }//GEN-LAST:event_btn_prestamoLibroActionPerformed
 

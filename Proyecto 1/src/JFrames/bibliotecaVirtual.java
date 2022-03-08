@@ -19,6 +19,7 @@ import javax.swing.RowFilter;
 
 public class bibliotecaVirtual extends javax.swing.JFrame {
 
+
 private static bibliotecaVirtual instancia;
 
 public static bibliotecaVirtual getInstancia(){
@@ -206,7 +207,7 @@ public static bibliotecaVirtual getInstancia(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
-        ventanaUsuario.getInstancia().setVisible(true);
+        loginUsuario.ventanaUsuarioActual.setVisible(true);
         bibliotecaVirtual.getInstancia().setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
@@ -249,7 +250,7 @@ public static bibliotecaVirtual getInstancia(){
         int column = tbl_mostrarLibrosDigitales.getColumnModel().getColumnIndexAtX(evt.getX());
         int row = evt.getY() / tbl_mostrarLibrosDigitales.getRowHeight();
         String isbnTabla = "";
-        String isbn = "", autor= "", añoPublicacion= "", titulo= "", edicion= "", palabrasClave= "", descripcion= "", temas= "", tamaño= "";
+        String idActual = "" ,isbn = "", autor= "", añoPublicacion= "", titulo= "", edicion= "", palabrasClave= "", descripcion= "", temas= "", tamaño= "";
         boolean libroExistente = false;
 
         if (row < tbl_mostrarLibrosDigitales.getRowCount() && row >= 0 && column < tbl_mostrarLibrosDigitales.getColumnCount() && column >= 0) {
@@ -259,8 +260,8 @@ public static bibliotecaVirtual getInstancia(){
                 JButton boton = (JButton) value;
                 isbnTabla = (String) (tbl_mostrarLibrosDigitales.getValueAt(row, 0));
 
-                for (int j = 0; j <= cuentaLibroVIrtual.getInstancia().contador; j++) {
-                    if (cuentaLibroVIrtual.getInstancia().isbn[j].equals(isbnTabla)) {
+                for (int j = 0; j <= cuentaLibroVIrtual.contador; j++) {
+                    if (cuentaLibroVIrtual.isbn[j].equals(isbnTabla) && cuentaLibroVIrtual.idUsuarioActual[j].equals(loginUsuario.idLoggeado)) {
                         JOptionPane.showMessageDialog(null, "Ya ha adquirido este libro digital.", "Error", JOptionPane.WARNING_MESSAGE);
                         libroExistente = true;
                     }
@@ -279,32 +280,19 @@ public static bibliotecaVirtual getInstancia(){
                             tamaño = LibroDigital.getInstancia().tamaño[i];
                         }
                     }
-                    cuentaLibroVIrtual.getInstancia().contador = cuentaLibroVIrtual.getInstancia().contador + 1;
-                    cuentaLibroVIrtual.getInstancia().isbn[cuentaLibroVIrtual.getInstancia().contador] = isbn;
-                    cuentaLibroVIrtual.getInstancia().autor[cuentaLibroVIrtual.getInstancia().contador] = autor;
-                    cuentaLibroVIrtual.getInstancia().añoPublicacion[cuentaLibroVIrtual.getInstancia().contador] = añoPublicacion;
-                    cuentaLibroVIrtual.getInstancia().titulo[cuentaLibroVIrtual.getInstancia().contador] = titulo;
-                    cuentaLibroVIrtual.getInstancia().edicion[cuentaLibroVIrtual.getInstancia().contador] = edicion;
-                    cuentaLibroVIrtual.getInstancia().palabrasClave[cuentaLibroVIrtual.getInstancia().contador] = palabrasClave;
-                    cuentaLibroVIrtual.getInstancia().descripcion[cuentaLibroVIrtual.getInstancia().contador] = descripcion;
-                    cuentaLibroVIrtual.getInstancia().temas[cuentaLibroVIrtual.getInstancia().contador] = temas;
-                    cuentaLibroVIrtual.getInstancia().tamaño[cuentaLibroVIrtual.getInstancia().contador] = tamaño;
+                    cuentaLibroVIrtual.contador = cuentaLibroVIrtual.contador + 1;
+                    cuentaLibroVIrtual.idUsuarioActual[cuentaLibroVIrtual.contador] = loginUsuario.idLoggeado;
+                    cuentaLibroVIrtual.isbn[cuentaLibroVIrtual.contador] = isbn;
+                    cuentaLibroVIrtual.autor[cuentaLibroVIrtual.contador] = autor;
+                    cuentaLibroVIrtual.añoPublicacion[cuentaLibroVIrtual.contador] = añoPublicacion;
+                    cuentaLibroVIrtual.titulo[cuentaLibroVIrtual.contador] = titulo;
+                    cuentaLibroVIrtual.edicion[cuentaLibroVIrtual.contador] = edicion;
+                    cuentaLibroVIrtual.palabrasClave[cuentaLibroVIrtual.contador] = palabrasClave;
+                    cuentaLibroVIrtual.descripcion[cuentaLibroVIrtual.contador] = descripcion;
+                    cuentaLibroVIrtual.temas[cuentaLibroVIrtual.contador] = temas;
+                    cuentaLibroVIrtual.tamaño[cuentaLibroVIrtual.contador] = tamaño;
                     JOptionPane.showMessageDialog(null, "Libro digital '" + titulo + "' añadido", "Nuevo libro digital", JOptionPane.INFORMATION_MESSAGE);
 
-                }
-                System.out.println("LIBROS DIGITALES ADQUIRIDOS");
-                for (int i = 0; i <= cuentaLibroVIrtual.getInstancia().contador; i++) {
-                    System.out.println("*******************************************************************");
-                    System.out.println(cuentaLibroVIrtual.getInstancia().isbn[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().autor[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().añoPublicacion[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().titulo[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().edicion[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().palabrasClave[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().descripcion[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().temas[i]);
-                    System.out.println(cuentaLibroVIrtual.getInstancia().tamaño[i]);
-                    System.out.println("*******************************************************************");
                 }
             }
         }

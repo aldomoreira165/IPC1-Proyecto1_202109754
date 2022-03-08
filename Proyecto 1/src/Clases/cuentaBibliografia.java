@@ -2,17 +2,13 @@ package Clases;
 
 public class cuentaBibliografia {
 
-    public int contador = -1;
-    public String[] isbn = new String[10];
-    public String[] titulo = new String[10];
-    public String[] tipo = new String[10];
-    private static cuentaBibliografia instancia;
-
-    public static cuentaBibliografia getInstancia() {
-        if (instancia == null) {
-            instancia = new cuentaBibliografia();
-        }
-        return instancia;
-    }
-
+    public static int contador = -1;
+    public static String[] idUsuarioActual = new String[100];
+    public static String[] nombreActual = new String[100];
+    public static String[] apellidoActual = new String[100];
+    public static String[] rolActual = new String[100];
+    public static String[] usuarioActual = new String[100];
+    public static String[] isbn = new String[10];
+    public static String[] titulo = new String[10];
+    public static String[] tipo = new String[10];
 }

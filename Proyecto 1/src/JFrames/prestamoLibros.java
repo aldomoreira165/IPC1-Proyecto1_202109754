@@ -19,6 +19,7 @@ public class prestamoLibros extends javax.swing.JFrame {
     public int columna1 = 0;
     public Object[][] tablaLibros;
 
+    private static String[][] bibliotecaUsuario = new String[10][10];
     private static prestamoLibros instancia;
 
     public static prestamoLibros getInstancia() {
@@ -261,7 +262,7 @@ public class prestamoLibros extends javax.swing.JFrame {
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
         prestamoLibros.getInstancia().setVisible(false);
-        ventanaUsuario.getInstancia().setVisible(true);
+        loginUsuario.ventanaUsuarioActual.setVisible(true);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
     private void btn_reporteExistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reporteExistenciasActionPerformed
@@ -575,10 +576,15 @@ public class prestamoLibros extends javax.swing.JFrame {
                         }
                     }
                     if (bibliografiaExistente == true) {
-                        cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador + 1;
-                        cuentaBibliografia.getInstancia().isbn[cuentaBibliografia.getInstancia().contador] = Libro.getInstancia().isbn[posicion];
-                        cuentaBibliografia.getInstancia().titulo[cuentaBibliografia.getInstancia().contador] = Libro.getInstancia().titulo[posicion];
-                        cuentaBibliografia.getInstancia().tipo[cuentaBibliografia.getInstancia().contador] = "Libro";
+                        cuentaBibliografia.contador = cuentaBibliografia.contador + 1;
+                        cuentaBibliografia.nombreActual[cuentaBibliografia.contador] = loginUsuario.nombreLoggeado;
+                        cuentaBibliografia.apellidoActual[cuentaBibliografia.contador] = loginUsuario.apellidoLoggeado;
+                        cuentaBibliografia.rolActual[cuentaBibliografia.contador] = loginUsuario.rolLoggeado;
+                        cuentaBibliografia.usuarioActual[cuentaBibliografia.contador] = loginUsuario.usuarioLoggeado;
+                        cuentaBibliografia.idUsuarioActual[cuentaBibliografia.contador] = loginUsuario.idLoggeado;
+                        cuentaBibliografia.isbn[cuentaBibliografia.contador] = Libro.getInstancia().isbn[posicion];
+                        cuentaBibliografia.titulo[cuentaBibliografia.contador] = Libro.getInstancia().titulo[posicion];
+                        cuentaBibliografia.tipo[cuentaBibliografia.contador] = "Libro";
                         JOptionPane.showMessageDialog(null, "Préstamo realizado con éxito", "Nuevo préstamo", JOptionPane.INFORMATION_MESSAGE);
                     }
                     if (bibliografiaExistente == false) {
@@ -600,10 +606,15 @@ public class prestamoLibros extends javax.swing.JFrame {
                         }
                     }
                     if (bibliografiaExistente == true) {
-                        cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador + 1;
-                        cuentaBibliografia.getInstancia().isbn[cuentaBibliografia.getInstancia().contador] = Revista.getInstancia().isbn[posicion];
-                        cuentaBibliografia.getInstancia().titulo[cuentaBibliografia.getInstancia().contador] = Revista.getInstancia().titulo[posicion];
-                        cuentaBibliografia.getInstancia().tipo[cuentaBibliografia.getInstancia().contador] = "Revista";
+                        cuentaBibliografia.contador = cuentaBibliografia.contador + 1;
+                        cuentaBibliografia.nombreActual[cuentaBibliografia.contador] = loginUsuario.nombreLoggeado;
+                        cuentaBibliografia.apellidoActual[cuentaBibliografia.contador] = loginUsuario.apellidoLoggeado;
+                        cuentaBibliografia.rolActual[cuentaBibliografia.contador] = loginUsuario.rolLoggeado;
+                        cuentaBibliografia.usuarioActual[cuentaBibliografia.contador] = loginUsuario.usuarioLoggeado;
+                        cuentaBibliografia.idUsuarioActual[cuentaBibliografia.contador] = loginUsuario.idLoggeado;
+                        cuentaBibliografia.isbn[cuentaBibliografia.contador] = Revista.getInstancia().isbn[posicion];
+                        cuentaBibliografia.titulo[cuentaBibliografia.contador] = Revista.getInstancia().titulo[posicion];
+                        cuentaBibliografia.tipo[cuentaBibliografia.contador] = "Revista";
                         JOptionPane.showMessageDialog(null, "Préstamo realizado con éxito", "Nuevo préstamo", JOptionPane.INFORMATION_MESSAGE);
                     }
                     if (bibliografiaExistente == false) {
@@ -624,10 +635,15 @@ public class prestamoLibros extends javax.swing.JFrame {
                         }
                     }
                     if (bibliografiaExistente == true) {
-                        cuentaBibliografia.getInstancia().contador = cuentaBibliografia.getInstancia().contador + 1;
-                        cuentaBibliografia.getInstancia().isbn[cuentaBibliografia.getInstancia().contador] = Tesis.getInstancia().isbn[posicion];
-                        cuentaBibliografia.getInstancia().titulo[cuentaBibliografia.getInstancia().contador] = Tesis.getInstancia().titulo[posicion];
-                        cuentaBibliografia.getInstancia().tipo[cuentaBibliografia.getInstancia().contador] = "Tesis";
+                        cuentaBibliografia.contador = cuentaBibliografia.contador + 1;
+                        cuentaBibliografia.nombreActual[cuentaBibliografia.contador] = loginUsuario.nombreLoggeado;
+                        cuentaBibliografia.apellidoActual[cuentaBibliografia.contador] = loginUsuario.apellidoLoggeado;
+                        cuentaBibliografia.rolActual[cuentaBibliografia.contador] = loginUsuario.rolLoggeado;
+                        cuentaBibliografia.usuarioActual[cuentaBibliografia.contador] = loginUsuario.usuarioLoggeado;
+                        cuentaBibliografia.idUsuarioActual[cuentaBibliografia.contador] = loginUsuario.idLoggeado;
+                        cuentaBibliografia.isbn[cuentaBibliografia.contador] = Tesis.getInstancia().isbn[posicion];
+                        cuentaBibliografia.titulo[cuentaBibliografia.contador] = Tesis.getInstancia().titulo[posicion];
+                        cuentaBibliografia.tipo[cuentaBibliografia.contador] = "Tesis";
                         JOptionPane.showMessageDialog(null, "Préstamo realizado con éxito", "Nuevo préstamo", JOptionPane.INFORMATION_MESSAGE);
                     }
                     if (bibliografiaExistente == false) {
@@ -643,7 +659,9 @@ public class prestamoLibros extends javax.swing.JFrame {
 
     private void btn_verPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verPrestamosActionPerformed
         prestamoLibros.getInstancia().setVisible(false);
-        verPrestamos.getInstancia().setVisible(true);
+        verPrestamos vePrestamos = new verPrestamos();
+        verPrestamos.prestamosActuales = vePrestamos;
+        verPrestamos.prestamosActuales.setVisible(true);
     }//GEN-LAST:event_btn_verPrestamosActionPerformed
 
     private void btn_logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_logoutMouseEntered
